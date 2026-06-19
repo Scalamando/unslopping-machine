@@ -1,0 +1,11 @@
+services:
+  caddy:
+    image: caddy:2
+    ports:
+      - 80:80
+    volumes:
+      - .export/:/usr/share/caddy/
+      - caddy_data:/data
+
+volumes:
+  caddy_data:
