@@ -7,6 +7,7 @@ offset_left = -523.0
 offset_top = -535.0
 offset_right = 960.0
 offset_bottom = 551.0
+mouse_filter = 2
 color = Color(0.32416314, 0.54268265, 0.53828967, 1)
 
 [node name="Wall" type="ColorRect" parent="." unique_id=1438566277]
@@ -14,6 +15,7 @@ offset_left = -547.0
 offset_top = -535.0
 offset_right = -495.0
 offset_bottom = -229.0
+mouse_filter = 2
 color = Color(0.08150054, 0.16904393, 0.167573, 1)
 
 [node name="Floor" type="ColorRect" parent="." unique_id=584946144]
@@ -21,6 +23,7 @@ offset_left = -523.0
 offset_top = 519.0
 offset_right = 960.0
 offset_bottom = 551.0
+mouse_filter = 2
 color = Color(0.08235294, 0.16862746, 0.16862746, 1)
 
 [node name="Wall2" type="ColorRect" parent="." unique_id=1812011202]
@@ -28,4 +31,5 @@ offset_left = 935.0
 offset_top = -535.0
 offset_right = 987.0
 offset_bottom = 551.0
+mouse_filter = 2
 color = Color(0.08150054, 0.16904393, 0.167573, 1)
