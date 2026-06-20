@@ -1,62 +1,15 @@
 [gd_scene format=3 uid="uid://dvo3ir3el2j44"]
 
+[ext_resource type="PackedScene" uid="uid://dwucql2syuxls" path="res://scenes/wasching_room.tscn" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://fsgyhkw1fcjg" path="res://ui/main_ui.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://wjafvpjq5ntv" path="res://scenes/reception.tscn" id="2_sugp2"]
 
 [node name="Node2D" type="Node2D" unique_id=715033021]
 
-[node name="Reception" type="Node2D" parent="." unique_id=368222555]
+[node name="Reception" parent="." unique_id=1964710212 instance=ExtResource("2_sugp2")]
 position = Vector2(-893, 0)
 
-[node name="Room" type="ColorRect" parent="Reception" unique_id=1062129699]
-offset_left = -830.0
-offset_top = -535.0
-offset_right = 370.0
-offset_bottom = 551.0
-color = Color(0.65378743, 0.7867861, 0.66864306, 1)
-
-[node name="Desk" type="ColorRect" parent="Reception" unique_id=1483577714]
-offset_left = -126.0
-offset_top = 199.0
-offset_right = 142.0
-offset_bottom = 537.0
-color = Color(0.34963936, 0.2530643, 0.13660088, 1)
-
-[node name="Floor" type="ColorRect" parent="Reception" unique_id=1374913471]
-offset_left = -830.0
-offset_top = 519.0
-offset_right = 370.0
-offset_bottom = 551.0
-color = Color(0.08235294, 0.16862746, 0.16862746, 1)
-
-[node name="WaschingRoom" type="Node2D" parent="." unique_id=2128180200]
-
-[node name="Room" type="ColorRect" parent="WaschingRoom" unique_id=963146155]
-offset_left = -523.0
-offset_top = -535.0
-offset_right = 960.0
-offset_bottom = 551.0
-color = Color(0.32416314, 0.54268265, 0.53828967, 1)
-
-[node name="Wall" type="ColorRect" parent="WaschingRoom" unique_id=1147284650]
-offset_left = -547.0
-offset_top = -535.0
-offset_right = -495.0
-offset_bottom = -229.0
-color = Color(0.08150054, 0.16904393, 0.167573, 1)
-
-[node name="Floor" type="ColorRect" parent="WaschingRoom" unique_id=2023265374]
-offset_left = -523.0
-offset_top = 519.0
-offset_right = 960.0
-offset_bottom = 551.0
-color = Color(0.08235294, 0.16862746, 0.16862746, 1)
-
-[node name="Wall2" type="ColorRect" parent="WaschingRoom" unique_id=451083440]
-offset_left = 935.0
-offset_top = -535.0
-offset_right = 987.0
-offset_bottom = 551.0
-color = Color(0.08150054, 0.16904393, 0.167573, 1)
+[node name="WaschingRoom" parent="." unique_id=1269579874 instance=ExtResource("1_0wfyh")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1243545003]
 
