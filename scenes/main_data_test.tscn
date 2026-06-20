@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://bh23phtqgb16i"]
+
+[ext_resource type="Script" uid="uid://bedr0dcnjakxq" path="res://scenes/main.gd" id="1_oyj1r"]
+[ext_resource type="PackedScene" uid="uid://wjafvpjq5ntv" path="res://scenes/reception.tscn" id="2_cfsa3"]
+[ext_resource type="PackedScene" uid="uid://dwucql2syuxls" path="res://scenes/wasching_room.tscn" id="3_d0rit"]
+[ext_resource type="Script" uid="uid://dmbn5b0p26ns5" path="res://scenes/camera_controller.gd" id="4_eib1c"]
+[ext_resource type="PackedScene" uid="uid://fsgyhkw1fcjg" path="res://ui/main_ui.tscn" id="5_mg1pm"]
+[ext_resource type="PackedScene" uid="uid://brnmfwif8cssh" path="res://entities/cloth.tscn" id="6_2wuav"]
+[ext_resource type="PackedScene" uid="uid://v0gnwt1i2wge" path="res://entities/washing_machine.tscn" id="7_6ot14"]
+[ext_resource type="Script" uid="uid://c0ierpals2ss6" path="res://scenes/cloth_spawner_controller.gd" id="7_oyj1r"]
+[ext_resource type="Script" uid="uid://bqcwvesmpnf82" path="res://data/Customer.gd" id="8_eib1c"]
+[ext_resource type="Resource" uid="uid://d2vmdjye85vqo" path="res://data/cloths/shirt.tres" id="9_eib1c"]
+
+[sub_resource type="Resource" id="Resource_cfsa3"]
+script = ExtResource("8_eib1c")
+name = "Dieter"
+clothing = ExtResource("9_eib1c")
+timeStamp = 2
+metadata/_custom_type_script = "uid://bqcwvesmpnf82"
+
+[sub_resource type="Resource" id="Resource_mg1pm"]
+script = ExtResource("8_eib1c")
+name = "Henry"
+clothing = ExtResource("9_eib1c")
+timeStamp = 5
+metadata/_custom_type_script = "uid://bqcwvesmpnf82"
+
+[node name="Node2D" type="Node2D" unique_id=715033021]
+script = ExtResource("1_oyj1r")
+
+[node name="Reception" parent="." unique_id=1964710212 instance=ExtResource("2_cfsa3")]
+position = Vector2(-893, 0)
+
+[node name="WaschingRoom" parent="." unique_id=1269579874 instance=ExtResource("3_d0rit")]
+scale = Vector2(1, 1.0131407)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1243545003]
+script = ExtResource("4_eib1c")
+cameraPosLeftRoom = Vector2(-750, 0)
+
+[node name="MainUI" parent="Camera2D" unique_id=1842875158 instance=ExtResource("5_mg1pm")]
+mouse_filter = 1
+
+[node name="WaschingMachine" parent="." unique_id=1667756517 instance=ExtResource("7_6ot14")]
+position = Vector2(730, 375)
+
+[node name="CustomerSpawner" type="Node2D" parent="." unique_id=687975302]
+position = Vector2(-1262, 160)
+script = ExtResource("7_oyj1r")
+customer_array = Array[ExtResource("8_eib1c")]([SubResource("Resource_cfsa3"), SubResource("Resource_mg1pm")])
+cloth_scene = ExtResource("6_2wuav")

@@ -5,8 +5,8 @@
 [ext_resource type="Script" uid="uid://bedr0dcnjakxq" path="res://scenes/main.gd" id="1_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://wjafvpjq5ntv" path="res://scenes/reception.tscn" id="2_sugp2"]
 [ext_resource type="Script" uid="uid://dmbn5b0p26ns5" path="res://scenes/camera_controller.gd" id="3_jyhfs"]
-[ext_resource type="PackedScene" uid="uid://v0gnwt1i2wge" path="res://scenes/washing_machine.tscn" id="6_tefeu"]
-[ext_resource type="PackedScene" uid="uid://brnmfwif8cssh" path="res://scenes/cloth.tscn" id="7_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://v0gnwt1i2wge" path="res://entities/washing_machine.tscn" id="6_tefeu"]
+[ext_resource type="PackedScene" uid="uid://brnmfwif8cssh" path="res://entities/cloth.tscn" id="7_o6xl0"]
 
 [node name="Node2D" type="Node2D" unique_id=715033021]
 script = ExtResource("1_tbgi4")

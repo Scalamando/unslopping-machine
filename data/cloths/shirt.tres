@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Clothing" format=3 uid="uid://d2vmdjye85vqo"]
+
+[ext_resource type="Texture2D" uid="uid://3kceedkv2w11" path="res://assets/shirt_folded.png" id="1_1hyl2"]
+[ext_resource type="Script" uid="uid://c1er473h2880c" path="res://data/Clothing.gd" id="1_w1q8m"]
+[ext_resource type="Script" uid="uid://blgnuyj5fjgf1" path="res://data/WashingInstructions.gd" id="2_bbsy2"]
+[ext_resource type="PackedScene" uid="uid://bwmg2lu7lep0e" path="res://data/cloths/scenes/shirt_spread_out.tscn" id="3_aqmbu"]
+
+[sub_resource type="Resource" id="Resource_bbsy2"]
+script = ExtResource("2_bbsy2")
+speed = 800
+temperature = 120
+metadata/_custom_type_script = "uid://blgnuyj5fjgf1"
+
+[resource]
+script = ExtResource("1_w1q8m")
+folded_texture = ExtResource("1_1hyl2")
+spread_out_scene = ExtResource("3_aqmbu")
+wash_instructions = SubResource("Resource_bbsy2")
+metadata/_custom_type_script = "uid://c1er473h2880c"
