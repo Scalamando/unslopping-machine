@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://wjafvpjq5ntv"]
 
+[ext_resource type="PackedScene" uid="uid://dnhqo1hwn6jpe" path="res://scenes/tresen.tscn" id="1_hcyh5"]
+
 [node name="Reception" type="Node2D" unique_id=1964710212]
 
 [node name="Room" type="ColorRect" parent="." unique_id=1873036716]
@@ -10,14 +12,6 @@ offset_bottom = 551.0
 mouse_filter = 2
 color = Color(0.65378743, 0.7867861, 0.66864306, 1)
 
-[node name="Desk" type="ColorRect" parent="." unique_id=444318651]
-offset_left = -126.0
-offset_top = 199.0
-offset_right = 142.0
-offset_bottom = 537.0
-mouse_filter = 2
-color = Color(0.34963936, 0.2530643, 0.13660088, 1)
-
 [node name="Floor" type="ColorRect" parent="." unique_id=734092252]
 offset_left = -830.0
 offset_top = 519.0
@@ -25,3 +19,6 @@ offset_right = 370.0
 offset_bottom = 551.0
 mouse_filter = 2
 color = Color(0.08235294, 0.16862746, 0.16862746, 1)
+
+[node name="Tresen" parent="." unique_id=1285519101 instance=ExtResource("1_hcyh5")]
+position = Vector2(3, 519)

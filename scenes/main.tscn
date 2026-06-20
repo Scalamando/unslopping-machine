@@ -22,9 +22,13 @@ script = ExtResource("3_jyhfs")
 cameraPosLeftRoom = Vector2(-750, 0)
 
 [node name="MainUI" parent="Camera2D" unique_id=1842875158 instance=ExtResource("1_o5qli")]
+mouse_filter = 1
 
 [node name="Cloth" parent="." unique_id=838017900 instance=ExtResource("7_o6xl0")]
-position = Vector2(-883, 141)
+position = Vector2(-1200, 226)
+
+[node name="Cloth2" parent="." unique_id=406249680 instance=ExtResource("7_o6xl0")]
+position = Vector2(-1469, 224)
 
 [node name="WaschingMachine" parent="." unique_id=1667756517 instance=ExtResource("6_tefeu")]
 position = Vector2(46, 375)

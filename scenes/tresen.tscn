@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dnhqo1hwn6jpe"]
+
+[ext_resource type="Texture2D" uid="uid://dssfjuxlm4d0y" path="res://assets/tresen.png" id="1_uuk3e"]
+[ext_resource type="Script" uid="uid://nj1hdjl1vob2" path="res://addons/drag_and_drop/scripts/drop_zone.gd" id="2_7ualo"]
+[ext_resource type="Script" uid="uid://b5wqxyc42r5u" path="res://addons/drag_and_drop/resources/drop_behaviors/drop_behavior_reject.gd" id="3_8w7rg"]
+[ext_resource type="Script" uid="uid://djdmnemxrx7bg" path="res://addons/drag_and_drop/resources/draggable_types/draggable_type.gd" id="4_hukpr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rcsmu"]
+size = Vector2(229, 433)
+
+[sub_resource type="Resource" id="Resource_0iswh"]
+script = ExtResource("3_8w7rg")
+
+[sub_resource type="Resource" id="Resource_g3410"]
+script = ExtResource("4_hukpr")
+
+[node name="Tresen" type="Area2D" unique_id=1285519101]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1345797470]
+position = Vector2(0.5, -217.5)
+shape = SubResource("RectangleShape2D_rcsmu")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1102692665]
+position = Vector2(0, -155)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_uuk3e")
+
+[node name="DropZone" type="Node2D" parent="." unique_id=172992097 node_paths=PackedStringArray("attach_spot")]
+script = ExtResource("2_7ualo")
+attach_spot = NodePath("..")
+drop_behavior = SubResource("Resource_0iswh")
+accepted_draggable_types = Array[ExtResource("4_hukpr")]([SubResource("Resource_g3410")])
+metadata/_custom_type_script = "uid://nj1hdjl1vob2"
+
+[node name="ClothAttachPoint" type="Marker2D" parent="DropZone" unique_id=187660227]
+position = Vector2(1, -359)
