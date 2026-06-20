@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://fsgyhkw1fcjg" path="res://ui/main_ui.tscn" id="5_mg1pm"]
 [ext_resource type="PackedScene" uid="uid://brnmfwif8cssh" path="res://entities/cloth.tscn" id="6_2wuav"]
 [ext_resource type="PackedScene" uid="uid://v0gnwt1i2wge" path="res://entities/washing_machine.tscn" id="7_6ot14"]
-[ext_resource type="Script" uid="uid://c0ierpals2ss6" path="res://scenes/cloth_spawner_controller.gd" id="7_oyj1r"]
+[ext_resource type="Script" uid="uid://c0ierpals2ss6" path="res://scenes/customer_spawner_controller.gd" id="7_oyj1r"]
 [ext_resource type="Script" uid="uid://bqcwvesmpnf82" path="res://data/Customer.gd" id="8_eib1c"]
 [ext_resource type="Resource" uid="uid://d2vmdjye85vqo" path="res://data/cloths/shirt.tres" id="9_eib1c"]
 

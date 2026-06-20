@@ -1,5 +1,9 @@
 [gd_scene format=3 uid="uid://fsgyhkw1fcjg"]
 
+[ext_resource type="Script" uid="uid://dorfsaj7pwlo5" path="res://ui/ui_controller.gd" id="1_v5qxn"]
+[ext_resource type="PackedScene" uid="uid://upi0337cb7xs" path="res://ui/tresen_cloth_inspection.tscn" id="2_hlo7n"]
+[ext_resource type="Resource" uid="uid://d2vmdjye85vqo" path="res://data/cloths/shirt.tres" id="2_x3h8h"]
+
 [node name="MainUI" type="Control" unique_id=1842875158]
 layout_mode = 3
 anchors_preset = 0
@@ -7,3 +11,10 @@ offset_left = -960.0
 offset_top = -540.0
 offset_right = 960.0
 offset_bottom = 540.0
+script = ExtResource("1_v5qxn")
+test_cloth = ExtResource("2_x3h8h")
+
+[node name="TresenClothInspection" parent="." unique_id=2079798534 instance=ExtResource("2_hlo7n")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
