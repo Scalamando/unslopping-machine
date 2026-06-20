@@ -2,9 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://dwucql2syuxls" path="res://scenes/wasching_room.tscn" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://fsgyhkw1fcjg" path="res://ui/main_ui.tscn" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://bedr0dcnjakxq" path="res://scenes/main.gd" id="1_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://wjafvpjq5ntv" path="res://scenes/reception.tscn" id="2_sugp2"]
+[ext_resource type="Script" uid="uid://dmbn5b0p26ns5" path="res://scenes/camera_controller.gd" id="3_jyhfs"]
 
 [node name="Node2D" type="Node2D" unique_id=715033021]
+script = ExtResource("1_tbgi4")
 
 [node name="Reception" parent="." unique_id=1964710212 instance=ExtResource("2_sugp2")]
 position = Vector2(-893, 0)
@@ -12,5 +15,7 @@ position = Vector2(-893, 0)
 [node name="WaschingRoom" parent="." unique_id=1269579874 instance=ExtResource("1_0wfyh")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1243545003]
+script = ExtResource("3_jyhfs")
+cameraPosLeftRoom = Vector2(-750, 0)
 
 [node name="MainUI" parent="Camera2D" unique_id=1842875158 instance=ExtResource("1_o5qli")]
