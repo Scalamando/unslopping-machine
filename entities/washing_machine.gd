@@ -35,7 +35,7 @@ func _ready() -> void:
 
 func _on_settings_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if (event is InputEventMouseButton):
-		if (event.button_index == MouseButton.MOUSE_BUTTON_LEFT):
+		if (event.pressed and event.button_index == MouseButton.MOUSE_BUTTON_LEFT):
 			UiManager.show_washing_mashine_settings(self)
 
 func _set_speed_label(value : int) -> void:
