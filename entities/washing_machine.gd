@@ -100,6 +100,9 @@ func start_washing() -> bool:
 	for c : Cloth in cloths:
 		c.input_pickable = false
 
+	# disable the dropzone
+	self.collision_layer = 0
+
 	indicator_texture_rect.visible = true
 	foreground_open.visible = false
 	foreground_closed.visible = true
@@ -115,6 +118,11 @@ func end_washing() -> void:
 		if child is Cloth:
 			child.apply_wash(temperature, speed, direction)
 			child.input_pickable = true
+
+	# re-enable the dropzone
+	self.collision_layer = 1
+
+
 	wasching_animation_player.play("RESET")
 	indicator_texture_rect.visible = false
 	foreground_open.visible = true
