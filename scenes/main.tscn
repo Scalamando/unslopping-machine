@@ -1,9 +1,8 @@
 [gd_scene format=3 uid="uid://dvo3ir3el2j44"]
 
-[ext_resource type="PackedScene" uid="uid://dwucql2syuxls" path="res://scenes/wasching_room.tscn" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://fsgyhkw1fcjg" path="res://ui/main_ui.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://bedr0dcnjakxq" path="res://scenes/main.gd" id="1_tbgi4"]
-[ext_resource type="PackedScene" uid="uid://wjafvpjq5ntv" path="res://scenes/reception.tscn" id="2_sugp2"]
+[ext_resource type="PackedScene" uid="uid://dnhqo1hwn6jpe" path="res://scenes/tresen.tscn" id="2_eb6dy"]
 [ext_resource type="Script" uid="uid://dmbn5b0p26ns5" path="res://scenes/camera_controller.gd" id="3_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://b5f15rlxpihuc" path="res://entities/basket.tscn" id="5_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://v0gnwt1i2wge" path="res://entities/washing_machine.tscn" id="6_tefeu"]
@@ -30,23 +29,89 @@ metadata/_custom_type_script = "uid://bqcwvesmpnf82"
 [node name="Node2D" type="Node2D" unique_id=715033021]
 script = ExtResource("1_tbgi4")
 
-[node name="Reception" parent="." unique_id=1964710212 instance=ExtResource("2_sugp2")]
+[node name="Reception" type="Node2D" parent="." unique_id=1964710212]
 position = Vector2(-893, 0)
 
-[node name="WaschingRoom" parent="." unique_id=1269579874 instance=ExtResource("1_0wfyh")]
+[node name="Room" type="ColorRect" parent="Reception" unique_id=1873036716]
+offset_left = -830.0
+offset_top = -535.0
+offset_right = 370.0
+offset_bottom = 551.0
+mouse_filter = 2
+color = Color(0.65378743, 0.7867861, 0.66864306, 1)
+
+[node name="Floor" type="ColorRect" parent="Reception" unique_id=734092252]
+offset_left = -830.0
+offset_top = 519.0
+offset_right = 370.0
+offset_bottom = 551.0
+mouse_filter = 2
+color = Color(0.08235294, 0.16862746, 0.16862746, 1)
+
+[node name="Tresen" parent="Reception" unique_id=1285519101 instance=ExtResource("2_eb6dy")]
+position = Vector2(3, 519)
+
+[node name="Basket" parent="Reception" unique_id=1943162463 instance=ExtResource("5_ya4ey")]
+position = Vector2(-283, 435)
+scale = Vector2(1, 0.98702973)
+
+[node name="Label" type="Label" parent="Reception/Basket" unique_id=1068517104]
+offset_left = -33.0
+offset_top = 28.367939
+offset_right = 31.0
+offset_bottom = 52.683308
+text = "finished"
+
+[node name="WaschingRoom" type="Node2D" parent="." unique_id=1269579874]
 scale = Vector2(1, 1.0131407)
 
-[node name="WaschingMachine" parent="." unique_id=1667756517 instance=ExtResource("6_tefeu")]
-position = Vector2(358, 327)
+[node name="Room" type="ColorRect" parent="WaschingRoom" unique_id=460883760]
+offset_left = -523.0
+offset_top = -535.0
+offset_right = 960.0
+offset_bottom = 551.0
+mouse_filter = 2
+color = Color(0.32416314, 0.54268265, 0.53828967, 1)
 
-[node name="WaschingMachine" parent="WaschingMachine" unique_id=875701637 instance=ExtResource("6_tefeu")]
-position = Vector2(316, 0)
+[node name="Wall" type="ColorRect" parent="WaschingRoom" unique_id=1438566277]
+offset_left = -547.0
+offset_top = -535.0
+offset_right = -495.0
+offset_bottom = -229.0
+mouse_filter = 2
+color = Color(0.08150054, 0.16904393, 0.167573, 1)
 
-[node name="Basket" parent="WaschingMachine" unique_id=1943162463 instance=ExtResource("5_ya4ey")]
-position = Vector2(-577, -69)
+[node name="Floor" type="ColorRect" parent="WaschingRoom" unique_id=584946144]
+offset_left = -523.0
+offset_top = 519.0
+offset_right = 960.0
+offset_bottom = 551.0
+mouse_filter = 2
+color = Color(0.08235294, 0.16862746, 0.16862746, 1)
 
-[node name="Basket2" parent="WaschingMachine" unique_id=1589727789 instance=ExtResource("5_ya4ey")]
-position = Vector2(-577, -253)
+[node name="Wall2" type="ColorRect" parent="WaschingRoom" unique_id=1812011202]
+offset_left = 935.0
+offset_top = -535.0
+offset_right = 987.0
+offset_bottom = 551.0
+mouse_filter = 2
+color = Color(0.08150054, 0.16904393, 0.167573, 1)
+
+[node name="WaschingMachine2" parent="WaschingRoom" unique_id=875701637 instance=ExtResource("6_tefeu")]
+position = Vector2(674, 322.75873)
+scale = Vector2(1, 0.98702973)
+
+[node name="Basket" parent="WaschingRoom" unique_id=401637336 instance=ExtResource("5_ya4ey")]
+position = Vector2(-219, 254.65367)
+scale = Vector2(1, 0.98702973)
+
+[node name="Basket2" parent="WaschingRoom" unique_id=1589727789 instance=ExtResource("5_ya4ey")]
+position = Vector2(-219, 73.0402)
+scale = Vector2(1, 0.98702973)
+
+[node name="WaschingMachine" parent="WaschingRoom" unique_id=1667756517 instance=ExtResource("6_tefeu")]
+position = Vector2(358, 322.75873)
+scale = Vector2(1, 0.98702973)
 
 [node name="CustomerSpawner" type="Node2D" parent="." unique_id=1869433657]
 position = Vector2(-1321, 160)
