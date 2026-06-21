@@ -12,7 +12,7 @@ func _ready() -> void:
 	spawn_customers()
 	
 
-func spawn_customers():
+func spawn_customers() -> void:
 	for customer : Customer in customer_array:
 		var delay : int = customer.timeStamp - time
 		await get_tree().create_timer(delay).timeout

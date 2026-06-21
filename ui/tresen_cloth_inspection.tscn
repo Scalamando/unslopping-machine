@@ -38,3 +38,15 @@ offset_right = 357.0
 offset_bottom = 403.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Button" type="Button" parent="." unique_id=384874467]
+layout_mode = 0
+offset_left = 1714.9999
+offset_top = 137.00006
+offset_right = 1780.9999
+offset_bottom = 168.00006
+scale = Vector2(2.6514904, 2.5972676)
+text = "Close
+"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
