@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://i3driceblmb2"]
+
+[ext_resource type="Script" uid="uid://dvtf38pphw1ry" path="res://entities/instructions_proxy_controller.gd" id="1_pdut6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0j7jy"]
+size = Vector2(54, 52)
+
+[node name="InstructionsProxy" type="Area2D" unique_id=1949294101]
+script = ExtResource("1_pdut6")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=790393792]
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1458007271]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_0j7jy")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
