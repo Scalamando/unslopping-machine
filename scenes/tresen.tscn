@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dnhqo1hwn6jpe"]
 
+[ext_resource type="Script" uid="uid://clgx533i6mxin" path="res://scenes/tresen_controller.gd" id="1_7ualo"]
 [ext_resource type="Texture2D" uid="uid://dssfjuxlm4d0y" path="res://assets/tresen.png" id="1_uuk3e"]
 [ext_resource type="Script" uid="uid://nj1hdjl1vob2" path="res://addons/drag_and_drop/scripts/drop_zone.gd" id="2_7ualo"]
 [ext_resource type="Script" uid="uid://b5wqxyc42r5u" path="res://addons/drag_and_drop/resources/drop_behaviors/drop_behavior_reject.gd" id="3_8w7rg"]
@@ -15,6 +16,7 @@ script = ExtResource("3_8w7rg")
 script = ExtResource("4_hukpr")
 
 [node name="Tresen" type="Area2D" unique_id=1285519101]
+script = ExtResource("1_7ualo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1345797470]
 position = Vector2(0.5, -217.5)
@@ -34,3 +36,5 @@ metadata/_custom_type_script = "uid://nj1hdjl1vob2"
 
 [node name="ClothAttachPoint" type="Marker2D" parent="DropZone" unique_id=187660227]
 position = Vector2(1, -359)
+
+[connection signal="drop_applied" from="DropZone" to="." method="_on_drop_zone_drop_applied"]
