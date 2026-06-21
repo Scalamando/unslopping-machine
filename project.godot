@@ -30,6 +30,9 @@ window/size/viewport_height=1080
 window/size/mode=2
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+window/size/mode.editor_hint=0
+window/size/viewport_width.editor_hint=1152
+window/size/viewport_height.editor_hint=648
 
 [editor_plugins]
 

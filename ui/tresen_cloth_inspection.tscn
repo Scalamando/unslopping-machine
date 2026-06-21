@@ -1,28 +1,100 @@
 [gd_scene format=3 uid="uid://upi0337cb7xs"]
 
 [ext_resource type="Script" uid="uid://bgjg0nvgknpum" path="res://ui/tresen_cloth_inspection_controller.gd" id="1_v7wvd"]
+[ext_resource type="Texture2D" uid="uid://cjgy02etn6tbf" path="res://assets/washing_instructions_icons/speed-slow.png" id="2_0r8yg"]
+[ext_resource type="Texture2D" uid="uid://p7enlrfxt4r2" path="res://assets/washing_instructions_icons/temp-cold.png" id="2_3k22f"]
+[ext_resource type="Texture2D" uid="uid://dh81kloa3bycp" path="res://assets/washing_instructions_icons/speed-med.png" id="3_lbrc7"]
+[ext_resource type="Texture2D" uid="uid://bkwdiv3l6y1i2" path="res://assets/washing_instructions_icons/dir-clockwise.png" id="3_xgu23"]
+[ext_resource type="Texture2D" uid="uid://cj5dbbhnb4li1" path="res://assets/washing_instructions_icons/speed-fast.png" id="4_0r8yg"]
+[ext_resource type="Texture2D" uid="uid://esmc1k7f4ums" path="res://assets/washing_instructions_icons/temp-medium.png" id="6_2bbuj"]
+[ext_resource type="Texture2D" uid="uid://dkdj3e2u6i8x5" path="res://assets/washing_instructions_icons/temp-hot.png" id="7_8wybo"]
+[ext_resource type="Texture2D" uid="uid://xqa77y2ksugd" path="res://assets/washing_instructions_icons/dir-counterclockwise.png" id="9_w4ujp"]
+[ext_resource type="Texture2D" uid="uid://dnponfla77m63" path="res://assets/washing_instructions_icons/dir-both.png" id="10_ic0nb"]
 
 [node name="TresenClothInspection" type="Control" unique_id=2079798534]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
+mouse_filter = 1
 script = ExtResource("1_v7wvd")
+speed_slow = ExtResource("2_0r8yg")
+speed_med = ExtResource("3_lbrc7")
+speed_fast = ExtResource("4_0r8yg")
+temp_cold = ExtResource("2_3k22f")
+temp_med = ExtResource("6_2bbuj")
+temp_hot = ExtResource("7_8wybo")
+dir_clockwise = ExtResource("3_xgu23")
+dir_counterclockwise = ExtResource("9_w4ujp")
+dir_both = ExtResource("10_ic0nb")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=94396307]
+[node name="Tresen" type="ColorRect" parent="." unique_id=94396307]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -960.0
+offset_left = -1080.0
 offset_top = -453.0
-offset_right = 960.0
+offset_right = 1080.0
 offset_bottom = 447.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 color = Color(0.5216516, 0.37004402, 0.19765705, 1)
+
+[node name="Instructions" type="ColorRect" parent="." unique_id=785957466]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1563.0
+offset_top = 430.0
+offset_right = 1759.0
+offset_bottom = 587.0
+mouse_filter = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Instructions" unique_id=789653406]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -81.99997
+offset_top = -81.0
+offset_right = 694.0
+offset_bottom = 175.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.215, 0.215)
+
+[node name="TempTexRect" type="TextureRect" parent="Instructions/HBoxContainer" unique_id=94150691]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("2_3k22f")
+
+[node name="DirTexRect" type="TextureRect" parent="Instructions/HBoxContainer" unique_id=894656843]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("3_xgu23")
+
+[node name="SpeedTexRect" type="TextureRect" parent="Instructions/HBoxContainer" unique_id=1556407445]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("4_0r8yg")
+
+[node name="Headline" type="Label" parent="Instructions" unique_id=1915626365]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -82.0
+offset_top = 11.0
+offset_right = 82.0
+offset_bottom = 34.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Washing Instructions"
 
 [node name="ClothPos" type="Control" parent="." unique_id=644119630]
 unique_name_in_owner = true
@@ -38,14 +110,16 @@ offset_right = 357.0
 offset_bottom = 403.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
 [node name="Button" type="Button" parent="." unique_id=384874467]
 layout_mode = 0
 offset_left = 1714.9999
 offset_top = 137.00006
-offset_right = 1780.9999
+offset_right = 1764.9999
 offset_bottom = 168.00006
 scale = Vector2(2.6514904, 2.5972676)
+theme_override_font_sizes/font_size = 16
 text = "Close
 "
 
