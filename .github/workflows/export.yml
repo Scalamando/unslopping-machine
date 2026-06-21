@@ -7,6 +7,8 @@ env:
   GODOT_VERSION: 4.7
   EXPORT_NAME: unslopping-machine
   PROJECT_PATH: .
+  ITCHIO_USERNAME: scalamando
+  ITCHIO_GAME: unslopping-machine
 
 jobs:
   export-windows:
@@ -36,6 +38,14 @@ jobs:
         with:
           name: windows
           path: build/windows
+      - name: Deploy to Itch.io 🎮
+        uses: Ayowel/butler-to-itch@v1.3.0
+        with:
+          butler_key: ${{ secrets.BUTLER_CREDENTIALS }}
+          itch_user: ${{ env.ITCHIO_USERNAME }}
+          itch_game: ${{ env.ITCHIO_GAME }}
+          version: ${{ github.ref_name }}
+          files: build/windows:windows
 
   export-linux:
     name: Linux Export
@@ -62,6 +72,14 @@ jobs:
         with:
           name: linux
           path: build/linux
+      - name: Deploy to Itch.io 🎮
+        uses: Ayowel/butler-to-itch@v1.3.0
+        with:
+          butler_key: ${{ secrets.BUTLER_CREDENTIALS }}
+          itch_user: ${{ env.ITCHIO_USERNAME }}
+          itch_game: ${{ env.ITCHIO_GAME }}
+          version: ${{ github.ref_name }}
+          files: build/linux:linux
 
   export-web:
     name: Web Export
@@ -100,3 +118,11 @@ jobs:
         with:
           branch: gh-pages # The branch the action should deploy to.
           folder: build/web # The folder the action should deploy.
+      - name: Deploy to Itch.io 🎮
+        uses: Ayowel/butler-to-itch@v1.3.0
+        with:
+          butler_key: ${{ secrets.BUTLER_CREDENTIALS }}
+          itch_user: ${{ env.ITCHIO_USERNAME }}
+          itch_game: ${{ env.ITCHIO_GAME }}
+          version: ${{ github.ref_name }}
+          files: build/web:web
