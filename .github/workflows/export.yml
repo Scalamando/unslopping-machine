@@ -13,7 +13,7 @@ jobs:
     name: Windows Export
     runs-on: ubuntu-24.04  # Use 24.04 with godot 4
     container:
-      image: barichello/godot-ci:4.7
+      image: scalamando/godot-ci:4.7
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -41,7 +41,7 @@ jobs:
     name: Linux Export
     runs-on: ubuntu-24.04  # Use 24.04 with godot 4
     container:
-      image: barichello/godot-ci:4.7
+      image: scalamando/godot-ci:4.7
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -67,7 +67,7 @@ jobs:
     name: Web Export
     runs-on: ubuntu-24.04  # Use 24.04 with godot 4
     container:
-      image: barichello/godot-ci:4.7
+      image: scalamando/godot-ci:4.7
     steps:
       - name: Checkout
         uses: actions/checkout@v4
