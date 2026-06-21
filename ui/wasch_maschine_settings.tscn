@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://biqlv4e8lh0px" path="res://assets/wasching-machine-settings.png" id="1_dkjvl"]
 [ext_resource type="Script" uid="uid://cf0ov6lsiwile" path="res://ui/wasch_maschine_settings_ui.gd" id="1_j6sok"]
+[ext_resource type="Texture2D" uid="uid://bkr3rhv6b6xv3" path="res://assets/washing-indicator.png" id="3_hp7ux"]
+[ext_resource type="Texture2D" uid="uid://bwg2yryjh4wsk" path="res://assets/washing-indicator-empty.png" id="4_kyslo"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_j6sok"]
 font_size = 42
@@ -21,6 +23,13 @@ bg_color = Color(0.5086176, 0.058313325, 0.11161379, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kyslo"]
 bg_color = Color(0.9282533, 0.18773845, 0.25566742, 1)
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_b1spw"]
+frames = 2
+frame_0/texture = ExtResource("3_hp7ux")
+frame_0/duration = 0.5
+frame_1/texture = ExtResource("4_kyslo")
+frame_1/duration = 0.5
 
 [node name="WaschMaschineSettings" type="Control" unique_id=1979839577]
 layout_mode = 3
@@ -151,7 +160,8 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_j6sok")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yxm6p")
 expand_icon = true
 
-[node name="Button" type="Button" parent="." unique_id=908637153]
+[node name="StartButton" type="Button" parent="." unique_id=908637153]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = -260.0
 offset_top = -173.0
@@ -164,9 +174,21 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_hp7ux")
 theme_override_styles/hover = SubResource("StyleBoxFlat_kyslo")
 text = "S T A R T"
 
+[node name="IndicatorTextureRect" type="TextureRect" parent="." unique_id=1316258989]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = -163.0
+offset_top = -177.0
+offset_right = -80.2
+offset_bottom = -108.0
+texture = SubResource("AnimatedTexture_b1spw")
+expand_mode = 1
+
 [connection signal="pressed" from="CloseButton" to="." method="_on_button_pressed"]
 [connection signal="value_changed" from="SpeedSlider" to="." method="_on_speed_value_changed"]
 [connection signal="pressed" from="TemperatureButtons/Cold" to="." method="_on_cold_pressed"]
 [connection signal="pressed" from="TemperatureButtons/Medium" to="." method="_on_medium_pressed"]
 [connection signal="pressed" from="TemperatureButtons/Hot" to="." method="_on_hot_pressed"]
 [connection signal="pressed" from="DirectionButton" to="." method="_on_direction_button_pressed"]
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

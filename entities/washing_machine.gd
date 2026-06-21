@@ -1,32 +1,46 @@
 class_name WashingMashine
 extends Area2D
 
+signal finished_wash
+
 enum Direction {clockwise, counterclockwise}
 
 @onready var temperature_rect: ColorRect = %TemperatureRect
 @onready var speed_label: Label = %SpeedLabel
 @onready var direction_texture_rect: TextureRect = %DirectionTextureRect
+@onready var indicator_texture_rect: TextureRect = %IndicatorTextureRect
+@onready var cloth_container: Node2D = %ClothContainer
+@onready var wasching_timer: Timer = %WaschingTimer
+
+var running: bool :
+	get:
+		return not wasching_timer.is_stopped()
+	set(value):
+		pass
 
 const DIR_CLOCKWISE = preload("uid://bl0cqry5dllwh")
 const DIR_COUNTERCLOCKWISE = preload("uid://cjjdrak1g00mr")
 
-@export var speed : int :
+@export var speed : int = 0 :
 	get: return speed
 	set(value):
 		speed = value
-		_set_speed_label(value)
+		if speed_label:
+			_set_speed_label(value)
 
 @export var temperature : WaschingInstruction.Temperature = WaschingInstruction.Temperature.hot :
 	get: return temperature
 	set(value):
 		temperature = value
-		_set_temperature_rect(value)
+		if temperature_rect:
+			_set_temperature_rect(value)
 
 @export var direction : Direction = Direction.clockwise :
 	get: return direction
 	set(value):
 		direction = value
-		_set_direction_texture_rect(value)
+		if direction_texture_rect:
+			_set_direction_texture_rect(value)
 
 func _ready() -> void:
 	_set_speed_label(speed)
@@ -56,5 +70,20 @@ func _set_direction_texture_rect(value : Direction) -> void:
 			direction_texture_rect.texture = DIR_CLOCKWISE
 		Direction.counterclockwise:
 			direction_texture_rect.texture = DIR_COUNTERCLOCKWISE
+
+func start_washing() -> void:
+	for child in cloth_container.get_children():
+		if child is Cloth:
+			child.input_pickable = false
+	indicator_texture_rect.visible = true
+	wasching_timer.start()
+	wasching_timer.timeout.connect(end_washing)
+
+func end_washing() -> void:
+	for child in cloth_container.get_children():
+		if child is Cloth:
+			child.cloth_data.apply_wash(temperature, speed, direction)
+	indicator_texture_rect.visible = false
+	finished_wash.emit()
 
 #TODO Flusensieb

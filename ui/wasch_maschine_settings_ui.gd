@@ -11,8 +11,10 @@ var button_style : StyleBoxFlat = StyleBoxFlat.new()
 @onready var temperature_cold_button: Button = %Cold
 @onready var temperature_medium_button: Button = %Medium
 @onready var temperature_hot_button: Button = %Hot
+@onready var indicator_texture_rect: TextureRect = %IndicatorTextureRect
 
 @onready var direction_button: Button = %DirectionButton
+@onready var start_button: Button = %StartButton
 
 const DIR_CLOCKWISE = preload("uid://bl0cqry5dllwh")
 const DIR_COUNTERCLOCKWISE = preload("uid://cjjdrak1g00mr")
@@ -49,6 +51,10 @@ func init(washing_machine : WashingMashine) -> void:
 	speed_slider.value = float(current_washing_machine.speed)
 	_on_speed_value_changed(float(current_washing_machine.speed))
 
+	print(current_washing_machine.running)
+	start_button.visible = not current_washing_machine.running
+	indicator_texture_rect.visible = current_washing_machine.running
+
 
 func _on_button_pressed() -> void:
 	UiManager.hide_washing_machine_settings()
@@ -82,3 +88,14 @@ func _on_direction_button_pressed() -> void:
 		WashingMashine.Direction.counterclockwise:
 			current_washing_machine.direction = WashingMashine.Direction.clockwise
 			direction_button.add_theme_icon_override("icon", DIR_CLOCKWISE)
+
+
+func _on_start_button_pressed() -> void:
+	start_button.visible = false
+	indicator_texture_rect.visible = true
+	current_washing_machine.start_washing()
+	current_washing_machine.finished_wash.connect(_on_wash_end)
+
+func _on_wash_end() -> void:
+	start_button.visible = true
+	indicator_texture_rect.visible = false

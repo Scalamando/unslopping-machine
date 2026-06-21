@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://b5wqxyc42r5u" path="res://addons/drag_and_drop/resources/drop_behaviors/drop_behavior_reject.gd" id="3_1vf26"]
 [ext_resource type="Script" uid="uid://djdmnemxrx7bg" path="res://addons/drag_and_drop/resources/draggable_types/draggable_type.gd" id="3_fckx4"]
 [ext_resource type="Texture2D" uid="uid://b4ydssd7c1m05" path="res://assets/wasching_machine.png" id="5_fckx4"]
+[ext_resource type="Texture2D" uid="uid://bkr3rhv6b6xv3" path="res://assets/washing-indicator.png" id="7_obclh"]
+[ext_resource type="Texture2D" uid="uid://bwg2yryjh4wsk" path="res://assets/washing-indicator-empty.png" id="8_u6ur1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rcsmu"]
 size = Vector2(300, 300)
@@ -48,6 +50,13 @@ size = Vector2(292, 72)
 [sub_resource type="LabelSettings" id="LabelSettings_rcsmu"]
 font_color = Color(0.0253638, 0.0253638, 0.025363795, 1)
 
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_obclh"]
+frames = 2
+frame_0/texture = ExtResource("7_obclh")
+frame_0/duration = 0.5
+frame_1/texture = ExtResource("8_u6ur1")
+frame_1/duration = 0.5
+
 [node name="WaschingMachine" type="Area2D" unique_id=875701637]
 script = ExtResource("1_cltil")
 
@@ -74,6 +83,7 @@ scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_rcvbw")
 
 [node name="ClothContainer" type="Node2D" parent="." unique_id=663207046]
+unique_name_in_owner = true
 position = Vector2(0, 25)
 scale = Vector2(0.25, 0.25)
 
@@ -124,5 +134,21 @@ offset_right = 136.69183
 offset_bottom = -7.0
 expand_mode = 3
 stretch_mode = 5
+
+[node name="IndicatorTextureRect" type="TextureRect" parent="UI" unique_id=1720080428]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = -26.0
+offset_top = -117.0
+offset_right = 10.0
+offset_bottom = -87.0
+texture = SubResource("AnimatedTexture_obclh")
+expand_mode = 1
+
+[node name="WaschingTimer" type="Timer" parent="." unique_id=1189344457]
+unique_name_in_owner = true
+wait_time = 10.0
+one_shot = true
 
 [connection signal="input_event" from="Settings" to="." method="_on_settings_input_event"]
