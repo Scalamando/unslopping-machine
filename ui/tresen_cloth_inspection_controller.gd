@@ -8,6 +8,6 @@ func init(cloth : Clothing):
 		cloth_pos.remove_child(n)
 		n.queue_free()
 	
-	## add new child scene
+	## add cloth scene
 	var node = cloth.spread_out_scene.instantiate()
 	cloth_pos.add_child(node)
