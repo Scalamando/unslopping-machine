@@ -45,6 +45,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0j7jy"]
 size = Vector2(292, 72)
 
+[sub_resource type="LabelSettings" id="LabelSettings_rcsmu"]
+font_color = Color(0.0253638, 0.0253638, 0.025363795, 1)
+
 [node name="WaschingMachine" type="Area2D" unique_id=875701637]
 script = ExtResource("1_cltil")
 
@@ -89,5 +92,37 @@ shape = SubResource("CircleShape2D_0j7jy")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Settings" unique_id=1109773792]
 position = Vector2(0, -106)
 shape = SubResource("RectangleShape2D_0j7jy")
+
+[node name="UI" type="Control" parent="." unique_id=892593718]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="TemperatureRect" type="ColorRect" parent="UI" unique_id=881573715]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -138.0
+offset_top = -128.0
+offset_right = -71.0
+offset_bottom = -88.0
+
+[node name="SpeedLabel" type="Label" parent="UI" unique_id=843787642]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 48.0
+offset_top = -119.0
+offset_right = 130.0
+offset_bottom = -94.0
+text = "0 RPM"
+label_settings = SubResource("LabelSettings_rcsmu")
+
+[node name="DirectionTextureRect" type="TextureRect" parent="UI" unique_id=1946772952]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 81.0
+offset_top = -62.0
+offset_right = 136.69183
+offset_bottom = -7.0
+expand_mode = 3
+stretch_mode = 5
 
 [connection signal="input_event" from="Settings" to="." method="_on_settings_input_event"]
