@@ -45,7 +45,8 @@ jobs:
           itch_user: ${{ env.ITCHIO_USERNAME }}
           itch_game: ${{ env.ITCHIO_GAME }}
           version: ${{ github.ref_name }}
-          files: build/windows:windows
+          files: |
+            windows build/windows
 
   export-linux:
     name: Linux Export
@@ -79,7 +80,8 @@ jobs:
           itch_user: ${{ env.ITCHIO_USERNAME }}
           itch_game: ${{ env.ITCHIO_GAME }}
           version: ${{ github.ref_name }}
-          files: build/linux:linux
+          files: |
+            linux build/linux
 
   export-web:
     name: Web Export
@@ -125,4 +127,5 @@ jobs:
           itch_user: ${{ env.ITCHIO_USERNAME }}
           itch_game: ${{ env.ITCHIO_GAME }}
           version: ${{ github.ref_name }}
-          files: build/web:web
+          files: |
+            web build/web
