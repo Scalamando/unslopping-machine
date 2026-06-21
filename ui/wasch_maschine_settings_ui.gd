@@ -32,7 +32,13 @@ func _ready() -> void:
 	temperature_hot_button.add_theme_stylebox_override("hover", button_style)
 
 func init(washing_machine : WashingMashine) -> void:
+	if current_washing_machine != null:
+		current_washing_machine.finished_wash.disconnect(_on_wash_end)
+
 	current_washing_machine = washing_machine
+
+	if not current_washing_machine.finished_wash.is_connected(_on_wash_end):
+		current_washing_machine.finished_wash.connect(_on_wash_end)
 
 	match current_washing_machine.temperature:
 		WaschingInstruction.Temperature.cold:
@@ -96,7 +102,6 @@ func _on_start_button_pressed() -> void:
 
 	start_button.visible = false
 	indicator_texture_rect.visible = true
-	current_washing_machine.finished_wash.connect(_on_wash_end)
 
 func _on_wash_end() -> void:
 	start_button.visible = true

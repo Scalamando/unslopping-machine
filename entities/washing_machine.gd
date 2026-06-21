@@ -53,6 +53,7 @@ func _ready() -> void:
 	_set_speed_label(speed)
 	_set_temperature_rect(temperature)
 	_set_direction_texture_rect(direction)
+	wasching_timer.timeout.connect(end_washing)
 
 @onready var starting_pos : Vector2 = self.position
 
@@ -103,7 +104,6 @@ func start_washing() -> bool:
 	foreground_open.visible = false
 	foreground_closed.visible = true
 	wasching_timer.start()
-	wasching_timer.timeout.connect(end_washing)
 
 	wasching_animation_player.play("new_animation")
 	wasching_animation_player.speed_scale = speed / 100.0
