@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://upi0337cb7xs"]
+
+[ext_resource type="Script" uid="uid://bgjg0nvgknpum" path="res://ui/tresen_cloth_inspection_controller.gd" id="1_v7wvd"]
+
+[node name="TresenClothInspection" type="Control" unique_id=2079798534]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+script = ExtResource("1_v7wvd")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=94396307]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -453.0
+offset_right = 960.0
+offset_bottom = 447.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.5216516, 0.37004402, 0.19765705, 1)
+
+[node name="ClothPos" type="Control" parent="." unique_id=644119630]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -357.0
+offset_top = -403.0
+offset_right = 357.0
+offset_bottom = 403.0
+grow_horizontal = 2
+grow_vertical = 2

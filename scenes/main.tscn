@@ -5,8 +5,8 @@
 [ext_resource type="Script" uid="uid://bedr0dcnjakxq" path="res://scenes/main.gd" id="1_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://wjafvpjq5ntv" path="res://scenes/reception.tscn" id="2_sugp2"]
 [ext_resource type="Script" uid="uid://dmbn5b0p26ns5" path="res://scenes/camera_controller.gd" id="3_jyhfs"]
-[ext_resource type="PackedScene" uid="uid://v0gnwt1i2wge" path="res://scenes/washing_machine.tscn" id="6_tefeu"]
-[ext_resource type="PackedScene" uid="uid://brnmfwif8cssh" path="res://scenes/cloth.tscn" id="7_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://v0gnwt1i2wge" path="res://entities/washing_machine.tscn" id="6_tefeu"]
+[ext_resource type="PackedScene" uid="uid://brnmfwif8cssh" path="res://entities/cloth.tscn" id="7_o6xl0"]
 
 [node name="Node2D" type="Node2D" unique_id=715033021]
 script = ExtResource("1_tbgi4")
@@ -16,13 +16,6 @@ position = Vector2(-893, 0)
 
 [node name="WaschingRoom" parent="." unique_id=1269579874 instance=ExtResource("1_0wfyh")]
 scale = Vector2(1, 1.0131407)
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1243545003]
-script = ExtResource("3_jyhfs")
-cameraPosLeftRoom = Vector2(-750, 0)
-
-[node name="MainUI" parent="Camera2D" unique_id=1842875158 instance=ExtResource("1_o5qli")]
-mouse_filter = 1
 
 [node name="Cloth" parent="." unique_id=838017900 instance=ExtResource("7_o6xl0")]
 position = Vector2(-1200, 226)
@@ -38,3 +31,10 @@ position = Vector2(-1480, -4)
 
 [node name="WaschingMachine" parent="." unique_id=1667756517 instance=ExtResource("6_tefeu")]
 position = Vector2(46, 375)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1243545003]
+script = ExtResource("3_jyhfs")
+cameraPosLeftRoom = Vector2(-750, 0)
+
+[node name="MainUI" parent="Camera2D" unique_id=1842875158 instance=ExtResource("1_o5qli")]
+mouse_filter = 1

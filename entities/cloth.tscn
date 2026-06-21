@@ -1,19 +1,8 @@
 [gd_scene format=3 uid="uid://brnmfwif8cssh"]
 
-[ext_resource type="Texture2D" uid="uid://04f4veqgag5n" path="res://assets/cloth.png" id="1_4erq4"]
+[ext_resource type="Script" uid="uid://bxe8mmrb2ox61" path="res://scenes/cloth_controller.gd" id="1_4erq4"]
 [ext_resource type="Script" uid="uid://crmnw3ldr3xev" path="res://addons/drag_and_drop/scripts/draggable.gd" id="1_sm2ym"]
 [ext_resource type="Script" uid="uid://djdmnemxrx7bg" path="res://addons/drag_and_drop/resources/draggable_types/draggable_type.gd" id="2_4erq4"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_rcsmu"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_4erq4")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 5.0
-}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rcsmu"]
 radius = 99.0202
@@ -22,10 +11,11 @@ radius = 99.0202
 script = ExtResource("2_4erq4")
 
 [node name="Cloth" type="Area2D" unique_id=406249680]
+script = ExtResource("1_4erq4")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2102569540]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1168166370]
+unique_name_in_owner = true
 scale = Vector2(0.25, 0.25)
-sprite_frames = SubResource("SpriteFrames_rcsmu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1394123991]
 shape = SubResource("CircleShape2D_rcsmu")
