@@ -4,12 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://cjgy02etn6tbf" path="res://assets/washing_instructions_icons/speed-slow.png" id="2_0r8yg"]
 [ext_resource type="Texture2D" uid="uid://p7enlrfxt4r2" path="res://assets/washing_instructions_icons/temp-cold.png" id="2_3k22f"]
 [ext_resource type="Texture2D" uid="uid://dh81kloa3bycp" path="res://assets/washing_instructions_icons/speed-med.png" id="3_lbrc7"]
-[ext_resource type="Texture2D" uid="uid://bkwdiv3l6y1i2" path="res://assets/washing_instructions_icons/dir-clockwise.png" id="3_xgu23"]
+[ext_resource type="Texture2D" uid="uid://bl0cqry5dllwh" path="res://assets/washing_instructions_icons/dir-clockwise.png" id="3_xgu23"]
 [ext_resource type="Texture2D" uid="uid://cj5dbbhnb4li1" path="res://assets/washing_instructions_icons/speed-fast.png" id="4_0r8yg"]
 [ext_resource type="Texture2D" uid="uid://esmc1k7f4ums" path="res://assets/washing_instructions_icons/temp-medium.png" id="6_2bbuj"]
 [ext_resource type="Texture2D" uid="uid://dkdj3e2u6i8x5" path="res://assets/washing_instructions_icons/temp-hot.png" id="7_8wybo"]
-[ext_resource type="Texture2D" uid="uid://xqa77y2ksugd" path="res://assets/washing_instructions_icons/dir-counterclockwise.png" id="9_w4ujp"]
-[ext_resource type="Texture2D" uid="uid://dnponfla77m63" path="res://assets/washing_instructions_icons/dir-both.png" id="10_ic0nb"]
+[ext_resource type="Texture2D" uid="uid://cjjdrak1g00mr" path="res://assets/washing_instructions_icons/dir-counterclockwise.png" id="9_w4ujp"]
+[ext_resource type="Texture2D" uid="uid://vdiqsnum0tab" path="res://assets/washing_instructions_icons/dir-both.png" id="10_ic0nb"]
 
 [node name="TresenClothInspection" type="Control" unique_id=2079798534]
 layout_mode = 3
