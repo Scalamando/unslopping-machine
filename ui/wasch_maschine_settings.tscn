@@ -3,6 +3,25 @@
 [ext_resource type="Texture2D" uid="uid://biqlv4e8lh0px" path="res://assets/wasching-machine-settings.png" id="1_dkjvl"]
 [ext_resource type="Script" uid="uid://cf0ov6lsiwile" path="res://ui/wasch_maschine_settings_ui.gd" id="1_j6sok"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_j6sok"]
+font_size = 42
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j6sok"]
+bg_color = Color(0.96, 0.96, 0.96, 0.5019608)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yxm6p"]
+bg_color = Color(0.7, 0.7, 0.7, 0.5019608)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rcsmu"]
+bg_color = Color(0.7196813, 0.106725834, 0.17738768, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hp7ux"]
+bg_color = Color(0.5086176, 0.058313325, 0.11161379, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kyslo"]
+bg_color = Color(0.9282533, 0.18773845, 0.25566742, 1)
+
 [node name="WaschMaschineSettings" type="Control" unique_id=1979839577]
 layout_mode = 3
 anchors_preset = 8
@@ -27,11 +46,11 @@ offset_bottom = 508.0
 color = Color(0.10283541, 0.15565357, 0.16642243, 1)
 
 [node name="WaschingMachineSettings" type="Sprite2D" parent="." unique_id=1768994128]
-position = Vector2(39.999973, 142.00003)
-scale = Vector2(1.9086134, 1.9086134)
+position = Vector2(22.999977, 68.00001)
+scale = Vector2(1.8503535, 1.7904414)
 texture = ExtResource("1_dkjvl")
 
-[node name="Button" type="Button" parent="." unique_id=1038874098]
+[node name="CloseButton" type="Button" parent="." unique_id=1038874098]
 layout_mode = 0
 offset_left = 637.0
 offset_top = -431.0
@@ -40,4 +59,114 @@ offset_bottom = -384.0
 text = "Close
 "
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="SpeedSlider" type="HSlider" parent="." unique_id=1722497373]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -12.475
+anchor_top = -1.0
+anchor_right = -12.475
+anchor_bottom = -0.975
+offset_left = -1.0
+offset_top = -3.0
+offset_right = 355.32233
+offset_bottom = 29.184113
+rotation = -0.071402654
+max_value = 3600.0
+step = 100.0
+rounded = true
+tick_count = 15
+
+[node name="SpeedLabel" type="Label" parent="SpeedSlider" unique_id=1213575725]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.032
+anchor_top = 0.5
+anchor_right = 0.032
+anchor_bottom = 0.5
+offset_left = -8.413967
+offset_top = 25.728977
+offset_right = 31.586035
+offset_bottom = 48.728973
+text = "0 RPM"
+label_settings = SubResource("LabelSettings_j6sok")
+
+[node name="TemperatureButtons" type="Control" parent="." unique_id=866505187]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Cold" type="Button" parent="TemperatureButtons" unique_id=1167156892]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -12.251
+anchor_top = -2.9120002
+anchor_right = -12.251
+anchor_bottom = -2.9120002
+offset_left = -23.959991
+offset_top = -43.51999
+offset_right = 35.04001
+offset_bottom = 30.480011
+rotation = -0.1090766
+
+[node name="Medium" type="Button" parent="TemperatureButtons" unique_id=585404810]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -12.251
+anchor_top = -2.9120002
+anchor_right = -12.251
+anchor_bottom = -2.9120002
+offset_left = 51.04001
+offset_top = -50.51999
+offset_right = 110.04001
+offset_bottom = 23.480011
+rotation = -0.107048094
+
+[node name="Hot" type="Button" parent="TemperatureButtons" unique_id=1545301610]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -12.251
+anchor_top = -2.9120002
+anchor_right = -12.251
+anchor_bottom = -2.9120002
+offset_left = 129.04001
+offset_top = -56.51999
+offset_right = 188.04001
+offset_bottom = 17.480011
+rotation = -0.08419622
+
+[node name="DirectionButton" type="Button" parent="." unique_id=1951405259]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 64.0
+offset_top = -173.0
+offset_right = 197.0
+offset_bottom = -38.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_j6sok")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yxm6p")
+expand_icon = true
+
+[node name="Button" type="Button" parent="." unique_id=908637153]
+layout_mode = 0
+offset_left = -260.0
+offset_top = -173.0
+offset_right = 26.0
+offset_bottom = -90.0
+rotation = -0.064937696
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_rcsmu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hp7ux")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kyslo")
+text = "S T A R T"
+
+[connection signal="pressed" from="CloseButton" to="." method="_on_button_pressed"]
+[connection signal="value_changed" from="SpeedSlider" to="." method="_on_speed_value_changed"]
+[connection signal="pressed" from="TemperatureButtons/Cold" to="." method="_on_cold_pressed"]
+[connection signal="pressed" from="TemperatureButtons/Medium" to="." method="_on_medium_pressed"]
+[connection signal="pressed" from="TemperatureButtons/Hot" to="." method="_on_hot_pressed"]
+[connection signal="pressed" from="DirectionButton" to="." method="_on_direction_button_pressed"]
