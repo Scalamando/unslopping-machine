@@ -28,7 +28,13 @@ mouse_filter = 1
 position = Vector2(-1200, 226)
 
 [node name="Cloth2" parent="." unique_id=406249680 instance=ExtResource("7_o6xl0")]
-position = Vector2(-1469, 224)
+position = Vector2(-1413, 217)
+
+[node name="Cloth3" parent="." unique_id=1931897766 instance=ExtResource("7_o6xl0")]
+position = Vector2(-1609, 215)
+
+[node name="Cloth4" parent="." unique_id=2089582836 instance=ExtResource("7_o6xl0")]
+position = Vector2(-1480, -4)
 
 [node name="WaschingMachine" parent="." unique_id=1667756517 instance=ExtResource("6_tefeu")]
 position = Vector2(46, 375)

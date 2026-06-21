@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://nj1hdjl1vob2" path="res://addons/drag_and_drop/scripts/drop_zone.gd" id="2_se0gy"]
 [ext_resource type="Script" uid="uid://b5wqxyc42r5u" path="res://addons/drag_and_drop/resources/drop_behaviors/drop_behavior_reject.gd" id="3_1vf26"]
 [ext_resource type="Script" uid="uid://djdmnemxrx7bg" path="res://addons/drag_and_drop/resources/draggable_types/draggable_type.gd" id="3_fckx4"]
+[ext_resource type="Texture2D" uid="uid://b4ydssd7c1m05" path="res://assets/wasching_machine.png" id="5_fckx4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rcsmu"]
 size = Vector2(300, 300)
@@ -16,11 +17,22 @@ metadata/_custom_type_script = "uid://b5wqxyc42r5u"
 script = ExtResource("3_fckx4")
 metadata/_custom_type_script = "uid://djdmnemxrx7bg"
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_rcsmu"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_rcvbw"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_td5mw")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rcsmu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_fckx4")
 }],
 "loop": 1,
 "name": &"default",
@@ -36,13 +48,25 @@ shape = SubResource("RectangleShape2D_rcsmu")
 script = ExtResource("2_se0gy")
 attach_spot = NodePath("../ClothContainer")
 drop_behavior = SubResource("Resource_10535")
-snap_style = 1
 accepted_draggable_types = Array[ExtResource("3_fckx4")]([SubResource("Resource_32ftm")])
 metadata/_custom_type_script = "uid://nj1hdjl1vob2"
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2095168351]
+[node name="Slot3" type="Marker2D" parent="DropZone" unique_id=890196539]
+
+[node name="Slot2" type="Marker2D" parent="DropZone" unique_id=5125084]
+position = Vector2(0, 30)
+
+[node name="Slot1" type="Marker2D" parent="DropZone" unique_id=936664904]
+position = Vector2(1, 62)
+
+[node name="Background" type="AnimatedSprite2D" parent="." unique_id=987259098]
 scale = Vector2(0.25, 0.25)
-sprite_frames = SubResource("SpriteFrames_rcsmu")
+sprite_frames = SubResource("SpriteFrames_rcvbw")
 
 [node name="ClothContainer" type="Node2D" parent="." unique_id=663207046]
 position = Vector2(0, 25)
+scale = Vector2(0.25, 0.25)
+
+[node name="Foreground" type="AnimatedSprite2D" parent="." unique_id=2095168351]
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_rcsmu")
