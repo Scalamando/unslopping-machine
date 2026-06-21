@@ -28,17 +28,17 @@ func _ready() -> void:
 
 func init(cloth : Clothing) -> void:
 	instructions.visible = false
-	
+
 	## clean up children
 	for n in cloth_pos.get_children():
 		cloth_pos.remove_child(n)
 		n.queue_free()
-	
+
 	## add new cloth
 	display_cloth = cloth
 	var cloth_inspection_controller : ClothInspectionController = cloth.spread_out_scene.instantiate()
 	cloth_pos.add_child(cloth_inspection_controller)
-	
+
 	cloth_inspection_controller.instructions_proxy.instruction_found.connect(show_instructions)
 
 
@@ -49,7 +49,7 @@ func _on_button_pressed() -> void:
 func show_instructions() -> void:
 	assert(display_cloth != null)
 	instructions.visible = true
-	
+
 	match display_cloth.wash_instructions.temperature:
 		WaschingInstruction.Temperature.cold:
 			temp_tex_rect.texture = temp_cold
@@ -57,7 +57,7 @@ func show_instructions() -> void:
 			temp_tex_rect.texture = temp_med
 		WaschingInstruction.Temperature.hot:
 			temp_tex_rect.texture = temp_hot
-	
+
 	match display_cloth.wash_instructions.direction:
 		WaschingInstruction.Direction.clockwise:
 			dir_tex_rect.texture = dir_clockwise
@@ -65,7 +65,7 @@ func show_instructions() -> void:
 			dir_tex_rect.texture = dir_counterclockwise
 		WaschingInstruction.Direction.both:
 			dir_tex_rect.texture = dir_both
-	
+
 	match display_cloth.wash_instructions.temperature:
 		WaschingInstruction.Speed.slow:
 			speed_tex_rect.texture = speed_slow
@@ -73,4 +73,3 @@ func show_instructions() -> void:
 			speed_tex_rect.texture = speed_med
 		WaschingInstruction.Speed.fast:
 			speed_tex_rect.texture = speed_fast
-		

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ci18p82e2i30c"
-path="res://.godot/imported/shirt_spread_out.png-b8aff765bdec38c0b3e4fa766cd54784.ctex"
+uid="uid://cfuo85jmdyn1k"
+path="res://.godot/imported/shirt_spread_out.png-d71ef5d692e4d9fee15fe12c2f0e9087.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/shirt_spread_out.png"
-dest_files=["res://.godot/imported/shirt_spread_out.png-b8aff765bdec38c0b3e4fa766cd54784.ctex"]
+source_file="res://assets/cloths/shirt/shirt_spread_out.png"
+dest_files=["res://.godot/imported/shirt_spread_out.png-d71ef5d692e4d9fee15fe12c2f0e9087.ctex"]
 
 [params]
 

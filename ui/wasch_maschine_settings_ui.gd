@@ -51,7 +51,6 @@ func init(washing_machine : WashingMashine) -> void:
 	speed_slider.value = float(current_washing_machine.speed)
 	_on_speed_value_changed(float(current_washing_machine.speed))
 
-	print(current_washing_machine.running)
 	start_button.visible = not current_washing_machine.running
 	indicator_texture_rect.visible = current_washing_machine.running
 
@@ -91,9 +90,12 @@ func _on_direction_button_pressed() -> void:
 
 
 func _on_start_button_pressed() -> void:
+	var started_washing : bool = current_washing_machine.start_washing()
+	if not started_washing:
+		return
+
 	start_button.visible = false
 	indicator_texture_rect.visible = true
-	current_washing_machine.start_washing()
 	current_washing_machine.finished_wash.connect(_on_wash_end)
 
 func _on_wash_end() -> void:

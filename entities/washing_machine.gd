@@ -71,18 +71,28 @@ func _set_direction_texture_rect(value : Direction) -> void:
 		Direction.counterclockwise:
 			direction_texture_rect.texture = DIR_COUNTERCLOCKWISE
 
-func start_washing() -> void:
-	for child in cloth_container.get_children():
-		if child is Cloth:
-			child.input_pickable = false
+func start_washing() -> bool:
+	var cloths = cloth_container.get_children().filter(func(child: Node) -> bool: return child is Cloth)
+
+	var has_clean_cloths : bool = cloths.any(func(c: Cloth) -> bool: return c.get_state() == Clothing.State.clean)
+	if has_clean_cloths:
+		print("Do not wash clean cloths")
+		return false
+
+	for c : Cloth in cloths:
+		c.input_pickable = false
+
 	indicator_texture_rect.visible = true
 	wasching_timer.start()
 	wasching_timer.timeout.connect(end_washing)
 
+	return true
+
 func end_washing() -> void:
 	for child in cloth_container.get_children():
 		if child is Cloth:
-			child.cloth_data.apply_wash(temperature, speed, direction)
+			child.apply_wash(temperature, speed, direction)
+			child.input_pickable = true
 	indicator_texture_rect.visible = false
 	finished_wash.emit()
 

@@ -8,4 +8,12 @@ func load_data(cloth : Clothing) -> void:
 	cloth_data = cloth
 
 func _ready() -> void:
-	sprite_2d.texture = cloth_data.folded_texture
+	sprite_2d.texture = cloth_data.dirty_texture
+
+func get_state() -> Clothing.State:
+	return cloth_data.state
+
+func apply_wash(temperature: WaschingInstruction.Temperature, speed: int, direction: WaschingInstruction.Direction) -> Clothing.State:
+	var state : Clothing.State = cloth_data.apply_wash(temperature, speed, direction)
+	sprite_2d.texture = cloth_data.get_texture()
+	return state
