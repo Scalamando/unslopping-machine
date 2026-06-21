@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://v0gnwt1i2wge"]
 
+[ext_resource type="Script" uid="uid://befi6c4b4e6f5" path="res://entities/washing_machine.gd" id="1_cltil"]
 [ext_resource type="Texture2D" uid="uid://b3kprviyrmalj" path="res://assets/washing_machine.png" id="1_td5mw"]
 [ext_resource type="Script" uid="uid://nj1hdjl1vob2" path="res://addons/drag_and_drop/scripts/drop_zone.gd" id="2_se0gy"]
 [ext_resource type="Script" uid="uid://b5wqxyc42r5u" path="res://addons/drag_and_drop/resources/drop_behaviors/drop_behavior_reject.gd" id="3_1vf26"]
@@ -39,7 +40,13 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_0j7jy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0j7jy"]
+size = Vector2(292, 72)
+
 [node name="WaschingMachine" type="Area2D" unique_id=875701637]
+script = ExtResource("1_cltil")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1698410713]
 shape = SubResource("RectangleShape2D_rcsmu")
@@ -70,3 +77,17 @@ scale = Vector2(0.25, 0.25)
 [node name="Foreground" type="AnimatedSprite2D" parent="." unique_id=2095168351]
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_rcsmu")
+
+[node name="Flusensieb" type="Area2D" parent="." unique_id=674456099]
+position = Vector2(110, 125)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flusensieb" unique_id=783310974]
+shape = SubResource("CircleShape2D_0j7jy")
+
+[node name="Settings" type="Area2D" parent="." unique_id=58356006]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Settings" unique_id=1109773792]
+position = Vector2(0, -106)
+shape = SubResource("RectangleShape2D_0j7jy")
+
+[connection signal="input_event" from="Settings" to="." method="_on_settings_input_event"]
