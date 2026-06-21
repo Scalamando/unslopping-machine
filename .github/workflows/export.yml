@@ -69,7 +69,7 @@ jobs:
     container:
       image: scalamando/godot-ci:4.7
     permissions:
-      contents: read
+      contents: write
       pages: write
       id-token: write
     steps:
