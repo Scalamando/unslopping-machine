@@ -12,6 +12,13 @@ enum Direction {clockwise, counterclockwise}
 @onready var cloth_container: Node2D = %ClothContainer
 @onready var wasching_timer: Timer = %WaschingTimer
 
+@onready var foreground_open: AnimatedSprite2D = $ForegroundOpen
+@onready var background: AnimatedSprite2D = %Background
+@onready var base: AnimatedSprite2D = %Base
+@onready var foreground_closed: AnimatedSprite2D = %ForegroundClosed
+
+@onready var wasching_animation_player: AnimationPlayer = %WaschingAnimationPlayer
+
 var running: bool :
 	get:
 		return not wasching_timer.is_stopped()
@@ -47,6 +54,17 @@ func _ready() -> void:
 	_set_temperature_rect(temperature)
 	_set_direction_texture_rect(direction)
 
+@onready var starting_pos : Vector2 = self.position
+
+func _process(delta: float) -> void:
+	if self.running:
+		var time = (Time.get_ticks_msec() / 1000.0) * (speed / 20.0);
+		var wobbling = sin(time) * (speed / 3600.0);
+		var direction = sin(time / 2.);
+		self.position += Vector2(direction * wobbling,wobbling);
+	else:
+		self.position = starting_pos
+
 func _on_settings_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if (event is InputEventMouseButton):
 		if (event.pressed and event.button_index == MouseButton.MOUSE_BUTTON_LEFT):
@@ -74,17 +92,21 @@ func _set_direction_texture_rect(value : Direction) -> void:
 func start_washing() -> bool:
 	var cloths = cloth_container.get_children().filter(func(child: Node) -> bool: return child is Cloth)
 
-	var has_clean_cloths : bool = cloths.any(func(c: Cloth) -> bool: return c.get_state() == Clothing.State.clean)
-	if has_clean_cloths:
-		print("Do not wash clean cloths")
+	var has_unwashable_cloths : bool = cloths.any(func(c: Cloth) -> bool: return c.get_state() != Clothing.State.dirty)
+	if has_unwashable_cloths:
 		return false
 
 	for c : Cloth in cloths:
 		c.input_pickable = false
 
 	indicator_texture_rect.visible = true
+	foreground_open.visible = false
+	foreground_closed.visible = true
 	wasching_timer.start()
 	wasching_timer.timeout.connect(end_washing)
+
+	wasching_animation_player.play("new_animation")
+	wasching_animation_player.speed_scale = speed / 100.0
 
 	return true
 
@@ -93,7 +115,10 @@ func end_washing() -> void:
 		if child is Cloth:
 			child.apply_wash(temperature, speed, direction)
 			child.input_pickable = true
+	wasching_animation_player.play("RESET")
 	indicator_texture_rect.visible = false
+	foreground_open.visible = true
+	foreground_closed.visible = false
 	finished_wash.emit()
 
 #TODO Flusensieb

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4ydssd7c1m05"
-path="res://.godot/imported/wasching_machine.png-68afa61d359792969da000ca22b1f30c.ctex"
+uid="uid://cwym7f8ycqmxj"
+path="res://.godot/imported/wasching_machine_open.png-243b6b18f7998844054a6d531c2990ff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/wasching_machine.png"
-dest_files=["res://.godot/imported/wasching_machine.png-68afa61d359792969da000ca22b1f30c.ctex"]
+source_file="res://assets/washing_machine/wasching_machine_open.png"
+dest_files=["res://.godot/imported/wasching_machine_open.png-243b6b18f7998844054a6d531c2990ff.ctex"]
 
 [params]
 

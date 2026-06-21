@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://v0gnwt1i2wge"]
 
 [ext_resource type="Script" uid="uid://befi6c4b4e6f5" path="res://entities/washing_machine.gd" id="1_cltil"]
-[ext_resource type="Texture2D" uid="uid://b3kprviyrmalj" path="res://assets/washing_machine.png" id="1_td5mw"]
 [ext_resource type="Script" uid="uid://nj1hdjl1vob2" path="res://addons/drag_and_drop/scripts/drop_zone.gd" id="2_se0gy"]
 [ext_resource type="Script" uid="uid://b5wqxyc42r5u" path="res://addons/drag_and_drop/resources/drop_behaviors/drop_behavior_reject.gd" id="3_1vf26"]
 [ext_resource type="Script" uid="uid://djdmnemxrx7bg" path="res://addons/drag_and_drop/resources/draggable_types/draggable_type.gd" id="3_fckx4"]
-[ext_resource type="Texture2D" uid="uid://b4ydssd7c1m05" path="res://assets/wasching_machine.png" id="5_fckx4"]
+[ext_resource type="Texture2D" uid="uid://5tb4lgckt4x4" path="res://assets/washing_machine/wasching_machine_base.png" id="5_4ja63"]
+[ext_resource type="Texture2D" uid="uid://dn7rcrandmpap" path="res://assets/washing_machine/wasching_machine_background.png" id="5_7cal4"]
+[ext_resource type="Texture2D" uid="uid://5vamxm3wf5mj" path="res://assets/washing_machine/wasching_machine_closed.png" id="6_7cal4"]
+[ext_resource type="Texture2D" uid="uid://cwym7f8ycqmxj" path="res://assets/washing_machine/wasching_machine_open.png" id="7_ausky"]
 [ext_resource type="Texture2D" uid="uid://bkr3rhv6b6xv3" path="res://assets/washing-indicator.png" id="7_obclh"]
 [ext_resource type="Texture2D" uid="uid://bwg2yryjh4wsk" path="res://assets/washing-indicator-empty.png" id="8_u6ur1"]
 
@@ -20,11 +22,22 @@ metadata/_custom_type_script = "uid://b5wqxyc42r5u"
 script = ExtResource("3_fckx4")
 metadata/_custom_type_script = "uid://djdmnemxrx7bg"
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_ausky"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_7cal4")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_rcvbw"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_td5mw")
+"texture": ExtResource("5_4ja63")
 }],
 "loop": 1,
 "name": &"default",
@@ -35,7 +48,18 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_fckx4")
+"texture": ExtResource("6_7cal4")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_34huu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_ausky")
 }],
 "loop": 1,
 "name": &"default",
@@ -56,6 +80,43 @@ frame_0/texture = ExtResource("7_obclh")
 frame_0/duration = 0.5
 frame_1/texture = ExtResource("8_u6ur1")
 frame_1/duration = 0.5
+
+[sub_resource type="Animation" id="Animation_7cal4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ClothContainer:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_ausky"]
+resource_name = "new_animation"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ClothContainer:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.2831855]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_34huu"]
+_data = {
+&"RESET": SubResource("Animation_7cal4"),
+&"new_animation": SubResource("Animation_ausky")
+}
 
 [node name="WaschingMachine" type="Area2D" unique_id=875701637]
 script = ExtResource("1_cltil")
@@ -79,17 +140,30 @@ position = Vector2(0, 30)
 position = Vector2(1, 62)
 
 [node name="Background" type="AnimatedSprite2D" parent="." unique_id=987259098]
+unique_name_in_owner = true
 scale = Vector2(0.25, 0.25)
-sprite_frames = SubResource("SpriteFrames_rcvbw")
+sprite_frames = SubResource("SpriteFrames_ausky")
 
 [node name="ClothContainer" type="Node2D" parent="." unique_id=663207046]
 unique_name_in_owner = true
 position = Vector2(0, 25)
 scale = Vector2(0.25, 0.25)
 
-[node name="Foreground" type="AnimatedSprite2D" parent="." unique_id=2095168351]
+[node name="Base" type="AnimatedSprite2D" parent="." unique_id=81787471]
+unique_name_in_owner = true
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_rcvbw")
+
+[node name="ForegroundClosed" type="AnimatedSprite2D" parent="." unique_id=2095168351]
+unique_name_in_owner = true
+visible = false
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_rcsmu")
+
+[node name="ForegroundOpen" type="AnimatedSprite2D" parent="." unique_id=1855455706]
+unique_name_in_owner = true
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_34huu")
 
 [node name="Flusensieb" type="Area2D" parent="." unique_id=674456099]
 position = Vector2(110, 125)
@@ -150,5 +224,9 @@ expand_mode = 1
 unique_name_in_owner = true
 wait_time = 10.0
 one_shot = true
+
+[node name="WaschingAnimationPlayer" type="AnimationPlayer" parent="." unique_id=740057500]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_34huu")
 
 [connection signal="input_event" from="Settings" to="." method="_on_settings_input_event"]
