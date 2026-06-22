@@ -1,4 +1,3 @@
-class_name UIManager
 extends Node
 
 ## spagetthi code class for UI Data traffic
