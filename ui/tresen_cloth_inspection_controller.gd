@@ -66,7 +66,7 @@ func show_instructions() -> void:
 		WaschingInstruction.Direction.both:
 			dir_tex_rect.texture = dir_both
 
-	match display_cloth.wash_instructions.temperature:
+	match display_cloth.wash_instructions.speed:
 		WaschingInstruction.Speed.slow:
 			speed_tex_rect.texture = speed_slow
 		WaschingInstruction.Speed.medium:

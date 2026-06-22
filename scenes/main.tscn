@@ -1,6 +1,5 @@
-[gd_scene format=3 uid="uid://dvo3ir3el2j44"]
+[gd_scene format=3 uid="uid://cw70m8ycq204t"]
 
-[ext_resource type="PackedScene" uid="uid://fsgyhkw1fcjg" path="res://ui/main_ui.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://bedr0dcnjakxq" path="res://scenes/main.gd" id="1_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://dnhqo1hwn6jpe" path="res://scenes/tresen.tscn" id="2_eb6dy"]
 [ext_resource type="Script" uid="uid://dmbn5b0p26ns5" path="res://scenes/camera_controller.gd" id="3_jyhfs"]
@@ -11,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://upi0337cb7xs" path="res://ui/tresen_cloth_inspection.tscn" id="8_eb6dy"]
 [ext_resource type="Script" uid="uid://bqcwvesmpnf82" path="res://data/Customer.gd" id="8_ya4ey"]
 [ext_resource type="Resource" uid="uid://d2vmdjye85vqo" path="res://data/cloths/shirt.tres" id="9_eb6dy"]
+[ext_resource type="Script" uid="uid://bi8xl0g3tlsk1" path="res://scenes/money_UI_controller.gd" id="10_trceg"]
 [ext_resource type="PackedScene" uid="uid://bdbknn06inx1a" path="res://ui/customer_queue.tscn" id="11_trceg"]
 [ext_resource type="PackedScene" uid="uid://cwsibguufdebd" path="res://ui/wasch_maschine_settings.tscn" id="13_trceg"]
 
@@ -125,12 +125,43 @@ cloth_scene = ExtResource("7_o6xl0")
 script = ExtResource("3_jyhfs")
 cameraPosLeftRoom = Vector2(-750, 0)
 
-[node name="MainUI" parent="Camera2D" unique_id=1842875158 instance=ExtResource("1_o5qli")]
+[node name="MainUI" type="Control" parent="Camera2D" unique_id=1842875158]
+layout_mode = 3
+anchors_preset = 0
 offset_left = -960.0
 offset_top = -540.0
 offset_right = 960.0
 offset_bottom = 540.0
 mouse_filter = 1
+
+[node name="Money" type="PanelContainer" parent="Camera2D/MainUI" unique_id=2095853730]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -113.0
+offset_top = 10.0
+offset_right = -13.0
+offset_bottom = 68.0
+grow_horizontal = 0
+script = ExtResource("10_trceg")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Camera2D/MainUI/Money" unique_id=1951345216]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+offset_transform_position = Vector2(3, 0)
+
+[node name="Doller" type="Label" parent="Camera2D/MainUI/Money/HBoxContainer" unique_id=892387999]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "$"
+
+[node name="Money" type="Label" parent="Camera2D/MainUI/Money/HBoxContainer" unique_id=1775086089]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "0"
 
 [node name="CustomerQueue" parent="Camera2D/MainUI" unique_id=350090850 instance=ExtResource("11_trceg")]
 layout_mode = 0

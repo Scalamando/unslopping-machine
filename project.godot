@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="Unslopping Machine"
-run/main_scene="uid://dvo3ir3el2j44"
+run/main_scene="uid://cw70m8ycq204t"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 UiManager="*uid://butc6vbxcrygb"
+FinanceManager="*uid://b4hpykvreaoed"
 
 [debug]
 
