@@ -21,7 +21,7 @@ static func create(queue_item: CustomerQueueItem) -> CustomerItemUI:
 	return new_scene
 
 func _ready() -> void:
-	self.cloth_texture.texture = customer_queue_item.customer.clothing.spread_out_texture
+	self.cloth_texture.texture = customer_queue_item.customer.clothing.texture_spread_out
 	self.progress_bar.max_value = customer_queue_item.timeout_at_msec - Time.get_ticks_msec()
 
 func _process(_delta: float) -> void:

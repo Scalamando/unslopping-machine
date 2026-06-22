@@ -18,14 +18,14 @@ metadata/_custom_type_script = "uid://blgnuyj5fjgf1"
 
 [resource]
 script = ExtResource("1_w1q8m")
-dirty_texture = ExtResource("2_ovbii")
-clean_texture = ExtResource("1_lb6p5")
-soaked_texture = ExtResource("7_au27e")
-ripped_texture = ExtResource("4_kytfe")
-shrunk_texture = ExtResource("6_72kb2")
-iced_texture = ExtResource("4_ovbii")
-garn_texture = ExtResource("3_36sbt")
-spread_out_texture = ExtResource("10_36sbt")
-spread_out_scene = ExtResource("3_aqmbu")
 wash_instructions = SubResource("Resource_bbsy2")
+texture_dirty = ExtResource("2_ovbii")
+texture_clean = ExtResource("1_lb6p5")
+texture_soaked = ExtResource("7_au27e")
+texture_ripped = ExtResource("4_kytfe")
+texture_shrunk = ExtResource("6_72kb2")
+texture_iced = ExtResource("4_ovbii")
+texture_garn = ExtResource("3_36sbt")
+texture_spread_out = ExtResource("10_36sbt")
+spread_out_scene = ExtResource("3_aqmbu")
 metadata/_custom_type_script = "uid://c1er473h2880c"

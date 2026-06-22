@@ -10,3 +10,10 @@ func _on_customer_added(customer: CustomerQueueItem) -> void:
 	var customer_item : CustomerItemUI = CustomerItemUI.create(customer)
 	customer_item.timeout.connect(func() -> void: customer_timed_out.emit(customer))
 	add_child(customer_item)
+
+
+func _on_customer_removed(customer: CustomerQueueItem) -> void:
+	for node in get_children():
+		if node is CustomerItemUI:
+			if node.customer_queue_item == customer:
+				node.queue_free()

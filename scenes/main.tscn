@@ -1,7 +1,8 @@
-[gd_scene format=3 uid="uid://cw70m8ycq204t"]
+[gd_scene format=3 uid="uid://dvo3ir3el2j44"]
 
 [ext_resource type="Script" uid="uid://bedr0dcnjakxq" path="res://scenes/main.gd" id="1_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://dnhqo1hwn6jpe" path="res://scenes/tresen.tscn" id="2_eb6dy"]
+[ext_resource type="PackedScene" uid="uid://cgrnbjcgn2fme" path="res://entities/finished_basket.tscn" id="3_a8y0u"]
 [ext_resource type="Script" uid="uid://dmbn5b0p26ns5" path="res://scenes/camera_controller.gd" id="3_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://b5f15rlxpihuc" path="res://entities/basket.tscn" id="5_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://v0gnwt1i2wge" path="res://entities/washing_machine.tscn" id="6_tefeu"]
@@ -52,16 +53,8 @@ color = Color(0.08235294, 0.16862746, 0.16862746, 1)
 [node name="Tresen" parent="Reception" unique_id=1285519101 instance=ExtResource("2_eb6dy")]
 position = Vector2(3, 519)
 
-[node name="Basket" parent="Reception" unique_id=1943162463 instance=ExtResource("5_ya4ey")]
-position = Vector2(-283, 435)
-scale = Vector2(1, 0.98702973)
-
-[node name="Label" type="Label" parent="Reception/Basket" unique_id=1068517104]
-offset_left = -33.0
-offset_top = 28.367939
-offset_right = 31.0
-offset_bottom = 52.683308
-text = "finished"
+[node name="FinishedBasket" parent="Reception" unique_id=1943162463 instance=ExtResource("3_a8y0u")]
+position = Vector2(-285, 437)
 
 [node name="WaschingRoom" type="Node2D" parent="." unique_id=1269579874]
 scale = Vector2(1, 1.0131407)
@@ -187,5 +180,6 @@ grow_vertical = 2
 [node name="WaschMaschineSettings" parent="Camera2D" unique_id=1979839577 instance=ExtResource("13_trceg")]
 visible = false
 
+[connection signal="finished_clothing" from="Reception/FinishedBasket" to="CustomerManager" method="_on_finished_clothing"]
 [connection signal="customer_added" from="CustomerManager" to="Camera2D/MainUI/CustomerQueue" method="_on_customer_added"]
-[connection signal="customer_timed_out" from="Camera2D/MainUI/CustomerQueue" to="CustomerManager" method="_on_customer_timed_out"]
+[connection signal="customer_removed" from="CustomerManager" to="Camera2D/MainUI/CustomerQueue" method="_on_customer_removed"]
