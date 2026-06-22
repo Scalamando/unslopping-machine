@@ -134,6 +134,7 @@ func _move_toward(from: Vector2, to: Vector2, delta: float) -> Vector2:
 
 func _on_input_event(_viewport, event, _shape_idx):
 	if event.is_action_pressed(drag_input_name) and state == DRAGGABLE_STATE.IDLE:
+		get_viewport().set_input_as_handled()
 		previous_position = a.global_position
 		previous_parent = a.get_parent()
 		if drag_layer_parent:

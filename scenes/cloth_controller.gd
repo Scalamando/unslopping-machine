@@ -2,18 +2,22 @@ class_name Cloth
 extends Area2D
 @onready var sprite_2d: Sprite2D = %Sprite2D
 
-var cloth_data : Clothing
+var clothing : Clothing
 
-func load_data(cloth : Clothing) -> void:
-	cloth_data = cloth
+const cloth_scene = preload("res://entities/cloth.tscn")
+
+static func create(state: Clothing) -> Cloth:
+	var new_scene : Cloth = cloth_scene.instantiate()
+	new_scene.clothing = state
+	return new_scene
 
 func _ready() -> void:
-	sprite_2d.texture = cloth_data.dirty_texture
+	sprite_2d.texture = clothing.dirty_texture
 
 func get_state() -> Clothing.State:
-	return cloth_data.state
+	return clothing.state
 
 func apply_wash(temperature: WaschingInstruction.Temperature, speed: int, direction: WaschingInstruction.Direction) -> Clothing.State:
-	var state : Clothing.State = cloth_data.apply_wash(temperature, speed, direction)
-	sprite_2d.texture = cloth_data.get_texture()
+	var state : Clothing.State = clothing.apply_wash(temperature, speed, direction)
+	sprite_2d.texture = clothing.get_texture()
 	return state

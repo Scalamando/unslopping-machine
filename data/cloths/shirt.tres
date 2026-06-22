@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://toivcp23ga6q" path="res://assets/cloths/shirt/shirt_iced.png" id="4_ovbii"]
 [ext_resource type="Texture2D" uid="uid://c2bp1dwsrseeq" path="res://assets/cloths/shirt/shirt_shrunk.png" id="6_72kb2"]
 [ext_resource type="Texture2D" uid="uid://cvkp4na34u670" path="res://assets/cloths/shirt/shirt_soaked.png" id="7_au27e"]
+[ext_resource type="Texture2D" uid="uid://cfuo85jmdyn1k" path="res://assets/cloths/shirt/shirt_spread_out.png" id="10_36sbt"]
 
 [sub_resource type="Resource" id="Resource_bbsy2"]
 script = ExtResource("2_bbsy2")
@@ -24,6 +25,7 @@ ripped_texture = ExtResource("4_kytfe")
 shrunk_texture = ExtResource("6_72kb2")
 iced_texture = ExtResource("4_ovbii")
 garn_texture = ExtResource("3_36sbt")
+spread_out_texture = ExtResource("10_36sbt")
 spread_out_scene = ExtResource("3_aqmbu")
 wash_instructions = SubResource("Resource_bbsy2")
 metadata/_custom_type_script = "uid://c1er473h2880c"

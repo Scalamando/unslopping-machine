@@ -10,6 +10,7 @@ enum State {dirty, clean, soaked, ripped, shrunk, iced, garn}
 @export var shrunk_texture : Texture
 @export var iced_texture : Texture
 @export var garn_texture : Texture
+@export var spread_out_texture : Texture
 @export var spread_out_scene : PackedScene
 @export var wash_instructions : WaschingInstruction
 
