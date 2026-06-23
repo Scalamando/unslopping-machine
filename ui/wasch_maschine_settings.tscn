@@ -2,7 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://biqlv4e8lh0px" path="res://assets/wasching-machine-settings.png" id="1_dkjvl"]
 [ext_resource type="Script" uid="uid://cf0ov6lsiwile" path="res://ui/wasch_maschine_settings_ui.gd" id="1_j6sok"]
+[ext_resource type="Texture2D" uid="uid://cax2bq2ok7oq7" path="res://assets/washing_machine_detail/ui_heatoff.png" id="3_b1spw"]
 [ext_resource type="Texture2D" uid="uid://bkr3rhv6b6xv3" path="res://assets/washing-indicator.png" id="3_hp7ux"]
+[ext_resource type="Texture2D" uid="uid://b6b72x3vhcbpo" path="res://assets/washing_machine_detail/ui_startlable.png" id="4_ik1eq"]
 [ext_resource type="Texture2D" uid="uid://bwg2yryjh4wsk" path="res://assets/washing-indicator-empty.png" id="4_kyslo"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_j6sok"]
@@ -61,10 +63,11 @@ texture = ExtResource("1_dkjvl")
 
 [node name="CloseButton" type="Button" parent="." unique_id=1038874098]
 layout_mode = 0
-offset_left = 637.0
-offset_top = -431.0
-offset_right = 756.0
-offset_bottom = -384.0
+offset_left = 1585.0
+offset_top = -1610.0001
+offset_right = 1704.0
+offset_bottom = -1563.0001
+scale = Vector2(6.3801312, 6.3801312)
 text = "Close
 "
 
@@ -76,11 +79,10 @@ anchor_left = -12.475
 anchor_top = -1.0
 anchor_right = -12.475
 anchor_bottom = -0.975
-offset_left = -1.0
+offset_left = 2043.0
 offset_top = -3.0
-offset_right = 355.32233
+offset_right = 2399.3223
 offset_bottom = 29.184113
-rotation = -0.071402654
 max_value = 3600.0
 step = 100.0
 rounded = true
@@ -115,11 +117,12 @@ anchor_left = -12.251
 anchor_top = -2.9120002
 anchor_right = -12.251
 anchor_bottom = -2.9120002
-offset_left = -23.959991
-offset_top = -43.51999
-offset_right = 35.04001
-offset_bottom = 30.480011
-rotation = -0.1090766
+offset_left = -744.95996
+offset_top = -746.52
+offset_right = -587.95996
+offset_bottom = -518.52
+scale = Vector2(1.499, 1.499)
+icon = ExtResource("3_b1spw")
 
 [node name="Medium" type="Button" parent="TemperatureButtons" unique_id=585404810]
 unique_name_in_owner = true
@@ -129,11 +132,12 @@ anchor_left = -12.251
 anchor_top = -2.9120002
 anchor_right = -12.251
 anchor_bottom = -2.9120002
-offset_left = 51.04001
-offset_top = -50.51999
-offset_right = 110.04001
-offset_bottom = 23.480011
-rotation = -0.107048094
+offset_left = -441.95987
+offset_top = -745.52
+offset_right = -284.95987
+offset_bottom = -517.52
+scale = Vector2(1.4985995, 1.4985995)
+icon = ExtResource("3_b1spw")
 
 [node name="Hot" type="Button" parent="TemperatureButtons" unique_id=1545301610]
 unique_name_in_owner = true
@@ -143,19 +147,21 @@ anchor_left = -12.251
 anchor_top = -2.9120002
 anchor_right = -12.251
 anchor_bottom = -2.9120002
-offset_left = 129.04001
-offset_top = -56.51999
-offset_right = 188.04001
-offset_bottom = 17.480011
-rotation = -0.08419622
+offset_left = -130.95987
+offset_top = -743.52
+offset_right = 26.04013
+offset_bottom = -515.52
+scale = Vector2(1.499, 1.499)
+icon = ExtResource("3_b1spw")
 
 [node name="DirectionButton" type="Button" parent="." unique_id=1951405259]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 64.0
-offset_top = -173.0
-offset_right = 197.0
-offset_bottom = -38.0
+offset_left = -2009.0
+offset_top = -963.0
+offset_right = -1876.0
+offset_bottom = -828.0
+scale = Vector2(4.438338, 4.263199)
 theme_override_styles/normal = SubResource("StyleBoxFlat_j6sok")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yxm6p")
 expand_icon = true
@@ -163,16 +169,16 @@ expand_icon = true
 [node name="StartButton" type="Button" parent="." unique_id=908637153]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = -260.0
-offset_top = -173.0
-offset_right = 26.0
-offset_bottom = -90.0
-rotation = -0.064937696
+offset_left = 1415.0
+offset_top = -815.0
+offset_right = 1814.0
+offset_bottom = -660.0
+scale = Vector2(1.8775368, 1.8775368)
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_rcsmu")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_hp7ux")
 theme_override_styles/hover = SubResource("StyleBoxFlat_kyslo")
-text = "S T A R T"
+icon = ExtResource("4_ik1eq")
 
 [node name="IndicatorTextureRect" type="TextureRect" parent="." unique_id=1316258989]
 unique_name_in_owner = true
