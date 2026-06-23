@@ -93,7 +93,7 @@ func _set_direction_texture_rect(value : Direction) -> void:
 func start_washing() -> bool:
 	var cloths = cloth_container.get_children().filter(func(child: Node) -> bool: return child is Cloth)
 
-	var has_unwashable_cloths : bool = cloths.any(func(c: Cloth) -> bool: return c.get_state() != Clothing.State.dirty)
+	var has_unwashable_cloths : bool = cloths.any(func(c: Cloth) -> bool: return c.get_state() != Cloth.State.dirty)
 	if has_unwashable_cloths:
 		return false
 

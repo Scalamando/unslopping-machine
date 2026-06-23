@@ -56,12 +56,12 @@ func _on_finished_clothing(cloth: Cloth) -> void:
 		if item.customer == cloth.customer:
 			var value : float = float(cloth.clothing.value) # TODO: Replace with customer specific value
 			match cloth.clothing.state:
-				Clothing.State.clean: value *= MOD_CLEAN
-				Clothing.State.soaked: value *= MOD_SOAKED
-				Clothing.State.ripped: value *= MOD_RIPPED
-				Clothing.State.shrunk: value *= MOD_SHRUNK
-				Clothing.State.iced: value *= MOD_ICED
-				Clothing.State.garn: value *= MOD_GARN
+				Cloth.State.clean: value *= MOD_CLEAN
+				Cloth.State.soaked: value *= MOD_SOAKED
+				Cloth.State.ripped: value *= MOD_RIPPED
+				Cloth.State.shrunk: value *= MOD_SHRUNK
+				Cloth.State.iced: value *= MOD_ICED
+				Cloth.State.garn: value *= MOD_GARN
 
 			if item.timeout_at_msec < Time.get_ticks_msec():
 				value *= MOD_TIMEOUT
