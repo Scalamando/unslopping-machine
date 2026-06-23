@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://da10pbbqmxpl4" path="res://assets/washing_machine_detail/ui_heaton.png" id="4_cflqw"]
 [ext_resource type="Texture2D" uid="uid://b6b72x3vhcbpo" path="res://assets/washing_machine_detail/ui_startlable.png" id="4_ik1eq"]
 [ext_resource type="Texture2D" uid="uid://bfnwonrb758k7" path="res://assets/ui/closebutton.png" id="4_ream5"]
+[ext_resource type="Script" uid="uid://mqvdgk1satiy" path="res://ui/speed_crank_controller.gd" id="5_7swae"]
+[ext_resource type="Texture2D" uid="uid://hyck2ayy7gr0" path="res://assets/washing_machine_detail/ui_speedhandle.png" id="5_yifcm"]
 [ext_resource type="Texture2D" uid="uid://brdjyf6c5niux" path="res://assets/washing_machine_detail/ui_startgreen.png" id="6_yifcm"]
 [ext_resource type="Texture2D" uid="uid://dw8uuqxpjp5yn" path="res://assets/washing_machine_detail/ui_startyellow.png" id="7_7swae"]
 [ext_resource type="Texture2D" uid="uid://bk7q51k2l70x3" path="res://assets/washing_machine_detail/ui_startred.png" id="8_hfvhi"]
@@ -48,8 +50,56 @@ text = "
 "
 icon = ExtResource("4_ream5")
 
+[node name="SpeedCrank" type="Control" parent="." unique_id=100898956]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = 1483.5131
+offset_top = -290.58496
+offset_right = 2483.5132
+offset_bottom = 709.41504
+script = ExtResource("5_7swae")
+
+[node name="SpeedLabel" type="Label" parent="SpeedCrank" unique_id=1213575725]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.032
+anchor_top = 0.5
+anchor_right = 0.032
+anchor_bottom = 0.5
+offset_left = -525.2298
+offset_top = -362.3545
+offset_right = -314.93832
+offset_bottom = -262.9436
+scale = Vector2(2.043896, 1.9839846)
+theme_override_font_sizes/font_size = 32
+text = "0 RPM"
+label_settings = SubResource("LabelSettings_j6sok")
+
+[node name="Anchor" type="Control" parent="SpeedCrank" unique_id=1256602382]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = 416.75983
+offset_top = 359.40778
+offset_right = 456.75983
+offset_bottom = 399.40775
+scale = Vector2(1.8941743, 1.8941743)
+
+[node name="TextureRect" type="TextureRect" parent="SpeedCrank/Anchor" unique_id=1370933325]
+layout_mode = 0
+offset_left = -84.116714
+offset_top = -80.29323
+offset_right = 224.88329
+offset_bottom = 89.70679
+mouse_filter = 2
+texture = ExtResource("5_yifcm")
+
+[node name="Line2D" type="Line2D" parent="SpeedCrank" unique_id=1057583525]
+default_color = Color(1, 0, 0, 1)
+
 [node name="SpeedSlider" type="HSlider" parent="." unique_id=1722497373]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -12.475
@@ -65,21 +115,6 @@ max_value = 3600.0
 step = 100.0
 rounded = true
 tick_count = 15
-
-[node name="SpeedLabel" type="Label" parent="SpeedSlider" unique_id=1213575725]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.032
-anchor_top = 0.5
-anchor_right = 0.032
-anchor_bottom = 0.5
-offset_left = -8.413967
-offset_top = 25.728977
-offset_right = 31.586035
-offset_bottom = 48.728973
-text = "0 RPM"
-label_settings = SubResource("LabelSettings_j6sok")
 
 [node name="TemperatureButtons" type="Control" parent="." unique_id=866505187]
 unique_name_in_owner = true
@@ -187,6 +222,7 @@ offset_bottom = 155.0
 texture = ExtResource("4_ik1eq")
 
 [connection signal="pressed" from="CloseButton" to="." method="_on_button_pressed"]
+[connection signal="gui_input" from="SpeedCrank" to="SpeedCrank" method="_on_crank_input"]
 [connection signal="value_changed" from="SpeedSlider" to="." method="_on_speed_value_changed"]
 [connection signal="pressed" from="TemperatureButtons/Cold" to="." method="_on_cold_pressed"]
 [connection signal="pressed" from="TemperatureButtons/Medium" to="." method="_on_medium_pressed"]

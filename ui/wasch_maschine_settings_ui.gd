@@ -16,6 +16,8 @@ var current_washing_machine : WashingMashine
 @onready var start_button_red: TextureRect = %StartButtonRed
 @onready var start_button_yellow: TextureRect = %StartButtonYellow
 
+@onready var speed_crank: SpeedCrankController = %SpeedCrank
+
 const DIR_CLOCKWISE = preload("uid://bpt7t56s24pkn")
 const DIR_COUNTERCLOCKWISE = preload("uid://cjcqvkh4x85u2")
 
@@ -24,6 +26,11 @@ const HEAT_ON = preload("uid://da10pbbqmxpl4")
 
 func _ready() -> void:
 	UiManager.washing_maschine_ui = self # register with UiManager
+	
+	speed_crank.speed_changed.connect(_on_speed_updated)
+
+func _on_speed_updated(speed : float):
+	pass
 
 func init(washing_machine : WashingMashine) -> void:
 	if current_washing_machine != null:
