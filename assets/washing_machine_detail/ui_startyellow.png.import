@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5tb4lgckt4x4"
-path="res://.godot/imported/wasching_machine_base.png-e84472d6c96c5dd7c34fed18c3724fbb.ctex"
+uid="uid://dw8uuqxpjp5yn"
+path="res://.godot/imported/ui_startyellow.png-968a57e41f471c261fc343a86f8d4d73.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/washing_machine/wasching_machine_base.png"
-dest_files=["res://.godot/imported/wasching_machine_base.png-e84472d6c96c5dd7c34fed18c3724fbb.ctex"]
+source_file="res://assets/washing_machine_detail/ui_startyellow.png"
+dest_files=["res://.godot/imported/ui_startyellow.png-968a57e41f471c261fc343a86f8d4d73.ctex"]
 
 [params]
 

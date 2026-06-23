@@ -4,12 +4,14 @@
 [ext_resource type="Script" uid="uid://nj1hdjl1vob2" path="res://addons/drag_and_drop/scripts/drop_zone.gd" id="2_se0gy"]
 [ext_resource type="Script" uid="uid://b5wqxyc42r5u" path="res://addons/drag_and_drop/resources/drop_behaviors/drop_behavior_reject.gd" id="3_1vf26"]
 [ext_resource type="Script" uid="uid://djdmnemxrx7bg" path="res://addons/drag_and_drop/resources/draggable_types/draggable_type.gd" id="3_fckx4"]
-[ext_resource type="Texture2D" uid="uid://5tb4lgckt4x4" path="res://assets/washing_machine/wasching_machine_base.png" id="5_4ja63"]
-[ext_resource type="Texture2D" uid="uid://dn7rcrandmpap" path="res://assets/washing_machine/wasching_machine_background.png" id="5_7cal4"]
-[ext_resource type="Texture2D" uid="uid://5vamxm3wf5mj" path="res://assets/washing_machine/wasching_machine_closed.png" id="6_7cal4"]
-[ext_resource type="Texture2D" uid="uid://cwym7f8ycqmxj" path="res://assets/washing_machine/wasching_machine_open.png" id="7_ausky"]
+[ext_resource type="Texture2D" uid="uid://5tb4lgckt4x4" path="res://assets/washing_machine_normal/wasching_machine_base.png" id="5_4ja63"]
+[ext_resource type="Texture2D" uid="uid://dn7rcrandmpap" path="res://assets/washing_machine_normal/wasching_machine_background.png" id="5_7cal4"]
+[ext_resource type="Texture2D" uid="uid://5vamxm3wf5mj" path="res://assets/washing_machine_normal/wasching_machine_closed.png" id="6_7cal4"]
+[ext_resource type="Texture2D" uid="uid://cwym7f8ycqmxj" path="res://assets/washing_machine_normal/wasching_machine_open.png" id="7_ausky"]
 [ext_resource type="Texture2D" uid="uid://bkr3rhv6b6xv3" path="res://assets/washing-indicator.png" id="7_obclh"]
 [ext_resource type="Texture2D" uid="uid://bwg2yryjh4wsk" path="res://assets/washing-indicator-empty.png" id="8_u6ur1"]
+[ext_resource type="Texture2D" uid="uid://ca8rorw3v0gkm" path="res://assets/washing_machine_normal/wasching_machine_speedbackground.png" id="9_34huu"]
+[ext_resource type="Texture2D" uid="uid://dqlrjr4f7q4is" path="res://assets/washing_machine_normal/ui_speedhandle.png" id="10_rql1f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rcsmu"]
 size = Vector2(300, 300)
@@ -33,22 +35,22 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_rcvbw"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_rcsmu"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_4ja63")
+"texture": ExtResource("6_7cal4")
 }],
 "loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_rcsmu"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_rcvbw"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_7cal4")
+"texture": ExtResource("5_4ja63")
 }],
 "loop": 1,
 "name": &"default",
@@ -66,7 +68,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_0j7jy"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_txmul"]
+size = Vector2(24, 18)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0j7jy"]
 size = Vector2(292, 72)
@@ -141,6 +144,7 @@ position = Vector2(1, 62)
 
 [node name="Background" type="AnimatedSprite2D" parent="." unique_id=987259098]
 unique_name_in_owner = true
+position = Vector2(-3, -6)
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_ausky")
 
@@ -149,27 +153,40 @@ unique_name_in_owner = true
 position = Vector2(0, 25)
 scale = Vector2(0.25, 0.25)
 
+[node name="ForegroundClosed" type="AnimatedSprite2D" parent="." unique_id=2095168351]
+unique_name_in_owner = true
+visible = false
+position = Vector2(-2, -7)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_rcsmu")
+
 [node name="Base" type="AnimatedSprite2D" parent="." unique_id=81787471]
 unique_name_in_owner = true
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_rcvbw")
 
-[node name="ForegroundClosed" type="AnimatedSprite2D" parent="." unique_id=2095168351]
-unique_name_in_owner = true
-visible = false
-scale = Vector2(0.25, 0.25)
-sprite_frames = SubResource("SpriteFrames_rcsmu")
-
 [node name="ForegroundOpen" type="AnimatedSprite2D" parent="." unique_id=1855455706]
 unique_name_in_owner = true
+position = Vector2(-27, -8)
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_34huu")
+
+[node name="SpeedBackground" type="Sprite2D" parent="." unique_id=144985321]
+position = Vector2(35.999996, -41)
+scale = Vector2(0.23659901, 0.23659901)
+texture = ExtResource("9_34huu")
+
+[node name="UiSpeedhandle" type="Sprite2D" parent="." unique_id=1670401946]
+position = Vector2(47.999996, -51.000004)
+scale = Vector2(0.22072312, 0.22072312)
+texture = ExtResource("10_rql1f")
 
 [node name="Flusensieb" type="Area2D" parent="." unique_id=674456099]
 position = Vector2(110, 125)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Flusensieb" unique_id=783310974]
-shape = SubResource("CircleShape2D_0j7jy")
+position = Vector2(-149, -57)
+shape = SubResource("RectangleShape2D_txmul")
 
 [node name="Settings" type="Area2D" parent="." unique_id=58356006]
 
