@@ -25,8 +25,8 @@ var running: bool :
 	set(value):
 		pass
 
-const DIR_CLOCKWISE = preload("uid://bl0cqry5dllwh")
-const DIR_COUNTERCLOCKWISE = preload("uid://cjjdrak1g00mr")
+const DIR_CLOCKWISE = preload("uid://bpt7t56s24pkn")
+const DIR_COUNTERCLOCKWISE = preload("uid://cjcqvkh4x85u2")
 
 @export var speed : int = 0 :
 	get: return speed

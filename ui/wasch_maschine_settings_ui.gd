@@ -3,33 +3,27 @@ extends Control
 
 var current_washing_machine : WashingMashine
 
-var button_style : StyleBoxFlat = StyleBoxFlat.new()
-
 @onready var speed_slider: HSlider = %SpeedSlider
 @onready var speed_label: Label = %SpeedLabel
 
 @onready var temperature_cold_button: Button = %Cold
 @onready var temperature_medium_button: Button = %Medium
 @onready var temperature_hot_button: Button = %Hot
-@onready var indicator_texture_rect: TextureRect = %IndicatorTextureRect
 
 @onready var direction_button: Button = %DirectionButton
+
 @onready var start_button: Button = %StartButton
+@onready var start_button_red: TextureRect = %StartButtonRed
+@onready var start_button_yellow: TextureRect = %StartButtonYellow
 
-const DIR_CLOCKWISE = preload("uid://bl0cqry5dllwh")
-const DIR_COUNTERCLOCKWISE = preload("uid://cjjdrak1g00mr")
+const DIR_CLOCKWISE = preload("uid://bpt7t56s24pkn")
+const DIR_COUNTERCLOCKWISE = preload("uid://cjcqvkh4x85u2")
 
+const HEAT_OFF = preload("uid://cax2bq2ok7oq7")
+const HEAT_ON = preload("uid://da10pbbqmxpl4")
 
 func _ready() -> void:
 	UiManager.washing_maschine_ui = self # register with UiManager
-
-	temperature_cold_button.add_theme_stylebox_override("normal", button_style)
-	temperature_medium_button.add_theme_stylebox_override("normal", button_style)
-	temperature_hot_button.add_theme_stylebox_override("normal", button_style)
-
-	temperature_cold_button.add_theme_stylebox_override("hover", button_style)
-	temperature_medium_button.add_theme_stylebox_override("hover", button_style)
-	temperature_hot_button.add_theme_stylebox_override("hover", button_style)
 
 func init(washing_machine : WashingMashine) -> void:
 	if current_washing_machine != null:
@@ -57,8 +51,8 @@ func init(washing_machine : WashingMashine) -> void:
 	speed_slider.value = float(current_washing_machine.speed)
 	_on_speed_value_changed(float(current_washing_machine.speed))
 
-	start_button.visible = not current_washing_machine.running
-	indicator_texture_rect.visible = current_washing_machine.running
+	# start_button.visible = not current_washing_machine.running
+	start_button_red.visible = current_washing_machine.running
 
 
 func _on_button_pressed() -> void:
@@ -67,17 +61,20 @@ func _on_button_pressed() -> void:
 
 func _on_cold_pressed() -> void:
 	current_washing_machine.temperature = WaschingInstruction.Temperature.cold
-	button_style.bg_color = Color(0, 0, 255, 0.5)
+	temperature_medium_button.icon = HEAT_OFF
+	temperature_hot_button.icon = HEAT_OFF
 
 
 func _on_medium_pressed() -> void:
 	current_washing_machine.temperature = WaschingInstruction.Temperature.medium
-	button_style.bg_color = Color(255, 128, 0, 0.5)
+	temperature_medium_button.icon = HEAT_ON
+	temperature_hot_button.icon = HEAT_OFF
 
 
 func _on_hot_pressed() -> void:
 	current_washing_machine.temperature = WaschingInstruction.Temperature.hot
-	button_style.bg_color = Color(255, 0, 0, 0.5)
+	temperature_medium_button.icon = HEAT_ON
+	temperature_hot_button.icon = HEAT_ON
 
 
 func _on_speed_value_changed(value: float) -> void:
@@ -100,9 +97,9 @@ func _on_start_button_pressed() -> void:
 	if not started_washing:
 		return
 
-	start_button.visible = false
-	indicator_texture_rect.visible = true
+	start_button.disabled = true
+	start_button_red.visible = true
 
 func _on_wash_end() -> void:
-	start_button.visible = true
-	indicator_texture_rect.visible = false
+	start_button.disabled = false
+	start_button_red.visible = false
