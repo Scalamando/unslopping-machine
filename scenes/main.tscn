@@ -35,9 +35,9 @@ script = ExtResource("1_tbgi4")
 position = Vector2(-893, 0)
 
 [node name="Room" type="ColorRect" parent="Reception" unique_id=1873036716]
-offset_left = -830.0
+offset_left = -828.0
 offset_top = -535.0
-offset_right = 370.0
+offset_right = 372.0
 offset_bottom = 551.0
 mouse_filter = 2
 color = Color(0.65378743, 0.7867861, 0.66864306, 1)
@@ -100,7 +100,7 @@ position = Vector2(-219, 73.0402)
 scale = Vector2(1, 0.98702973)
 
 [node name="WaschingMachine" parent="WaschingRoom" unique_id=1667756517 instance=ExtResource("6_tefeu")]
-position = Vector2(358, 322.75873)
+position = Vector2(360, 332.62903)
 scale = Vector2(1, 0.98702973)
 
 [node name="WaschingMachine2" parent="WaschingRoom" unique_id=875701637 instance=ExtResource("6_tefeu")]
