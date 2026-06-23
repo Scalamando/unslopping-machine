@@ -4,16 +4,22 @@ extends Node2D
 @export var customer_array : Array[Customer]
 @export var cloth_scene : PackedScene
 @export var customer_wait_time : int = 45
-@export var timed_out_multiplier : float = 0.8
 
 @export_group("Multiplier", "MOD_")
-@export_range(0.0, 1, 0.05) var MOD_CLEAN : float = 1.0
-@export_range(0.0, 1, 0.05) var MOD_SOAKED : float = 0.9
-@export_range(0.0, 1, 0.05) var MOD_RIPPED : float = 0.5
-@export_range(0.0, 1, 0.05) var MOD_SHRUNK : float = 0.7
-@export_range(0.0, 1, 0.05) var MOD_ICED : float = 0.8
-@export_range(0.0, 1, 0.05) var MOD_GARN : float = 0.3
-@export_range(0.0, 1, 0.05) var MOD_TIMEOUT : float = 0.5
+## Money modifier applied for clean cloths.
+@export_range(-1, 1, 0.05) var MOD_CLEAN : float = 1.0
+## Money modifier applied for soaked cloths.
+@export_range(-1, 1, 0.05) var MOD_SOAKED : float = 0.9
+## Money modifier applied for ripped cloths.
+@export_range(-1, 1, 0.05) var MOD_RIPPED : float = 0.5
+## Money modifier applied for shrunk cloths.
+@export_range(-1, 1, 0.05) var MOD_SHRUNK : float = 0.7
+## Money modifier applied for iced cloths.
+@export_range(-1, 1, 0.05) var MOD_ICED : float = 0.8
+## Money modifier applied for cloths that got torn to garn.
+@export_range(-1, 1, 0.05) var MOD_GARN : float = 0.3
+## Money modifier applied for cloths that did not finsh in time.
+@export_range(-1, 1, 0.05) var MOD_TIMEOUT : float = 0.5
 
 var time : int = 0
 var customer_spawn_counter : int = 0
