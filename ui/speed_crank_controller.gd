@@ -14,14 +14,14 @@ var cranking : bool = false
 var current_angle : float = NAN
 var prev_angle : float = NAN
 
-var max_speed : float = 0
+var avg_speed : float = 0
 
 func _on_crank_input(event: InputEvent) -> void:
 	
 	if event is InputEventMouse:
 		if event.is_action_pressed("draggable_click"):
 			cranking = true
-			max_speed = 0
+			avg_speed = 0
 		elif event.is_action_released("draggable_click"):
 			cranking = false
 			prev_angle = NAN
@@ -45,10 +45,11 @@ func _process(delta: float) -> void:
 	
 	speed *= delta * 10000 * SPEED_CRANK_MULTIPLIER
 	
-	print(max_speed)
-	max_speed = lerp(max_speed, speed, delta * SPEED_CRANK_FALLOFF)
-	speed_label.text = str(max_speed)
-	speed_changed.emit(max_speed)
+	print(avg_speed)
+	avg_speed = lerp(avg_speed, speed, delta * SPEED_CRANK_FALLOFF)
+	speed_label.text = str(avg_speed)
+	
+	speed_changed.emit(avg_speed)
 	
 	prev_angle = current_angle
 

@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://hyck2ayy7gr0" path="res://assets/washing_machine_detail/ui_speedhandle.png" id="5_yifcm"]
 [ext_resource type="Texture2D" uid="uid://brdjyf6c5niux" path="res://assets/washing_machine_detail/ui_startgreen.png" id="6_yifcm"]
 [ext_resource type="Texture2D" uid="uid://dw8uuqxpjp5yn" path="res://assets/washing_machine_detail/ui_startyellow.png" id="7_7swae"]
+[ext_resource type="Texture2D" uid="uid://bg320rdqxrnh8" path="res://assets/washing_machine_detail/ui_speeddisplay.png" id="7_hfvhi"]
 [ext_resource type="Texture2D" uid="uid://bk7q51k2l70x3" path="res://assets/washing_machine_detail/ui_startred.png" id="8_hfvhi"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_j6sok"]
@@ -58,9 +59,11 @@ offset_top = -290.58496
 offset_right = 2483.5132
 offset_bottom = 709.41504
 script = ExtResource("5_7swae")
+SPEED_CRANK_FALLOFF = 0.25
 
 [node name="SpeedLabel" type="Label" parent="SpeedCrank" unique_id=1213575725]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.032
@@ -97,24 +100,22 @@ texture = ExtResource("5_yifcm")
 [node name="Line2D" type="Line2D" parent="SpeedCrank" unique_id=1057583525]
 default_color = Color(1, 0, 0, 1)
 
-[node name="SpeedSlider" type="HSlider" parent="." unique_id=1722497373]
+[node name="SpeedIndicator" type="Control" parent="." unique_id=1903805863]
 unique_name_in_owner = true
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -12.475
-anchor_top = -1.0
-anchor_right = -12.475
-anchor_bottom = -0.975
-offset_left = 2043.0
-offset_top = -3.0
-offset_right = 2399.3223
-offset_bottom = 29.184113
-scale = Vector2(2.462405, 2.3472946)
-max_value = 3600.0
-step = 100.0
-rounded = true
-tick_count = 15
+anchors_preset = 0
+offset_left = 38.23487
+offset_top = 1961.449
+offset_right = 78.23487
+offset_bottom = 2001.449
+rotation = 0.3926991
+
+[node name="TextureRect" type="TextureRect" parent="SpeedIndicator" unique_id=1918856654]
+layout_mode = 0
+offset_left = 1269.398
+offset_top = -1613.5115
+offset_right = 1542.981
+offset_bottom = -1332.484
+texture = ExtResource("7_hfvhi")
 
 [node name="TemperatureButtons" type="Control" parent="." unique_id=866505187]
 unique_name_in_owner = true
@@ -223,7 +224,6 @@ texture = ExtResource("4_ik1eq")
 
 [connection signal="pressed" from="CloseButton" to="." method="_on_button_pressed"]
 [connection signal="gui_input" from="SpeedCrank" to="SpeedCrank" method="_on_crank_input"]
-[connection signal="value_changed" from="SpeedSlider" to="." method="_on_speed_value_changed"]
 [connection signal="pressed" from="TemperatureButtons/Cold" to="." method="_on_cold_pressed"]
 [connection signal="pressed" from="TemperatureButtons/Medium" to="." method="_on_medium_pressed"]
 [connection signal="pressed" from="TemperatureButtons/Hot" to="." method="_on_hot_pressed"]
