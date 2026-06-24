@@ -7,6 +7,7 @@ enum Direction {clockwise, counterclockwise}
 
 @onready var temperature_rect: ColorRect = %TemperatureRect
 @onready var speed_label: Label = %SpeedLabel
+@onready var speed_indicator: Node2D = %SpeedIndicator
 @onready var direction_texture_rect: TextureRect = %DirectionTextureRect
 @onready var indicator_texture_rect: TextureRect = %IndicatorTextureRect
 @onready var cloth_container: Node2D = %ClothContainer
@@ -32,8 +33,7 @@ const DIR_COUNTERCLOCKWISE = preload("uid://cjcqvkh4x85u2")
 	get: return speed
 	set(value):
 		speed = value
-		if speed_label:
-			_set_speed_label(value)
+		set_speed_pointer(value)
 
 @export var temperature : WaschingInstruction.Temperature = WaschingInstruction.Temperature.hot :
 	get: return temperature
@@ -41,6 +41,7 @@ const DIR_COUNTERCLOCKWISE = preload("uid://cjcqvkh4x85u2")
 		temperature = value
 		if temperature_rect:
 			_set_temperature_rect(value)
+			set_speed_pointer(value)
 
 @export var direction : Direction = Direction.clockwise :
 	get: return direction
@@ -50,19 +51,22 @@ const DIR_COUNTERCLOCKWISE = preload("uid://cjcqvkh4x85u2")
 			_set_direction_texture_rect(value)
 
 func _ready() -> void:
-	_set_speed_label(speed)
+	set_speed_pointer(speed)
 	_set_temperature_rect(temperature)
 	_set_direction_texture_rect(direction)
 	wasching_timer.timeout.connect(end_washing)
 
 @onready var starting_pos : Vector2 = self.position
 
-func _process(delta: float) -> void:
+func set_speed_pointer(speed_ : float) -> void:
+	speed_indicator.rotation_degrees = remap(speed_, 800.0, 3200.0, -21.2, 19.7)
+
+func _process(_delta: float) -> void:
 	if self.running:
-		var time = (Time.get_ticks_msec() / 1000.0) * (speed / 20.0);
-		var wobbling = sin(time) * (speed / 3600.0);
-		var direction = sin(time / 2.);
-		self.position += Vector2(direction * wobbling,wobbling);
+		var time : float = (Time.get_ticks_msec() / 1000.0) * (speed / 20.0);
+		var wobbling : float = sin(time) * (speed / 3600.0);
+		var direction_ : float = sin(time / 2.);
+		self.position += Vector2(direction_ * wobbling,wobbling);
 	else:
 		self.position = starting_pos
 
@@ -71,8 +75,6 @@ func _on_settings_input_event(_viewport: Node, event: InputEvent, _shape_idx: in
 		if (event.pressed and event.button_index == MouseButton.MOUSE_BUTTON_LEFT):
 			UiManager.show_washing_mashine_settings(self)
 
-func _set_speed_label(value : int) -> void:
-	speed_label.text = str(value) + " RPM"
 
 func _set_temperature_rect(value : WaschingInstruction.Temperature) -> void:
 	match value:
@@ -91,7 +93,7 @@ func _set_direction_texture_rect(value : Direction) -> void:
 			direction_texture_rect.texture = DIR_COUNTERCLOCKWISE
 
 func start_washing() -> bool:
-	var cloths = cloth_container.get_children().filter(func(child: Node) -> bool: return child is Cloth)
+	var cloths : Array[Cloth] = cloth_container.get_children().filter(func(child: Node) -> bool: return child is Cloth)
 
 	var has_unwashable_cloths : bool = cloths.any(func(c: Cloth) -> bool: return c.get_state() != Cloth.State.dirty)
 	if has_unwashable_cloths:

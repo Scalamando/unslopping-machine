@@ -63,7 +63,6 @@ SPEED_CRANK_FALLOFF = 0.25
 
 [node name="SpeedLabel" type="Label" parent="SpeedCrank" unique_id=1213575725]
 unique_name_in_owner = true
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.032
@@ -107,7 +106,7 @@ offset_left = 38.23487
 offset_top = 1961.449
 offset_right = 78.23487
 offset_bottom = 2001.449
-rotation = 0.3926991
+rotation = -0.34906584
 
 [node name="TextureRect" type="TextureRect" parent="SpeedIndicator" unique_id=1918856654]
 layout_mode = 0

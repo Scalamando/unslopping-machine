@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://ca8rorw3v0gkm" path="res://assets/washing_machine_normal/wasching_machine_speedbackground.png" id="9_34huu"]
 [ext_resource type="Texture2D" uid="uid://dqlrjr4f7q4is" path="res://assets/washing_machine_normal/ui_speedhandle.png" id="10_rql1f"]
 [ext_resource type="Texture2D" uid="uid://yr8w6tf37am5" path="res://assets/washing_machine_normal/ui_turnright.png" id="12_euh64"]
+[ext_resource type="Texture2D" uid="uid://bg320rdqxrnh8" path="res://assets/washing_machine_detail/ui_speeddisplay.png" id="15_euh64"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rcsmu"]
 size = Vector2(204, 297)
@@ -75,9 +76,6 @@ size = Vector2(42.5, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0j7jy"]
 size = Vector2(203, 39)
-
-[sub_resource type="LabelSettings" id="LabelSettings_rcsmu"]
-font_color = Color(0.0253638, 0.0253638, 0.025363795, 1)
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_obclh"]
 frames = 2
@@ -214,16 +212,6 @@ offset_top = -139.0
 offset_right = -14.0
 offset_bottom = -116.0
 
-[node name="SpeedLabel" type="Label" parent="UI" unique_id=843787642]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = -88.0
-offset_top = -109.0
-offset_right = -6.0
-offset_bottom = -84.0
-text = "0 RPM"
-label_settings = SubResource("LabelSettings_rcsmu")
-
 [node name="DirectionTextureRect" type="TextureRect" parent="UI" unique_id=1946772952]
 unique_name_in_owner = true
 layout_mode = 0
@@ -246,6 +234,16 @@ offset_bottom = -107.0
 scale = Vector2(0.42063007, 0.50303906)
 texture = SubResource("AnimatedTexture_obclh")
 expand_mode = 1
+
+[node name="SpeedIndicator" type="Node2D" parent="UI" unique_id=1717174500]
+unique_name_in_owner = true
+position = Vector2(3, -14)
+rotation = 0.31415927
+scale = Vector2(0.068353705, 0.068353705)
+
+[node name="UiSpeeddisplay" type="Sprite2D" parent="UI/SpeedIndicator" unique_id=1405955114]
+position = Vector2(921.6764, -848.5275)
+texture = ExtResource("15_euh64")
 
 [node name="WaschingTimer" type="Timer" parent="." unique_id=1189344457]
 unique_name_in_owner = true

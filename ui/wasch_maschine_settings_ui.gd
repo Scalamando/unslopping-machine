@@ -97,7 +97,7 @@ func _on_direction_button_pressed() -> void:
 			direction_button.add_theme_icon_override("icon", DIR_CLOCKWISE)
 
 func set_speed_pointer(speed : float) -> void:
-	speed_indicator.rotation_degrees = remap(speed, 800.0, 3200.0, -21.2, 22.5)
+	speed_indicator.rotation_degrees = remap(speed, 800.0, 3200.0, -20.0, 22.5)
 
 
 func _on_start_button_pressed() -> void:
