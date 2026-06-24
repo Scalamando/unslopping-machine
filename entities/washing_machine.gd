@@ -5,9 +5,15 @@ signal finished_wash
 
 enum Direction {clockwise, counterclockwise}
 
-@onready var temperature_rect: ColorRect = %TemperatureRect
+@onready var temp_med: Sprite2D = %TempMed
+@onready var temp_high: Sprite2D = %TempHigh
+
+const heat_on = preload("uid://da10pbbqmxpl4")
+const heat_off = preload("uid://cax2bq2ok7oq7")
+
 @onready var speed_label: Label = %SpeedLabel
 @onready var speed_indicator: Node2D = %SpeedIndicator
+
 @onready var direction_texture_rect: TextureRect = %DirectionTextureRect
 @onready var indicator_texture_rect: TextureRect = %IndicatorTextureRect
 @onready var cloth_container: Node2D = %ClothContainer
@@ -39,9 +45,7 @@ const DIR_COUNTERCLOCKWISE = preload("uid://cjcqvkh4x85u2")
 	get: return temperature
 	set(value):
 		temperature = value
-		if temperature_rect:
-			_set_temperature_rect(value)
-			set_speed_pointer(value)
+		_set_temperature_rect(value)
 
 @export var direction : Direction = Direction.clockwise :
 	get: return direction
@@ -79,11 +83,14 @@ func _on_settings_input_event(_viewport: Node, event: InputEvent, _shape_idx: in
 func _set_temperature_rect(value : WaschingInstruction.Temperature) -> void:
 	match value:
 		WaschingInstruction.Temperature.cold:
-			temperature_rect.color = Color(0, 0, 255, 0.5)
+			temp_med.texture = heat_off
+			temp_high.texture = heat_off
 		WaschingInstruction.Temperature.medium:
-			temperature_rect.color = Color(255, 128, 0, 0.5)
+			temp_med.texture = heat_on
+			temp_high.texture = heat_off
 		WaschingInstruction.Temperature.hot:
-			temperature_rect.color = Color(255, 0, 0, 0.5)
+			temp_med.texture = heat_on
+			temp_high.texture = heat_on
 
 func _set_direction_texture_rect(value : Direction) -> void:
 	match value:
