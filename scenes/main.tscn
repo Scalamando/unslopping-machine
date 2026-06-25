@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dvo3ir3el2j44"]
+[gd_scene format=3 uid="uid://cw70m8ycq204t"]
 
 [ext_resource type="Script" uid="uid://bedr0dcnjakxq" path="res://scenes/main.gd" id="1_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://dnhqo1hwn6jpe" path="res://scenes/tresen.tscn" id="2_eb6dy"]
@@ -9,21 +9,25 @@
 [ext_resource type="Script" uid="uid://c0ierpals2ss6" path="res://entities/customer_manager.gd" id="7_choun"]
 [ext_resource type="PackedScene" uid="uid://brnmfwif8cssh" path="res://entities/cloth.tscn" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://upi0337cb7xs" path="res://ui/tresen_cloth_inspection.tscn" id="8_eb6dy"]
-[ext_resource type="Script" uid="uid://bqcwvesmpnf82" path="res://data/Customer.gd" id="8_ya4ey"]
+[ext_resource type="Script" uid="uid://bqcwvesmpnf82" path="res://data/CustomerProfile.gd" id="8_ya4ey"]
 [ext_resource type="Resource" uid="uid://d2vmdjye85vqo" path="res://data/cloths/shirt.tres" id="9_eb6dy"]
+[ext_resource type="Texture2D" uid="uid://b1swlxy6kh0e3" path="res://assets/persons/cara.png" id="9_jbj1t"]
+[ext_resource type="Texture2D" uid="uid://h4pmrib2o5ns" path="res://assets/persons/pia.png" id="10_muem4"]
 [ext_resource type="Script" uid="uid://bi8xl0g3tlsk1" path="res://scenes/money_UI_controller.gd" id="10_trceg"]
 [ext_resource type="PackedScene" uid="uid://bdbknn06inx1a" path="res://ui/customer_queue.tscn" id="11_trceg"]
 [ext_resource type="PackedScene" uid="uid://cwsibguufdebd" path="res://ui/wasch_maschine_settings.tscn" id="13_trceg"]
 
 [sub_resource type="Resource" id="Resource_cfsa3"]
 script = ExtResource("8_ya4ey")
-name = "Dieter"
+name = "Cara"
+texture = ExtResource("9_jbj1t")
 clothing = ExtResource("9_eb6dy")
 metadata/_custom_type_script = "uid://bqcwvesmpnf82"
 
 [sub_resource type="Resource" id="Resource_mg1pm"]
 script = ExtResource("8_ya4ey")
-name = "Henry"
+name = "Pia"
+texture = ExtResource("10_muem4")
 clothing = ExtResource("9_eb6dy")
 timeStamp = 5
 metadata/_custom_type_script = "uid://bqcwvesmpnf82"
@@ -113,6 +117,7 @@ position = Vector2(-1321, 160)
 script = ExtResource("7_choun")
 customer_array = Array[ExtResource("8_ya4ey")]([SubResource("Resource_cfsa3"), SubResource("Resource_mg1pm")])
 cloth_scene = ExtResource("7_o6xl0")
+customer_offset = Vector2(-350, 0)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1243545003]
 script = ExtResource("3_jyhfs")

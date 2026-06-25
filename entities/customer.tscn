@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cr4l3scucf4x7"]
+
+[ext_resource type="Script" uid="uid://4rnf6mprwhdn" path="res://entities/customer_controller.gd" id="1_g1yes"]
+[ext_resource type="Texture2D" uid="uid://b1swlxy6kh0e3" path="res://assets/persons/cara.png" id="2_bi0d8"]
+
+[node name="Customer" type="Node2D" unique_id=742488921]
+script = ExtResource("1_g1yes")
+
+[node name="CustomerSprite2D" type="Sprite2D" parent="." unique_id=976970813]
+unique_name_in_owner = true
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_bi0d8")
+
+[node name="ClothContainer" type="Node2D" parent="." unique_id=1918274852]
+unique_name_in_owner = true
+
+[node name="ClothMarker2D" type="Marker2D" parent="ClothContainer" unique_id=1668937604]
+unique_name_in_owner = true
+position = Vector2(140, -167)

@@ -1,37 +1,22 @@
 [gd_scene format=3 uid="uid://cwsibguufdebd"]
 
-[ext_resource type="Texture2D" uid="uid://biqlv4e8lh0px" path="res://assets/wasching-machine-settings.png" id="1_dkjvl"]
 [ext_resource type="Script" uid="uid://cf0ov6lsiwile" path="res://ui/wasch_maschine_settings_ui.gd" id="1_j6sok"]
+[ext_resource type="Texture2D" uid="uid://dp8tddenq1y2s" path="res://assets/washing_machine_detail/wasching-machine-settings.PNG" id="2_hfvhi"]
 [ext_resource type="Texture2D" uid="uid://cax2bq2ok7oq7" path="res://assets/washing_machine_detail/ui_heatoff.png" id="3_b1spw"]
-[ext_resource type="Texture2D" uid="uid://bkr3rhv6b6xv3" path="res://assets/washing-indicator.png" id="3_hp7ux"]
+[ext_resource type="Theme" uid="uid://c822krlutu482" path="res://assets/theme/Main-Theme.tres" id="3_ik1eq"]
+[ext_resource type="Texture2D" uid="uid://da10pbbqmxpl4" path="res://assets/washing_machine_detail/ui_heaton.png" id="4_cflqw"]
 [ext_resource type="Texture2D" uid="uid://b6b72x3vhcbpo" path="res://assets/washing_machine_detail/ui_startlable.png" id="4_ik1eq"]
-[ext_resource type="Texture2D" uid="uid://bwg2yryjh4wsk" path="res://assets/washing-indicator-empty.png" id="4_kyslo"]
+[ext_resource type="Texture2D" uid="uid://bfnwonrb758k7" path="res://assets/ui/closebutton.png" id="4_ream5"]
+[ext_resource type="Script" uid="uid://mqvdgk1satiy" path="res://ui/speed_crank_controller.gd" id="5_7swae"]
+[ext_resource type="Texture2D" uid="uid://hyck2ayy7gr0" path="res://assets/washing_machine_detail/ui_speedhandle.png" id="5_yifcm"]
+[ext_resource type="Texture2D" uid="uid://brdjyf6c5niux" path="res://assets/washing_machine_detail/ui_startgreen.png" id="6_yifcm"]
+[ext_resource type="Texture2D" uid="uid://dw8uuqxpjp5yn" path="res://assets/washing_machine_detail/ui_startyellow.png" id="7_7swae"]
+[ext_resource type="Texture2D" uid="uid://bg320rdqxrnh8" path="res://assets/washing_machine_detail/ui_speeddisplay.png" id="7_hfvhi"]
+[ext_resource type="Texture2D" uid="uid://bk7q51k2l70x3" path="res://assets/washing_machine_detail/ui_startred.png" id="8_hfvhi"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_j6sok"]
 font_size = 42
 font_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j6sok"]
-bg_color = Color(0.96, 0.96, 0.96, 0.5019608)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yxm6p"]
-bg_color = Color(0.7, 0.7, 0.7, 0.5019608)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rcsmu"]
-bg_color = Color(0.7196813, 0.106725834, 0.17738768, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hp7ux"]
-bg_color = Color(0.5086176, 0.058313325, 0.11161379, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kyslo"]
-bg_color = Color(0.9282533, 0.18773845, 0.25566742, 1)
-
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_b1spw"]
-frames = 2
-frame_0/texture = ExtResource("3_hp7ux")
-frame_0/duration = 0.5
-frame_1/texture = ExtResource("4_kyslo")
-frame_1/duration = 0.5
 
 [node name="WaschMaschineSettings" type="Control" unique_id=1979839577]
 layout_mode = 3
@@ -41,54 +26,42 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -20.0
-offset_top = -20.0
+offset_top = 113.0
 offset_right = 20.0
-offset_bottom = 20.0
+offset_bottom = 153.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.26154134, 0.26154134)
 script = ExtResource("1_j6sok")
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=473891349]
-layout_mode = 0
-offset_left = -753.0
-offset_top = -468.0
-offset_right = 793.0
-offset_bottom = 508.0
-color = Color(0.10283541, 0.15565357, 0.16642243, 1)
 
 [node name="WaschingMachineSettings" type="Sprite2D" parent="." unique_id=1768994128]
 position = Vector2(22.999977, 68.00001)
-scale = Vector2(1.8503535, 1.7904414)
-texture = ExtResource("1_dkjvl")
+scale = Vector2(1.85, 1.85)
+texture = ExtResource("2_hfvhi")
 
 [node name="CloseButton" type="Button" parent="." unique_id=1038874098]
 layout_mode = 0
-offset_left = 1585.0
-offset_top = -1610.0001
-offset_right = 1704.0
-offset_bottom = -1563.0001
-scale = Vector2(6.3801312, 6.3801312)
-text = "Close
+offset_left = 2278.7986
+offset_top = -1735.8633
+offset_right = 2363.7986
+offset_bottom = -1650.8633
+scale = Vector2(3.1580083, 3.1580083)
+theme = ExtResource("3_ik1eq")
+text = "
 "
+icon = ExtResource("4_ream5")
 
-[node name="SpeedSlider" type="HSlider" parent="." unique_id=1722497373]
+[node name="SpeedCrank" type="Control" parent="." unique_id=100898956]
 unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -12.475
-anchor_top = -1.0
-anchor_right = -12.475
-anchor_bottom = -0.975
-offset_left = 2043.0
-offset_top = -3.0
-offset_right = 2399.3223
-offset_bottom = 29.184113
-max_value = 3600.0
-step = 100.0
-rounded = true
-tick_count = 15
+anchors_preset = 0
+offset_left = 1483.5131
+offset_top = -290.58496
+offset_right = 2483.5132
+offset_bottom = 709.41504
+script = ExtResource("5_7swae")
+SPEED_CRANK_FALLOFF = 0.25
 
-[node name="SpeedLabel" type="Label" parent="SpeedSlider" unique_id=1213575725]
+[node name="SpeedLabel" type="Label" parent="SpeedCrank" unique_id=1213575725]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
@@ -96,18 +69,60 @@ anchor_left = 0.032
 anchor_top = 0.5
 anchor_right = 0.032
 anchor_bottom = 0.5
-offset_left = -8.413967
-offset_top = 25.728977
-offset_right = 31.586035
-offset_bottom = 48.728973
+offset_left = -525.2298
+offset_top = -362.3545
+offset_right = -314.93832
+offset_bottom = -262.9436
+scale = Vector2(2.043896, 1.9839846)
+theme_override_font_sizes/font_size = 32
 text = "0 RPM"
 label_settings = SubResource("LabelSettings_j6sok")
+
+[node name="Anchor" type="Control" parent="SpeedCrank" unique_id=1256602382]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = 416.75983
+offset_top = 359.40778
+offset_right = 456.75983
+offset_bottom = 399.40775
+scale = Vector2(1.8941743, 1.8941743)
+
+[node name="TextureRect" type="TextureRect" parent="SpeedCrank/Anchor" unique_id=1370933325]
+layout_mode = 0
+offset_left = -84.116714
+offset_top = -80.29323
+offset_right = 224.88329
+offset_bottom = 89.70679
+mouse_filter = 2
+texture = ExtResource("5_yifcm")
+
+[node name="Line2D" type="Line2D" parent="SpeedCrank" unique_id=1057583525]
+default_color = Color(1, 0, 0, 1)
+
+[node name="SpeedIndicator" type="Control" parent="." unique_id=1903805863]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = 38.23487
+offset_top = 1961.449
+offset_right = 78.23487
+offset_bottom = 2001.449
+rotation = 0.4886922
+
+[node name="TextureRect" type="TextureRect" parent="SpeedIndicator" unique_id=1918856654]
+layout_mode = 0
+offset_left = 1269.398
+offset_top = -1613.5115
+offset_right = 1542.981
+offset_bottom = -1332.484
+texture = ExtResource("7_hfvhi")
 
 [node name="TemperatureButtons" type="Control" parent="." unique_id=866505187]
 unique_name_in_owner = true
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -1234.9865
+offset_top = -860.28467
+offset_right = -1194.9865
+offset_bottom = -820.28467
 
 [node name="Cold" type="Button" parent="TemperatureButtons" unique_id=1167156892]
 unique_name_in_owner = true
@@ -117,12 +132,13 @@ anchor_left = -12.251
 anchor_top = -2.9120002
 anchor_right = -12.251
 anchor_bottom = -2.9120002
-offset_left = -744.95996
-offset_top = -746.52
-offset_right = -587.95996
-offset_bottom = -518.52
+offset_left = 490.02658
+offset_top = 113.76456
+offset_right = 647.0266
+offset_bottom = 341.76456
 scale = Vector2(1.499, 1.499)
-icon = ExtResource("3_b1spw")
+theme = ExtResource("3_ik1eq")
+icon = ExtResource("4_cflqw")
 
 [node name="Medium" type="Button" parent="TemperatureButtons" unique_id=585404810]
 unique_name_in_owner = true
@@ -132,11 +148,12 @@ anchor_left = -12.251
 anchor_top = -2.9120002
 anchor_right = -12.251
 anchor_bottom = -2.9120002
-offset_left = -441.95987
-offset_top = -745.52
-offset_right = -284.95987
-offset_bottom = -517.52
+offset_left = 793.02686
+offset_top = 114.76456
+offset_right = 950.02686
+offset_bottom = 342.76456
 scale = Vector2(1.4985995, 1.4985995)
+theme = ExtResource("3_ik1eq")
 icon = ExtResource("3_b1spw")
 
 [node name="Hot" type="Button" parent="TemperatureButtons" unique_id=1545301610]
@@ -147,52 +164,65 @@ anchor_left = -12.251
 anchor_top = -2.9120002
 anchor_right = -12.251
 anchor_bottom = -2.9120002
-offset_left = -130.95987
-offset_top = -743.52
-offset_right = 26.04013
-offset_bottom = -515.52
+offset_left = 1104.0269
+offset_top = 116.7648
+offset_right = 1261.0269
+offset_bottom = 344.7648
 scale = Vector2(1.499, 1.499)
+theme = ExtResource("3_ik1eq")
 icon = ExtResource("3_b1spw")
 
 [node name="DirectionButton" type="Button" parent="." unique_id=1951405259]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = -2009.0
-offset_top = -963.0
-offset_right = -1876.0
-offset_bottom = -828.0
-scale = Vector2(4.438338, 4.263199)
-theme_override_styles/normal = SubResource("StyleBoxFlat_j6sok")
-theme_override_styles/hover = SubResource("StyleBoxFlat_yxm6p")
+offset_left = -1976.7433
+offset_top = -971.1658
+offset_right = -1843.7433
+offset_bottom = -836.1658
+scale = Vector2(3.95, 3.95)
+theme = ExtResource("3_ik1eq")
 expand_icon = true
 
 [node name="StartButton" type="Button" parent="." unique_id=908637153]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 1415.0
-offset_top = -815.0
+offset_top = -815.00024
 offset_right = 1814.0
-offset_bottom = -660.0
+offset_bottom = -660.00024
 scale = Vector2(1.8775368, 1.8775368)
-theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxFlat_rcsmu")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_hp7ux")
-theme_override_styles/hover = SubResource("StyleBoxFlat_kyslo")
-icon = ExtResource("4_ik1eq")
+theme = ExtResource("3_ik1eq")
 
-[node name="IndicatorTextureRect" type="TextureRect" parent="." unique_id=1316258989]
+[node name="StartGreen" type="TextureRect" parent="StartButton" unique_id=1494321951]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("6_yifcm")
+
+[node name="StartButtonYellow" type="TextureRect" parent="StartButton" unique_id=14935988]
 unique_name_in_owner = true
 visible = false
 layout_mode = 0
-offset_left = -163.0
-offset_top = -177.0
-offset_right = -80.2
-offset_bottom = -108.0
-texture = SubResource("AnimatedTexture_b1spw")
-expand_mode = 1
+offset_right = 396.0
+offset_bottom = 154.0
+texture = ExtResource("7_7swae")
+
+[node name="StartButtonRed" type="TextureRect" parent="StartButton" unique_id=1124428928]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_right = 396.0
+offset_bottom = 154.0
+texture = ExtResource("8_hfvhi")
+
+[node name="StartLabel" type="TextureRect" parent="StartButton" unique_id=776952288]
+layout_mode = 0
+offset_right = 399.0
+offset_bottom = 155.0
+texture = ExtResource("4_ik1eq")
 
 [connection signal="pressed" from="CloseButton" to="." method="_on_button_pressed"]
-[connection signal="value_changed" from="SpeedSlider" to="." method="_on_speed_value_changed"]
+[connection signal="gui_input" from="SpeedCrank" to="SpeedCrank" method="_on_crank_input"]
 [connection signal="pressed" from="TemperatureButtons/Cold" to="." method="_on_cold_pressed"]
 [connection signal="pressed" from="TemperatureButtons/Medium" to="." method="_on_medium_pressed"]
 [connection signal="pressed" from="TemperatureButtons/Hot" to="." method="_on_hot_pressed"]
