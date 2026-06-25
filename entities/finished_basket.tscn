@@ -35,6 +35,7 @@ position = Vector2(0, 18)
 position = Vector2(0, 48)
 
 [node name="Basket" type="Sprite2D" parent="." unique_id=1495810037]
+visible = false
 scale = Vector2(0.42776406, 0.42776406)
 texture = ExtResource("4_mdkva")
 
@@ -46,6 +47,7 @@ shape = SubResource("RectangleShape2D_0j7jy")
 unique_name_in_owner = true
 
 [node name="Label" type="Label" parent="." unique_id=91042431]
+visible = false
 offset_left = -83.0
 offset_top = -31.0
 offset_right = 84.0
