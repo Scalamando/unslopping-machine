@@ -60,6 +60,7 @@ func init(washing_machine : WashingMashine) -> void:
 
 	start_button.disabled = current_washing_machine.running
 	start_button_red.visible = current_washing_machine.running
+	start_button_yellow.visible = washing_machine.has_unwashable_cloths
 
 
 func _on_button_pressed() -> void:
@@ -104,10 +105,14 @@ func set_speed_pointer(speed : float) -> void:
 func _on_start_button_pressed() -> void:
 	var started_washing : bool = current_washing_machine.start_washing()
 	if not started_washing:
+		start_button_yellow.visible = true
 		return
 
 	start_button.disabled = true
+	start_button_yellow.visible = false
 	start_button_red.visible = true
+	
+	UiManager.hide_washing_machine_settings()
 
 func _on_wash_end() -> void:
 	start_button.disabled = false
