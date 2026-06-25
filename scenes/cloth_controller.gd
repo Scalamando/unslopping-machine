@@ -10,18 +10,17 @@ var state : State = State.dirty
 var clothing : Clothing
 var customer : Customer
 
-@warning_ignore("shadowed_variable")
-static func create(clothing: Clothing, customer: Customer) -> Cloth:
+static func create(clothing: Clothing, customer_: Customer) -> Cloth:
 	var new_scene : Cloth = cloth_scene.instantiate()
 	new_scene.clothing = clothing
-	new_scene.customer = customer
+	new_scene.customer = customer_
 	return new_scene
 
 func _ready() -> void:
 	sprite_2d.texture = clothing.texture_dirty
 
 func get_state() -> State:
-	return clothing.state
+	return state
 
 func apply_wash(temperature: WaschingInstruction.Temperature, speed: int, direction: WaschingInstruction.Direction) -> State:
 	state = _state_for_wash(temperature, speed, direction)
@@ -62,5 +61,8 @@ func _state_for_wash(temperature: WaschingInstruction.Temperature, speed: int, d
 		WaschingInstruction.Speed.fast:
 			if speed < clothing.wash_instructions.speed:
 				return State.soaked
+			elif speed >= WaschingInstruction.Speed.too_fast:
+				state = State.ripped
+				return state
 
 	return State.clean

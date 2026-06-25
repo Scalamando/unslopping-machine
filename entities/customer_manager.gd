@@ -55,7 +55,7 @@ func _on_finished_clothing(cloth: Cloth) -> void:
 	for item in customer_queue_array:
 		if item.customer == cloth.customer:
 			var value : float = float(cloth.clothing.value) # TODO: Replace with customer specific value
-			match cloth.clothing.state:
+			match cloth.state:
 				Cloth.State.clean: value *= MOD_CLEAN
 				Cloth.State.soaked: value *= MOD_SOAKED
 				Cloth.State.ripped: value *= MOD_RIPPED

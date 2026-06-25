@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://baxhb4nhmrjo5"
-path="res://.godot/imported/ui_heatoff.png-ca02aed6984b1204d35e9b297591c925.ctex"
+uid="uid://c3pir06gj8apv"
+path="res://.godot/imported/Heat_Without.png-3d4e96eaddcf792add05ed70bbad07e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/washing_machine_normal/ui_heatoff.png"
-dest_files=["res://.godot/imported/ui_heatoff.png-ca02aed6984b1204d35e9b297591c925.ctex"]
+source_file="res://assets/washing_machine_normal/Heat_Without.png"
+dest_files=["res://.godot/imported/Heat_Without.png-3d4e96eaddcf792add05ed70bbad07e9.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqlrjr4f7q4is"
-path="res://.godot/imported/ui_speedhandle.png-1b532a3849be07ce8f04b4b192a8179c.ctex"
+uid="uid://bj2f6c78jjfc7"
+path="res://.godot/imported/Heat_With.png-63f1390f27120cb21a2a4867d707a94c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/washing_machine_normal/ui_speedhandle.png"
-dest_files=["res://.godot/imported/ui_speedhandle.png-1b532a3849be07ce8f04b4b192a8179c.ctex"]
+source_file="res://assets/washing_machine_normal/Heat_With.png"
+dest_files=["res://.godot/imported/Heat_With.png-63f1390f27120cb21a2a4867d707a94c.ctex"]
 
 [params]
 
