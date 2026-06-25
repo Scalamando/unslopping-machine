@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cwsibguufdebd"]
 
 [ext_resource type="Script" uid="uid://cf0ov6lsiwile" path="res://ui/wasch_maschine_settings_ui.gd" id="1_j6sok"]
-[ext_resource type="Texture2D" uid="uid://dp8tddenq1y2s" path="res://assets/washing_machine_detail/wasching-machine-settings.PNG" id="2_hfvhi"]
+[ext_resource type="Texture2D" uid="uid://c63rqbmiwyusw" path="res://assets/washing_machine_detail/wasching-machine-settings.png" id="2_hfvhi"]
 [ext_resource type="Texture2D" uid="uid://cax2bq2ok7oq7" path="res://assets/washing_machine_detail/ui_heatoff.png" id="3_b1spw"]
 [ext_resource type="Theme" uid="uid://c822krlutu482" path="res://assets/theme/Main-Theme.tres" id="3_ik1eq"]
 [ext_resource type="Texture2D" uid="uid://da10pbbqmxpl4" path="res://assets/washing_machine_detail/ui_heaton.png" id="4_cflqw"]
@@ -59,7 +59,8 @@ offset_top = -290.58496
 offset_right = 2483.5132
 offset_bottom = 709.41504
 script = ExtResource("5_7swae")
-SPEED_CRANK_FALLOFF = 0.25
+SPEED_CRANK_MULTIPLIER = 9.0
+SPEED_CRANK_FALLOFF = 0.01
 
 [node name="SpeedLabel" type="Label" parent="SpeedCrank" unique_id=1213575725]
 unique_name_in_owner = true
@@ -97,6 +98,7 @@ mouse_filter = 2
 texture = ExtResource("5_yifcm")
 
 [node name="Line2D" type="Line2D" parent="SpeedCrank" unique_id=1057583525]
+unique_name_in_owner = true
 default_color = Color(1, 0, 0, 1)
 
 [node name="SpeedIndicator" type="Control" parent="." unique_id=1903805863]

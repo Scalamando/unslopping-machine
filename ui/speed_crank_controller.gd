@@ -7,8 +7,8 @@ signal speed_changed(speed : int)
 @onready var line_2d: Line2D = $Line2D
 @onready var speed_label: Label = %SpeedLabel
 
-@export var SPEED_CRANK_MULTIPLIER : int = 10
-@export var SPEED_CRANK_FALLOFF : float = 0.5
+@export var SPEED_CRANK_MULTIPLIER : float = 0.5
+@export var SPEED_CRANK_FALLOFF : float = 0.005
 
 const MAX_SPEED : int = 3000
 
@@ -41,12 +41,12 @@ func _process(delta: float) -> void:
 	
 	var speed : float = abs(current_angle - prev_angle)
 	
-	if (speed > 180):
-		speed -= 180
+	if (speed > 180): # angles jumped from ~ -180 to 180
+		speed -= 360
 	
 	speed *= delta * 10000 * SPEED_CRANK_MULTIPLIER
 	
-	avg_speed = min(lerp(avg_speed, speed, delta * SPEED_CRANK_FALLOFF), MAX_SPEED) 
+	avg_speed = min(lerp(avg_speed, speed, SPEED_CRANK_FALLOFF), MAX_SPEED) 
 	speed_label.text = str(avg_speed)
 	
 	speed_changed.emit(avg_speed)
