@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwmu1x47i6iy7"
-path="res://.godot/imported/basket_front.png-22f48f44788c50686d3444d989d24d59.ctex"
+uid="uid://xlh0rlo4480v"
+path="res://.godot/imported/shirt_pink.PNG-966f0e65d10826d31a92fb506442602d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/baskets/basket_front.png"
-dest_files=["res://.godot/imported/basket_front.png-22f48f44788c50686d3444d989d24d59.ctex"]
+source_file="res://assets/cloth_inspection/clothes/shirt/shirt_pink.PNG"
+dest_files=["res://.godot/imported/shirt_pink.PNG-966f0e65d10826d31a92fb506442602d.ctex"]
 
 [params]
 

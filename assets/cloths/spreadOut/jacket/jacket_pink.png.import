@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2rquwato17vb"
-path="res://.godot/imported/Shorts_Blue.png-ac313bf1aa28a1073261b0e6dbccce7c.ctex"
+uid="uid://c17bfgw5ia5lu"
+path="res://.godot/imported/jacket_pink.png-f8d407d589421cf94431fc17347563d7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cloths/Shorts_Blue.png"
-dest_files=["res://.godot/imported/Shorts_Blue.png-ac313bf1aa28a1073261b0e6dbccce7c.ctex"]
+source_file="res://assets/cloths/spreadOut/jacket/jacket_pink.png"
+dest_files=["res://.godot/imported/jacket_pink.png-f8d407d589421cf94431fc17347563d7.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dis8adh8mwo5e"
-path="res://.godot/imported/folded_blau.png-e6dc372c7608b7ca34a8a81e1f643e4b.ctex"
+uid="uid://dsu7dvtbqkeyd"
+path="res://.godot/imported/shorts_grey.PNG-b13cac5b75af61c359f5606ddf4715a8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cloths/folded/folded_blau.png"
-dest_files=["res://.godot/imported/folded_blau.png-e6dc372c7608b7ca34a8a81e1f643e4b.ctex"]
+source_file="res://assets/cloth_inspection/clothes/shorts/shorts_grey.PNG"
+dest_files=["res://.godot/imported/shorts_grey.PNG-b13cac5b75af61c359f5606ddf4715a8.ctex"]
 
 [params]
 

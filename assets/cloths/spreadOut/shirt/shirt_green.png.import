@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bljv6ecn5jnff"
-path="res://.godot/imported/wasching-machine-settings.PNG-0593bdbe7629b60b427dc61842c3746a.ctex"
+uid="uid://cy4phnwxos5hi"
+path="res://.godot/imported/shirt_green.png-d686e65caae4eb6acf47191b5b9ce179.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/wasching-machine-settings.PNG"
-dest_files=["res://.godot/imported/wasching-machine-settings.PNG-0593bdbe7629b60b427dc61842c3746a.ctex"]
+source_file="res://assets/cloths/spreadOut/shirt/shirt_green.png"
+dest_files=["res://.godot/imported/shirt_green.png-d686e65caae4eb6acf47191b5b9ce179.ctex"]
 
 [params]
 
