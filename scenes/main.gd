@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 ## FOR DEBUG CLOSE GAME WITH ESC
 func _input(event: InputEvent) -> void:

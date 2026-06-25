@@ -10,6 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://dkdj3e2u6i8x5" path="res://assets/washing_instructions_icons/temp-hot.png" id="7_8wybo"]
 [ext_resource type="Texture2D" uid="uid://cjjdrak1g00mr" path="res://assets/washing_instructions_icons/dir-counterclockwise.png" id="9_w4ujp"]
 [ext_resource type="Texture2D" uid="uid://vdiqsnum0tab" path="res://assets/washing_instructions_icons/dir-both.png" id="10_ic0nb"]
+[ext_resource type="Texture2D" uid="uid://cc2kxgkgxe5qi" path="res://assets/cloth_inspection/table.png" id="11_w4ujp"]
+[ext_resource type="Texture2D" uid="uid://bfnwonrb758k7" path="res://assets/ui/closebutton.png" id="12_ic0nb"]
+[ext_resource type="Texture2D" uid="uid://chdphl8exgow7" path="res://assets/cloth_inspection/tag_large.png" id="13_ic0nb"]
 
 [node name="TresenClothInspection" type="Control" unique_id=2079798534]
 layout_mode = 3
@@ -28,7 +31,13 @@ dir_clockwise = ExtResource("3_xgu23")
 dir_counterclockwise = ExtResource("9_w4ujp")
 dir_both = ExtResource("10_ic0nb")
 
+[node name="Table" type="Sprite2D" parent="." unique_id=1531922368]
+position = Vector2(935, 540.00006)
+scale = Vector2(0.40177792, 0.4335666)
+texture = ExtResource("11_w4ujp")
+
 [node name="Tresen" type="ColorRect" parent="." unique_id=94396307]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -47,11 +56,12 @@ color = Color(0.5216516, 0.37004402, 0.19765705, 1)
 [node name="Instructions" type="ColorRect" parent="." unique_id=785957466]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 1563.0
-offset_top = 430.0
-offset_right = 1759.0
-offset_bottom = 587.0
+offset_left = 1181.0
+offset_top = 520.0
+offset_right = 1377.0
+offset_bottom = 677.0
 mouse_filter = 1
+color = Color(1, 1, 1, 0)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Instructions" unique_id=789653406]
 layout_mode = 1
@@ -67,6 +77,11 @@ offset_bottom = 175.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.215, 0.215)
+
+[node name="TagLarge" type="Sprite2D" parent="Instructions/HBoxContainer" unique_id=2146018203]
+position = Vector2(502.32568, -93.023315)
+scale = Vector2(2.4141579, 2.4141579)
+texture = ExtResource("13_ic0nb")
 
 [node name="TempTexRect" type="TextureRect" parent="Instructions/HBoxContainer" unique_id=94150691]
 unique_name_in_owner = true
@@ -84,6 +99,7 @@ layout_mode = 2
 texture = ExtResource("4_0r8yg")
 
 [node name="Headline" type="Label" parent="Instructions" unique_id=1915626365]
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -104,23 +120,25 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -357.0
-offset_top = -403.0
-offset_right = 357.0
-offset_bottom = 403.0
+offset_left = -488.99997
+offset_top = -349.0
+offset_right = 225.0
+offset_bottom = 457.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.8257143, 0.85711366)
 mouse_filter = 1
 
 [node name="Button" type="Button" parent="." unique_id=384874467]
 layout_mode = 0
-offset_left = 1714.9999
-offset_top = 137.00006
-offset_right = 1764.9999
-offset_bottom = 168.00006
-scale = Vector2(2.6514904, 2.5972676)
+offset_left = 1412.0001
+offset_top = 120.0
+offset_right = 1499.0001
+offset_bottom = 213.0
+rotation = 0.0039966754
+scale = Vector2(0.6908964, 0.6767676)
 theme_override_font_sizes/font_size = 16
-text = "Close
-"
+icon = ExtResource("12_ic0nb")
+flat = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,45 +1,40 @@
 [gd_scene format=3 uid="uid://cw70m8ycq204t"]
 
+[ext_resource type="Script" uid="uid://u7k6scer6xem" path="res://scenes/LevelManager.gd" id="1_muem4"]
 [ext_resource type="Script" uid="uid://bedr0dcnjakxq" path="res://scenes/main.gd" id="1_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://dnhqo1hwn6jpe" path="res://scenes/tresen.tscn" id="2_eb6dy"]
+[ext_resource type="Script" uid="uid://b5ioyvhc456j2" path="res://data/LevelRes.gd" id="2_jkv2x"]
+[ext_resource type="Texture2D" uid="uid://cwu0qw0aed8jw" path="res://assets/background.png" id="2_muem4"]
 [ext_resource type="PackedScene" uid="uid://cgrnbjcgn2fme" path="res://entities/finished_basket.tscn" id="3_a8y0u"]
+[ext_resource type="Resource" uid="uid://brrju62wo45jr" path="res://data/levels/level_1.tres" id="3_jbj1t"]
 [ext_resource type="Script" uid="uid://dmbn5b0p26ns5" path="res://scenes/camera_controller.gd" id="3_jyhfs"]
+[ext_resource type="Resource" uid="uid://cxnt6wmq76r7c" path="res://data/levels/level_2.tres" id="4_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://b5f15rlxpihuc" path="res://entities/basket.tscn" id="5_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://v0gnwt1i2wge" path="res://entities/washing_machine.tscn" id="6_tefeu"]
 [ext_resource type="Script" uid="uid://c0ierpals2ss6" path="res://entities/customer_manager.gd" id="7_choun"]
 [ext_resource type="PackedScene" uid="uid://brnmfwif8cssh" path="res://entities/cloth.tscn" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://upi0337cb7xs" path="res://ui/tresen_cloth_inspection.tscn" id="8_eb6dy"]
-[ext_resource type="Script" uid="uid://bqcwvesmpnf82" path="res://data/CustomerProfile.gd" id="8_ya4ey"]
-[ext_resource type="Resource" uid="uid://d2vmdjye85vqo" path="res://data/cloths/shirt.tres" id="9_eb6dy"]
-[ext_resource type="Texture2D" uid="uid://b1swlxy6kh0e3" path="res://assets/persons/cara.png" id="9_jbj1t"]
-[ext_resource type="Texture2D" uid="uid://h4pmrib2o5ns" path="res://assets/persons/pia.png" id="10_muem4"]
 [ext_resource type="Script" uid="uid://bi8xl0g3tlsk1" path="res://scenes/money_UI_controller.gd" id="10_trceg"]
 [ext_resource type="PackedScene" uid="uid://bdbknn06inx1a" path="res://ui/customer_queue.tscn" id="11_trceg"]
 [ext_resource type="PackedScene" uid="uid://cwsibguufdebd" path="res://ui/wasch_maschine_settings.tscn" id="13_trceg"]
 
-[sub_resource type="Resource" id="Resource_cfsa3"]
-script = ExtResource("8_ya4ey")
-name = "Cara"
-texture = ExtResource("9_jbj1t")
-clothing = ExtResource("9_eb6dy")
-metadata/_custom_type_script = "uid://bqcwvesmpnf82"
+[node name="Level" type="Node2D" unique_id=715033021 node_paths=PackedStringArray("customer_manager", "Camera")]
+script = ExtResource("1_muem4")
+levels = Array[ExtResource("2_jkv2x")]([ExtResource("3_jbj1t"), ExtResource("4_jbj1t")])
+customer_manager = NodePath("CustomerManager")
+Camera = NodePath("Camera2D")
 
-[sub_resource type="Resource" id="Resource_mg1pm"]
-script = ExtResource("8_ya4ey")
-name = "Pia"
-texture = ExtResource("10_muem4")
-clothing = ExtResource("9_eb6dy")
-timeStamp = 5
-metadata/_custom_type_script = "uid://bqcwvesmpnf82"
-
-[node name="Node2D" type="Node2D" unique_id=715033021]
-script = ExtResource("1_tbgi4")
+[node name="Background" type="Sprite2D" parent="." unique_id=1997451519]
+position = Vector2(-524, -0.99999976)
+scale = Vector2(0.51561403, 0.51561403)
+texture = ExtResource("2_muem4")
 
 [node name="Reception" type="Node2D" parent="." unique_id=1964710212]
 position = Vector2(-893, 0)
 
 [node name="Room" type="ColorRect" parent="Reception" unique_id=1873036716]
-offset_left = -828.0
+visible = false
+offset_left = -1184.0
 offset_top = -535.0
 offset_right = 372.0
 offset_bottom = 551.0
@@ -47,6 +42,7 @@ mouse_filter = 2
 color = Color(0.65378743, 0.7867861, 0.66864306, 1)
 
 [node name="Floor" type="ColorRect" parent="Reception" unique_id=734092252]
+visible = false
 offset_left = -830.0
 offset_top = 519.0
 offset_right = 370.0
@@ -55,15 +51,18 @@ mouse_filter = 2
 color = Color(0.08235294, 0.16862746, 0.16862746, 1)
 
 [node name="Tresen" parent="Reception" unique_id=1285519101 instance=ExtResource("2_eb6dy")]
-position = Vector2(3, 519)
+position = Vector2(95, 272)
+rotation = -0.00091724045
 
 [node name="FinishedBasket" parent="Reception" unique_id=1943162463 instance=ExtResource("3_a8y0u")]
-position = Vector2(-285, 437)
+position = Vector2(222, 290.99997)
+scale = Vector2(0.7671957, 2.211498)
 
 [node name="WaschingRoom" type="Node2D" parent="." unique_id=1269579874]
 scale = Vector2(1, 1.0131407)
 
 [node name="Room" type="ColorRect" parent="WaschingRoom" unique_id=460883760]
+visible = false
 offset_left = -523.0
 offset_top = -535.0
 offset_right = 960.0
@@ -72,6 +71,7 @@ mouse_filter = 2
 color = Color(0.32416314, 0.54268265, 0.53828967, 1)
 
 [node name="Wall" type="ColorRect" parent="WaschingRoom" unique_id=1438566277]
+visible = false
 offset_left = -547.0
 offset_top = -535.0
 offset_right = -495.0
@@ -80,6 +80,7 @@ mouse_filter = 2
 color = Color(0.08150054, 0.16904393, 0.167573, 1)
 
 [node name="Floor" type="ColorRect" parent="WaschingRoom" unique_id=584946144]
+visible = false
 offset_left = -523.0
 offset_top = 519.0
 offset_right = 960.0
@@ -88,6 +89,7 @@ mouse_filter = 2
 color = Color(0.08235294, 0.16862746, 0.16862746, 1)
 
 [node name="Wall2" type="ColorRect" parent="WaschingRoom" unique_id=1812011202]
+visible = false
 offset_left = 935.0
 offset_top = -535.0
 offset_right = 987.0
@@ -96,32 +98,35 @@ mouse_filter = 2
 color = Color(0.08150054, 0.16904393, 0.167573, 1)
 
 [node name="Basket" parent="WaschingRoom" unique_id=401637336 instance=ExtResource("5_ya4ey")]
-position = Vector2(-219, 254.65367)
+position = Vector2(-268, 312.88843)
 scale = Vector2(1, 0.98702973)
 
 [node name="Basket2" parent="WaschingRoom" unique_id=1589727789 instance=ExtResource("5_ya4ey")]
-position = Vector2(-219, 73.0402)
+position = Vector2(-268, 131.27496)
 scale = Vector2(1, 0.98702973)
 
+[node name="Basket3" parent="WaschingRoom" unique_id=1893582163 instance=ExtResource("5_ya4ey")]
+position = Vector2(-267, -53.299606)
+scale = Vector2(1, 0.9742276)
+
 [node name="WaschingMachine" parent="WaschingRoom" unique_id=1667756517 instance=ExtResource("6_tefeu")]
-position = Vector2(360, 332.62903)
+position = Vector2(856, 183.58754)
 scale = Vector2(1, 0.98702973)
 
 [node name="WaschingMachine2" parent="WaschingRoom" unique_id=875701637 instance=ExtResource("6_tefeu")]
-position = Vector2(674, 322.75873)
+position = Vector2(620, 183.58754)
 scale = Vector2(1, 0.98702973)
 
 [node name="CustomerManager" type="Node2D" parent="." unique_id=622872701]
 unique_name_in_owner = true
-position = Vector2(-1321, 160)
+position = Vector2(-1083, 147)
 script = ExtResource("7_choun")
-customer_array = Array[ExtResource("8_ya4ey")]([SubResource("Resource_cfsa3"), SubResource("Resource_mg1pm")])
 cloth_scene = ExtResource("7_o6xl0")
 customer_offset = Vector2(-350, 0)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1243545003]
 script = ExtResource("3_jyhfs")
-cameraPosLeftRoom = Vector2(-750, 0)
+cameraPosLeftRoom = Vector2(-1050, 0)
 
 [node name="MainUI" type="Control" parent="Camera2D" unique_id=1842875158]
 layout_mode = 3
@@ -164,9 +169,9 @@ text = "0"
 [node name="CustomerQueue" parent="Camera2D/MainUI" unique_id=350090850 instance=ExtResource("11_trceg")]
 layout_mode = 0
 offset_left = 0.0
-offset_top = 0.0
+offset_top = -2.0
 offset_right = 40.0
-offset_bottom = 40.0
+offset_bottom = 38.0
 
 [node name="TresenClothInspection" parent="Camera2D" unique_id=2079798534 instance=ExtResource("8_eb6dy")]
 visible = false
@@ -185,6 +190,10 @@ grow_vertical = 2
 [node name="WaschMaschineSettings" parent="Camera2D" unique_id=1979839577 instance=ExtResource("13_trceg")]
 visible = false
 
+[node name="DebugFeatures" type="Node" parent="." unique_id=667250662]
+script = ExtResource("1_tbgi4")
+
 [connection signal="finished_clothing" from="Reception/FinishedBasket" to="CustomerManager" method="_on_finished_clothing"]
 [connection signal="customer_added" from="CustomerManager" to="Camera2D/MainUI/CustomerQueue" method="_on_customer_added"]
+[connection signal="customer_queue_finshed" from="CustomerManager" to="." method="_on_cm_customer_queue_finshed"]
 [connection signal="customer_removed" from="CustomerManager" to="Camera2D/MainUI/CustomerQueue" method="_on_customer_removed"]
