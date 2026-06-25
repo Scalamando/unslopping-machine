@@ -14,7 +14,6 @@ const heat_off = preload("uid://c3pir06gj8apv")
 @onready var speed_indicator: Node2D = %SpeedIndicator
 
 @onready var direction_texture_rect: TextureRect = %DirectionTextureRect
-@onready var indicator_texture_rect: TextureRect = %IndicatorTextureRect
 @onready var cloth_container: Node2D = %ClothContainer
 @onready var wasching_timer: Timer = %WaschingTimer
 
@@ -26,10 +25,16 @@ const heat_off = preload("uid://c3pir06gj8apv")
 @onready var wasching_animation_player: AnimationPlayer = %WaschingAnimationPlayer
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = %AudioStreamPlayer2D
 
+@onready var ui_start_red: Sprite2D = %UiStartRed
+@onready var ui_start_yellow: Sprite2D = %UiStartYellow
+
+
 const WASHING_MACHINE_FAST = preload("res://assets/audio/washing_machine/WashingMachine_Fast.mp3")
 const WASHING_MACHINE_MEDIUM = preload("res://assets/audio/washing_machine/WashingMachine_Medium.mp3")
 const WASHING_MACHINE_SLOW = preload("res://assets/audio/washing_machine/WashingMachine_Slow.mp3")
 
+const DIR_CLOCKWISE = preload("uid://dfiy3v5mak80d")
+const DIR_COUNTERCLOCKWISE = preload("uid://yr8w6tf37am5")
 
 var running: bool :
 	get:
@@ -37,8 +42,12 @@ var running: bool :
 	set(value):
 		pass
 
-const DIR_CLOCKWISE = preload("uid://bpt7t56s24pkn")
-const DIR_COUNTERCLOCKWISE = preload("uid://cjcqvkh4x85u2")
+var has_unwashable_cloths: bool :
+	get:
+		var cloths = cloth_container.get_children().filter(func(child: Node) -> bool: return child is Cloth)
+		return cloths.any(func(c: Cloth) -> bool: return c.state != Cloth.State.dirty)
+	set(value):
+		pass
 
 @export var speed : int = 0 :
 	get: return speed
@@ -68,7 +77,7 @@ func _ready() -> void:
 @onready var starting_pos : Vector2 = self.position
 
 func set_speed_pointer(speed_ : float) -> void:
-	speed_indicator.rotation_degrees = remap(speed_, 800.0, 3200.0, -21.2, 19.7)
+	speed_indicator.rotation_degrees = remap(speed_, 0.0, 3000.0, -37.9, 42.0)
 
 func _process(_delta: float) -> void:
 	if self.running:
@@ -105,11 +114,13 @@ func _set_direction_texture_rect(value : Direction) -> void:
 			direction_texture_rect.texture = DIR_COUNTERCLOCKWISE
 
 func start_washing() -> bool:
-	var cloths = cloth_container.get_children().filter(func(child: Node) -> bool: return child is Cloth)
+	var cloths : Array[Node] = cloth_container.get_children().filter(func(child: Node) -> bool: return child is Cloth)
 
-	var has_unwashable_cloths : bool = cloths.any(func(c: Cloth) -> bool: return c.state != Cloth.State.dirty)
 	if has_unwashable_cloths:
+		ui_start_yellow.visible = true
 		return false
+	
+	ui_start_yellow.visible = false
 
 	for c : Cloth in cloths:
 		c.input_pickable = false
@@ -117,7 +128,7 @@ func start_washing() -> bool:
 	# disable the dropzone
 	self.collision_layer = 0
 
-	indicator_texture_rect.visible = true
+	ui_start_red.visible = true
 	foreground_open.visible = false
 	foreground_closed.visible = true
 	wasching_timer.start()
@@ -149,7 +160,7 @@ func end_washing() -> void:
 
 	wasching_animation_player.play("RESET")
 	audio_stream_player_2d.stop()
-	indicator_texture_rect.visible = false
+	ui_start_red.visible = false
 	foreground_open.visible = true
 	foreground_closed.visible = false
 	finished_wash.emit()
