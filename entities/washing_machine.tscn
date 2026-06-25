@@ -76,7 +76,7 @@ animations = [{
 size = Vector2(42.5, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0j7jy"]
-size = Vector2(203, 39)
+size = Vector2(203, 146)
 
 [sub_resource type="Animation" id="Animation_7cal4"]
 length = 0.001
@@ -206,7 +206,7 @@ shape = SubResource("RectangleShape2D_txmul")
 [node name="Settings" type="Area2D" parent="." unique_id=58356006]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Settings" unique_id=1109773792]
-position = Vector2(-0.5, -127.5)
+position = Vector2(-0.5, -74)
 shape = SubResource("RectangleShape2D_0j7jy")
 
 [node name="UI" type="Control" parent="." unique_id=892593718]
