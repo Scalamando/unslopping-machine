@@ -1,9 +1,12 @@
 class_name CustomerManager
 extends Node2D
 
-@export var customer_array : Array[Customer]
+@export var customer_array : Array[CustomerProfile]
 @export var cloth_scene : PackedScene
+## The time customers will wait for their clothes to be washed. Incurs a penalty if the time is up
 @export var customer_wait_time : int = 45
+## The offset between customers, when multiple customers are present in the queue
+@export var customer_offset : Vector2 = Vector2(-20.0, 0.0)
 
 @export_group("Multiplier", "MOD_")
 ## Money modifier applied for clean cloths.
@@ -33,23 +36,34 @@ func _ready() -> void:
 	assert(!customer_array.is_empty())
 	timed_customer_iteration()
 
+	self.child_entered_tree.connect(_on_customer_count_changes)
+	self.child_exiting_tree.connect(_on_customer_count_changes)
+
 func timed_customer_iteration() -> void:
 	customer_spawn_counter =  0
 
-	for customer : Customer in customer_array:
+	for customer : CustomerProfile in customer_array:
 		var delay : int = customer.timeStamp - time
 		await get_tree().create_timer(delay).timeout
 
 		spawn_customer(customer)
 		customer_spawn_counter += 1
 
-func spawn_customer(customer : Customer) -> void:
-	var cloth_node : Cloth = Cloth.create(customer.clothing, customer)
-	add_child(cloth_node)
+func spawn_customer(customer : CustomerProfile) -> void:
+	var customer_node : Customer = Customer.create(customer)
+	add_child(customer_node)
+	customer_node.global_position = self.global_position + customer_offset * len(customer_queue_array)
 
 	var customer_queue_item : CustomerQueueItem = CustomerQueueItem.new(customer, customer_wait_time)
 	customer_queue_array.append(customer_queue_item)
 	customer_added.emit(customer_queue_item)
+
+func _on_customer_count_changes(node: Node) -> void:
+	if node is Customer:
+		var i : int = 0
+		for child : Node in get_children().filter(func(c: Node) -> bool: return c is Customer and not is_same(c, node)):
+			create_tween().set_trans(Tween.TRANS_SINE).tween_property(child, "global_position", self.global_position + customer_offset * i, 0.5)
+			i += 1
 
 func _on_finished_clothing(cloth: Cloth) -> void:
 	for item in customer_queue_array:

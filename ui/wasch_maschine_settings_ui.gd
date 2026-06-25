@@ -58,7 +58,7 @@ func init(washing_machine : WashingMashine) -> void:
 	set_speed_pointer(float(current_washing_machine.speed))
 	# _on_speed_value_changed(float(current_washing_machine.speed))
 
-	# start_button.visible = not current_washing_machine.running
+	start_button.disabled = current_washing_machine.running
 	start_button_red.visible = current_washing_machine.running
 
 

@@ -8,9 +8,9 @@ enum State {dirty, clean, soaked, ripped, shrunk, iced, garn}
 
 var state : State = State.dirty
 var clothing : Clothing
-var customer : Customer
+var customer : CustomerProfile
 
-static func create(clothing: Clothing, customer_: Customer) -> Cloth:
+static func create(clothing: Clothing, customer_: CustomerProfile) -> Cloth:
 	var new_scene : Cloth = cloth_scene.instantiate()
 	new_scene.clothing = clothing
 	new_scene.customer = customer_
@@ -24,7 +24,7 @@ func get_state() -> State:
 
 func apply_wash(temperature: WaschingInstruction.Temperature, speed: int, direction: WaschingInstruction.Direction) -> State:
 	state = _state_for_wash(temperature, speed, direction)
-	sprite_2d.texture = clothing.get_texture()
+	sprite_2d.texture = get_texture()
 	return state
 
 func get_texture() -> Texture:

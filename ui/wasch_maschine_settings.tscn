@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cwsibguufdebd"]
 
 [ext_resource type="Script" uid="uid://cf0ov6lsiwile" path="res://ui/wasch_maschine_settings_ui.gd" id="1_j6sok"]
-[ext_resource type="Texture2D" uid="uid://bljv6ecn5jnff" path="res://assets/washing_machine_detail/wasching-machine-settings.PNG" id="2_hfvhi"]
+[ext_resource type="Texture2D" uid="uid://dp8tddenq1y2s" path="res://assets/washing_machine_detail/wasching-machine-settings.PNG" id="2_hfvhi"]
 [ext_resource type="Texture2D" uid="uid://cax2bq2ok7oq7" path="res://assets/washing_machine_detail/ui_heatoff.png" id="3_b1spw"]
 [ext_resource type="Theme" uid="uid://c822krlutu482" path="res://assets/theme/Main-Theme.tres" id="3_ik1eq"]
 [ext_resource type="Texture2D" uid="uid://da10pbbqmxpl4" path="res://assets/washing_machine_detail/ui_heaton.png" id="4_cflqw"]
