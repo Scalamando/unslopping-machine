@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cwsibguufdebd"]
 
-[ext_resource type="Texture2D" uid="uid://biqlv4e8lh0px" path="res://assets/wasching-machine-settings.png" id="1_dkjvl"]
 [ext_resource type="Script" uid="uid://cf0ov6lsiwile" path="res://ui/wasch_maschine_settings_ui.gd" id="1_j6sok"]
+[ext_resource type="Texture2D" uid="uid://bljv6ecn5jnff" path="res://assets/washing_machine_detail/wasching-machine-settings.PNG" id="2_hfvhi"]
 [ext_resource type="Texture2D" uid="uid://cax2bq2ok7oq7" path="res://assets/washing_machine_detail/ui_heatoff.png" id="3_b1spw"]
 [ext_resource type="Theme" uid="uid://c822krlutu482" path="res://assets/theme/Main-Theme.tres" id="3_ik1eq"]
 [ext_resource type="Texture2D" uid="uid://da10pbbqmxpl4" path="res://assets/washing_machine_detail/ui_heaton.png" id="4_cflqw"]
@@ -37,7 +37,7 @@ script = ExtResource("1_j6sok")
 [node name="WaschingMachineSettings" type="Sprite2D" parent="." unique_id=1768994128]
 position = Vector2(22.999977, 68.00001)
 scale = Vector2(1.85, 1.85)
-texture = ExtResource("1_dkjvl")
+texture = ExtResource("2_hfvhi")
 
 [node name="CloseButton" type="Button" parent="." unique_id=1038874098]
 layout_mode = 0
@@ -106,7 +106,7 @@ offset_left = 38.23487
 offset_top = 1961.449
 offset_right = 78.23487
 offset_bottom = 2001.449
-rotation = -0.34906584
+rotation = 0.4886922
 
 [node name="TextureRect" type="TextureRect" parent="SpeedIndicator" unique_id=1918856654]
 layout_mode = 0

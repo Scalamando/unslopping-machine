@@ -8,10 +8,9 @@ enum Direction {clockwise, counterclockwise}
 @onready var temp_med: Sprite2D = %TempMed
 @onready var temp_high: Sprite2D = %TempHigh
 
-const heat_on = preload("uid://da10pbbqmxpl4")
-const heat_off = preload("uid://cax2bq2ok7oq7")
+const heat_on = preload("uid://bj2f6c78jjfc7")
+const heat_off = preload("uid://c3pir06gj8apv")
 
-@onready var speed_label: Label = %SpeedLabel
 @onready var speed_indicator: Node2D = %SpeedIndicator
 
 @onready var direction_texture_rect: TextureRect = %DirectionTextureRect

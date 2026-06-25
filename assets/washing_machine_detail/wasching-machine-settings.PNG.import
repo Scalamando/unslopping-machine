@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://baxhb4nhmrjo5"
-path="res://.godot/imported/ui_heatoff.png-ca02aed6984b1204d35e9b297591c925.ctex"
+uid="uid://bljv6ecn5jnff"
+path="res://.godot/imported/wasching-machine-settings.PNG-8e5a37a766abadf5ce4d031648de9392.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/washing_machine_normal/ui_heatoff.png"
-dest_files=["res://.godot/imported/ui_heatoff.png-ca02aed6984b1204d35e9b297591c925.ctex"]
+source_file="res://assets/washing_machine_detail/wasching-machine-settings.PNG"
+dest_files=["res://.godot/imported/wasching-machine-settings.PNG-8e5a37a766abadf5ce4d031648de9392.ctex"]
 
 [params]
 

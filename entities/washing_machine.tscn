@@ -12,9 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://b4mqj8w5k1c8n" path="res://assets/washing_machine_normal/ui_startgreen.png" id="8_0lh1t"]
 [ext_resource type="Texture2D" uid="uid://bwg2yryjh4wsk" path="res://assets/washing-indicator-empty.png" id="8_u6ur1"]
 [ext_resource type="Texture2D" uid="uid://ca8rorw3v0gkm" path="res://assets/washing_machine_normal/wasching_machine_speedbackground.png" id="9_34huu"]
-[ext_resource type="Texture2D" uid="uid://dqlrjr4f7q4is" path="res://assets/washing_machine_normal/ui_speedhandle.png" id="10_rql1f"]
+[ext_resource type="Texture2D" uid="uid://t2wjeexurs3c" path="res://assets/washing_machine_normal/Speed_Handle.png" id="11_l7nsl"]
 [ext_resource type="Texture2D" uid="uid://yr8w6tf37am5" path="res://assets/washing_machine_normal/ui_turnright.png" id="12_euh64"]
-[ext_resource type="Texture2D" uid="uid://da10pbbqmxpl4" path="res://assets/washing_machine_detail/ui_heaton.png" id="12_l7nsl"]
+[ext_resource type="Texture2D" uid="uid://bj2f6c78jjfc7" path="res://assets/washing_machine_normal/Heat_With.png" id="12_l7nsl"]
 [ext_resource type="Texture2D" uid="uid://bg320rdqxrnh8" path="res://assets/washing_machine_detail/ui_speeddisplay.png" id="15_euh64"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rcsmu"]
@@ -186,7 +186,7 @@ texture = ExtResource("9_34huu")
 [node name="UiSpeedhandle" type="Sprite2D" parent="." unique_id=1670401946]
 position = Vector2(86, -94)
 scale = Vector2(0.3973009, 0.3973009)
-texture = ExtResource("10_rql1f")
+texture = ExtResource("11_l7nsl")
 
 [node name="Flusensieb" type="Area2D" parent="." unique_id=674456099]
 position = Vector2(-71, 123)
@@ -207,19 +207,19 @@ anchors_preset = 0
 
 [node name="TempLow" type="Sprite2D" parent="UI" unique_id=284377962]
 position = Vector2(-51, -128)
-scale = Vector2(0.061513003, 0.061513003)
+scale = Vector2(0.268, 0.268)
 texture = ExtResource("12_l7nsl")
 
 [node name="TempMed" type="Sprite2D" parent="UI" unique_id=138397070]
 unique_name_in_owner = true
 position = Vector2(-39.000004, -128)
-scale = Vector2(0.061512984, 0.061512984)
+scale = Vector2(0.28571454, 0.28571454)
 texture = ExtResource("12_l7nsl")
 
 [node name="TempHigh" type="Sprite2D" parent="UI" unique_id=308719695]
 unique_name_in_owner = true
 position = Vector2(-27, -128)
-scale = Vector2(0.061512984, 0.061512984)
+scale = Vector2(0.268, 0.268)
 texture = ExtResource("12_l7nsl")
 
 [node name="DirectionTextureRect" type="TextureRect" parent="UI" unique_id=1946772952]

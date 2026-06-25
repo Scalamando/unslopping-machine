@@ -10,11 +10,12 @@ var state : State = State.dirty
 var clothing : Clothing
 var customer : Customer
 
-@warning_ignore("shadowed_variable")
-static func create(clothing: Clothing, customer: Customer) -> Cloth:
+const cloth_scene = preload("res://entities/cloth.tscn")
+
+static func create(clothing: Clothing, customer_: Customer) -> Cloth:
 	var new_scene : Cloth = cloth_scene.instantiate()
 	new_scene.clothing = clothing
-	new_scene.customer = customer
+	new_scene.customer = customer_
 	return new_scene
 
 func _ready() -> void:

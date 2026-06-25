@@ -54,8 +54,9 @@ func init(washing_machine : WashingMashine) -> void:
 		WashingMashine.Direction.counterclockwise:
 			direction_button.add_theme_icon_override("icon", DIR_COUNTERCLOCKWISE)
 
+	speed_crank.avg_speed = current_washing_machine.speed
 	set_speed_pointer(float(current_washing_machine.speed))
-	_on_speed_value_changed(float(current_washing_machine.speed))
+	# _on_speed_value_changed(float(current_washing_machine.speed))
 
 	# start_button.visible = not current_washing_machine.running
 	start_button_red.visible = current_washing_machine.running
@@ -97,7 +98,7 @@ func _on_direction_button_pressed() -> void:
 			direction_button.add_theme_icon_override("icon", DIR_CLOCKWISE)
 
 func set_speed_pointer(speed : float) -> void:
-	speed_indicator.rotation_degrees = remap(speed, 800.0, 3200.0, -20.0, 22.5)
+	speed_indicator.rotation_degrees = remap(speed, 0.0, 3000.0, -26.5, 28.0)
 
 
 func _on_start_button_pressed() -> void:
