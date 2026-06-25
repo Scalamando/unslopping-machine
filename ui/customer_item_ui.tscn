@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cfe4ur4icogg"]
 
 [ext_resource type="Script" uid="uid://drmprt6u51t88" path="res://ui/customer_item_ui.gd" id="1_l4b52"]
+[ext_resource type="Texture2D" uid="uid://cn5tvi7u1a8d7" path="res://assets/ui/queueCard.png" id="2_l4b52"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jx42o"]
 bg_color = Color(0.92372704, 0.5366206, 0.141498, 1)
@@ -32,6 +33,11 @@ custom_maximum_size = Vector2(120, 120)
 script = ExtResource("1_l4b52")
 warning_stylebox = SubResource("StyleBoxFlat_jx42o")
 critical_stylebox = SubResource("StyleBoxFlat_l4b52")
+
+[node name="QueueCard" type="Sprite2D" parent="." unique_id=1437393700]
+position = Vector2(59.999996, 55)
+scale = Vector2(0.43711916, 0.43711916)
+texture = ExtResource("2_l4b52")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1441329013]
 layout_mode = 2

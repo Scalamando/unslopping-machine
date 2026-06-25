@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://i3driceblmb2"]
 
 [ext_resource type="Script" uid="uid://dvtf38pphw1ry" path="res://entities/instructions_proxy_controller.gd" id="1_pdut6"]
+[ext_resource type="Texture2D" uid="uid://b61xe0p6yrodd" path="res://assets/cloth_inspection/tag_small_1.png" id="2_kv4pr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0j7jy"]
 size = Vector2(54, 52)
@@ -8,10 +9,10 @@ size = Vector2(54, 52)
 [node name="InstructionsProxy" type="Area2D" unique_id=1949294101]
 script = ExtResource("1_pdut6")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=790393792]
-offset_right = 40.0
-offset_bottom = 40.0
-mouse_filter = 2
+[node name="TagSmall1" type="Sprite2D" parent="." unique_id=310363147]
+position = Vector2(23, 21.000004)
+scale = Vector2(0.35728115, 0.35728115)
+texture = ExtResource("2_kv4pr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1458007271]
 position = Vector2(20, 20)

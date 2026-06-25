@@ -126,7 +126,7 @@ offset_right = 225.0
 offset_bottom = 457.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.8257143, 0.9457143)
+scale = Vector2(0.8257143, 0.85711366)
 mouse_filter = 1
 
 [node name="Button" type="Button" parent="." unique_id=384874467]
@@ -135,6 +135,7 @@ offset_left = 1412.0001
 offset_top = 120.0
 offset_right = 1499.0001
 offset_bottom = 213.0
+rotation = 0.0039966754
 scale = Vector2(0.6908964, 0.6767676)
 theme_override_font_sizes/font_size = 16
 icon = ExtResource("12_ic0nb")

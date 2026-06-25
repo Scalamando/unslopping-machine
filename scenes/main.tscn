@@ -64,6 +64,7 @@ color = Color(0.08235294, 0.16862746, 0.16862746, 1)
 
 [node name="Tresen" parent="Reception" unique_id=1285519101 instance=ExtResource("2_eb6dy")]
 position = Vector2(95, 272)
+rotation = -0.00091724045
 
 [node name="FinishedBasket" parent="Reception" unique_id=1943162463 instance=ExtResource("3_a8y0u")]
 position = Vector2(222, 290.99997)
