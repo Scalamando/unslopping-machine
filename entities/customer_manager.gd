@@ -52,7 +52,7 @@ func timed_customer_iteration() -> void:
 func spawn_customer(customer : CustomerProfile) -> void:
 	var customer_node : Customer = Customer.create(customer)
 	add_child(customer_node)
-	customer_node.global_position = self.global_position + customer_offset * len(customer_queue_array)
+	customer_node.global_position = self.global_position + customer_offset * (get_child_count() - 1)
 
 	var customer_queue_item : CustomerQueueItem = CustomerQueueItem.new(customer, customer_wait_time)
 	customer_queue_array.append(customer_queue_item)

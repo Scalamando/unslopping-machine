@@ -11,6 +11,6 @@ func _ready() -> void:
 
 func _on_new_node(node: Node) -> void:
 	if node is Cloth:
-		if node.clothing.state == Cloth.State.dirty: return
+		if node.state == Cloth.State.dirty: return
 		finished_clothing.emit(node)
 		node.queue_free()
