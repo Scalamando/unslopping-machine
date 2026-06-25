@@ -10,8 +10,6 @@ var state : State = State.dirty
 var clothing : Clothing
 var customer : Customer
 
-const cloth_scene = preload("res://entities/cloth.tscn")
-
 static func create(clothing: Clothing, customer_: Customer) -> Cloth:
 	var new_scene : Cloth = cloth_scene.instantiate()
 	new_scene.clothing = clothing
@@ -22,7 +20,7 @@ func _ready() -> void:
 	sprite_2d.texture = clothing.texture_dirty
 
 func get_state() -> State:
-	return clothing.state
+	return state
 
 func apply_wash(temperature: WaschingInstruction.Temperature, speed: int, direction: WaschingInstruction.Direction) -> State:
 	state = _state_for_wash(temperature, speed, direction)
@@ -63,5 +61,8 @@ func _state_for_wash(temperature: WaschingInstruction.Temperature, speed: int, d
 		WaschingInstruction.Speed.fast:
 			if speed < clothing.wash_instructions.speed:
 				return State.soaked
+			elif speed >= WaschingInstruction.Speed.too_fast:
+				state = State.ripped
+				return state
 
 	return State.clean

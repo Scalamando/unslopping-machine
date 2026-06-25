@@ -24,7 +24,7 @@ const HEAT_ON = preload("uid://da10pbbqmxpl4")
 
 func _ready() -> void:
 	UiManager.washing_maschine_ui = self # register with UiManager
-	
+
 	speed_crank.speed_changed.connect(_on_speed_updated)
 
 func _on_speed_updated(speed : float) -> void:
