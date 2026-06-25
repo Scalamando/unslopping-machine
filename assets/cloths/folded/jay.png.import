@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bljv6ecn5jnff"
-path="res://.godot/imported/wasching-machine-settings.PNG-0593bdbe7629b60b427dc61842c3746a.ctex"
+uid="uid://dj0hyiifphjak"
+path="res://.godot/imported/jay.png-d2afc60d26080cd59892acce30f70e52.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/wasching-machine-settings.PNG"
-dest_files=["res://.godot/imported/wasching-machine-settings.PNG-0593bdbe7629b60b427dc61842c3746a.ctex"]
+source_file="res://assets/cloths/folded/jay.png"
+dest_files=["res://.godot/imported/jay.png-d2afc60d26080cd59892acce30f70e52.ctex"]
 
 [params]
 

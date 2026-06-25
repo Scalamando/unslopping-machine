@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bljv6ecn5jnff"
-path="res://.godot/imported/wasching-machine-settings.PNG-0593bdbe7629b60b427dc61842c3746a.ctex"
+uid="uid://b1vardmayk34r"
+path="res://.godot/imported/balkalva_pink.PNG-2569db88b7d2a7e4d0aae35c7be5d618.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/wasching-machine-settings.PNG"
-dest_files=["res://.godot/imported/wasching-machine-settings.PNG-0593bdbe7629b60b427dc61842c3746a.ctex"]
+source_file="res://assets/cloth_inspection/clothes/balaklava/balkalva_pink.PNG"
+dest_files=["res://.godot/imported/balkalva_pink.PNG-2569db88b7d2a7e4d0aae35c7be5d618.ctex"]
 
 [params]
 

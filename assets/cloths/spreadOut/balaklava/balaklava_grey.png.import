@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bljv6ecn5jnff"
-path="res://.godot/imported/wasching-machine-settings.PNG-0593bdbe7629b60b427dc61842c3746a.ctex"
+uid="uid://b0m8vpdyfesa5"
+path="res://.godot/imported/balaklava_grey.png-38d4b6f2babccc0121d1885158f52dbe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/wasching-machine-settings.PNG"
-dest_files=["res://.godot/imported/wasching-machine-settings.PNG-0593bdbe7629b60b427dc61842c3746a.ctex"]
+source_file="res://assets/cloths/spreadOut/balaklava/balaklava_grey.png"
+dest_files=["res://.godot/imported/balaklava_grey.png-38d4b6f2babccc0121d1885158f52dbe.ctex"]
 
 [params]
 
