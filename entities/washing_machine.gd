@@ -24,6 +24,12 @@ const heat_off = preload("uid://c3pir06gj8apv")
 @onready var foreground_closed: AnimatedSprite2D = %ForegroundClosed
 
 @onready var wasching_animation_player: AnimationPlayer = %WaschingAnimationPlayer
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = %AudioStreamPlayer2D
+
+const WASHING_MACHINE_FAST = preload("res://assets/audio/washing_machine/WashingMachine_Fast.mp3")
+const WASHING_MACHINE_MEDIUM = preload("res://assets/audio/washing_machine/WashingMachine_Medium.mp3")
+const WASHING_MACHINE_SLOW = preload("res://assets/audio/washing_machine/WashingMachine_Slow.mp3")
+
 
 var running: bool :
 	get:
@@ -116,6 +122,16 @@ func start_washing() -> bool:
 	foreground_closed.visible = true
 	wasching_timer.start()
 
+
+
+	if speed < WaschingInstruction.Speed.medium:
+		audio_stream_player_2d.stream = WASHING_MACHINE_SLOW
+	elif speed >= WaschingInstruction.Speed.fast:
+		audio_stream_player_2d.stream = WASHING_MACHINE_MEDIUM
+	else:
+		audio_stream_player_2d.stream = WASHING_MACHINE_FAST
+
+	audio_stream_player_2d.play()
 	wasching_animation_player.play("new_animation")
 	wasching_animation_player.speed_scale = speed / 100.0
 
@@ -132,6 +148,7 @@ func end_washing() -> void:
 
 
 	wasching_animation_player.play("RESET")
+	audio_stream_player_2d.stop()
 	indicator_texture_rect.visible = false
 	foreground_open.visible = true
 	foreground_closed.visible = false

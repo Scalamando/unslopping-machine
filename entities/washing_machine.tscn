@@ -264,4 +264,7 @@ one_shot = true
 unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_34huu")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1453423974]
+unique_name_in_owner = true
+
 [connection signal="input_event" from="Settings" to="." method="_on_settings_input_event"]
