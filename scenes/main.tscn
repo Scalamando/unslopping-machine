@@ -1,40 +1,28 @@
 [gd_scene format=3 uid="uid://cw70m8ycq204t"]
 
+[ext_resource type="Script" uid="uid://u7k6scer6xem" path="res://scenes/LevelManager.gd" id="1_muem4"]
 [ext_resource type="Script" uid="uid://bedr0dcnjakxq" path="res://scenes/main.gd" id="1_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://dnhqo1hwn6jpe" path="res://scenes/tresen.tscn" id="2_eb6dy"]
+[ext_resource type="Script" uid="uid://b5ioyvhc456j2" path="res://data/LevelRes.gd" id="2_jkv2x"]
 [ext_resource type="Texture2D" uid="uid://cwu0qw0aed8jw" path="res://assets/background.png" id="2_muem4"]
 [ext_resource type="PackedScene" uid="uid://cgrnbjcgn2fme" path="res://entities/finished_basket.tscn" id="3_a8y0u"]
+[ext_resource type="Resource" uid="uid://brrju62wo45jr" path="res://data/levels/level_1.tres" id="3_jbj1t"]
 [ext_resource type="Script" uid="uid://dmbn5b0p26ns5" path="res://scenes/camera_controller.gd" id="3_jyhfs"]
+[ext_resource type="Resource" uid="uid://cxnt6wmq76r7c" path="res://data/levels/level_2.tres" id="4_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://b5f15rlxpihuc" path="res://entities/basket.tscn" id="5_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://v0gnwt1i2wge" path="res://entities/washing_machine.tscn" id="6_tefeu"]
 [ext_resource type="Script" uid="uid://c0ierpals2ss6" path="res://entities/customer_manager.gd" id="7_choun"]
 [ext_resource type="PackedScene" uid="uid://brnmfwif8cssh" path="res://entities/cloth.tscn" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://upi0337cb7xs" path="res://ui/tresen_cloth_inspection.tscn" id="8_eb6dy"]
-[ext_resource type="Script" uid="uid://bqcwvesmpnf82" path="res://data/CustomerProfile.gd" id="8_ya4ey"]
-[ext_resource type="Resource" uid="uid://d2vmdjye85vqo" path="res://data/cloths/shirt.tres" id="9_eb6dy"]
-[ext_resource type="Texture2D" uid="uid://b1swlxy6kh0e3" path="res://assets/persons/cara.png" id="9_jbj1t"]
-[ext_resource type="Texture2D" uid="uid://h4pmrib2o5ns" path="res://assets/persons/pia.png" id="10_muem4"]
 [ext_resource type="Script" uid="uid://bi8xl0g3tlsk1" path="res://scenes/money_UI_controller.gd" id="10_trceg"]
 [ext_resource type="PackedScene" uid="uid://bdbknn06inx1a" path="res://ui/customer_queue.tscn" id="11_trceg"]
 [ext_resource type="PackedScene" uid="uid://cwsibguufdebd" path="res://ui/wasch_maschine_settings.tscn" id="13_trceg"]
 
-[sub_resource type="Resource" id="Resource_cfsa3"]
-script = ExtResource("8_ya4ey")
-name = "Cara"
-texture = ExtResource("9_jbj1t")
-clothing = ExtResource("9_eb6dy")
-metadata/_custom_type_script = "uid://bqcwvesmpnf82"
-
-[sub_resource type="Resource" id="Resource_mg1pm"]
-script = ExtResource("8_ya4ey")
-name = "Pia"
-texture = ExtResource("10_muem4")
-clothing = ExtResource("9_eb6dy")
-timeStamp = 5
-metadata/_custom_type_script = "uid://bqcwvesmpnf82"
-
-[node name="Node2D" type="Node2D" unique_id=715033021]
-script = ExtResource("1_tbgi4")
+[node name="Level" type="Node2D" unique_id=715033021 node_paths=PackedStringArray("customer_manager", "Camera")]
+script = ExtResource("1_muem4")
+levels = Array[ExtResource("2_jkv2x")]([ExtResource("3_jbj1t"), ExtResource("4_jbj1t")])
+customer_manager = NodePath("CustomerManager")
+Camera = NodePath("Camera2D")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1997451519]
 position = Vector2(-524, -0.99999976)
@@ -133,7 +121,6 @@ scale = Vector2(1, 0.98702973)
 unique_name_in_owner = true
 position = Vector2(-1083, 147)
 script = ExtResource("7_choun")
-customer_array = Array[ExtResource("8_ya4ey")]([SubResource("Resource_cfsa3"), SubResource("Resource_mg1pm")])
 cloth_scene = ExtResource("7_o6xl0")
 customer_offset = Vector2(-350, 0)
 
@@ -203,6 +190,10 @@ grow_vertical = 2
 [node name="WaschMaschineSettings" parent="Camera2D" unique_id=1979839577 instance=ExtResource("13_trceg")]
 visible = false
 
+[node name="DebugFeatures" type="Node" parent="." unique_id=667250662]
+script = ExtResource("1_tbgi4")
+
 [connection signal="finished_clothing" from="Reception/FinishedBasket" to="CustomerManager" method="_on_finished_clothing"]
 [connection signal="customer_added" from="CustomerManager" to="Camera2D/MainUI/CustomerQueue" method="_on_customer_added"]
+[connection signal="customer_queue_finshed" from="CustomerManager" to="." method="_on_cm_customer_queue_finshed"]
 [connection signal="customer_removed" from="CustomerManager" to="Camera2D/MainUI/CustomerQueue" method="_on_customer_removed"]

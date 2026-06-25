@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="LevelRes" format=3 uid="uid://cxnt6wmq76r7c"]
+
+[ext_resource type="Script" uid="uid://bqcwvesmpnf82" path="res://data/CustomerProfile.gd" id="1_bbs7n"]
+[ext_resource type="Resource" uid="uid://d2vmdjye85vqo" path="res://data/cloths/shirt.tres" id="2_8wi7h"]
+[ext_resource type="Script" uid="uid://b5ioyvhc456j2" path="res://data/LevelRes.gd" id="2_bbs7n"]
+[ext_resource type="Texture2D" uid="uid://h4pmrib2o5ns" path="res://assets/persons/pia.png" id="3_tewwg"]
+
+[sub_resource type="Resource" id="Resource_diofb"]
+script = ExtResource("1_bbs7n")
+texture = ExtResource("3_tewwg")
+clothing = ExtResource("2_8wi7h")
+metadata/_custom_type_script = "uid://bqcwvesmpnf82"
+
+[sub_resource type="Resource" id="Resource_8wi7h"]
+script = ExtResource("1_bbs7n")
+texture = ExtResource("3_tewwg")
+clothing = ExtResource("2_8wi7h")
+metadata/_custom_type_script = "uid://bqcwvesmpnf82"
+
+[resource]
+script = ExtResource("2_bbs7n")
+customer_array = Array[ExtResource("1_bbs7n")]([SubResource("Resource_diofb"), SubResource("Resource_8wi7h")])
+metadata/_custom_type_script = "uid://b5ioyvhc456j2"

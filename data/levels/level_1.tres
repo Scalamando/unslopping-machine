@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="LevelRes" format=3 uid="uid://brrju62wo45jr"]
+
+[ext_resource type="Script" uid="uid://bqcwvesmpnf82" path="res://data/CustomerProfile.gd" id="1_5gghx"]
+[ext_resource type="Resource" uid="uid://d2vmdjye85vqo" path="res://data/cloths/shirt.tres" id="2_8p1tc"]
+[ext_resource type="Texture2D" uid="uid://d1nad5cg2lgml" path="res://assets/persons/jay.png" id="4_3dfqs"]
+[ext_resource type="Script" uid="uid://b5ioyvhc456j2" path="res://data/LevelRes.gd" id="4_3u61q"]
+
+[sub_resource type="Resource" id="Resource_jbj1t"]
+script = ExtResource("1_5gghx")
+name = "Geralt"
+texture = ExtResource("4_3dfqs")
+clothing = ExtResource("2_8p1tc")
+metadata/_custom_type_script = "uid://bqcwvesmpnf82"
+
+[resource]
+script = ExtResource("4_3u61q")
+customer_array = Array[ExtResource("1_5gghx")]([SubResource("Resource_jbj1t")])
+metadata/_custom_type_script = "uid://b5ioyvhc456j2"
