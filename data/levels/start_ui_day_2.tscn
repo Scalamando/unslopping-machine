@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bmqipj5vrhbl6" path="res://ui/day_start_ui_controller.gd" id="1_20fbp"]
 [ext_resource type="Texture2D" uid="uid://h061wjtkfes2" path="res://assets/calender/calender_background.png" id="2_2t7cl"]
+[ext_resource type="Texture2D" uid="uid://bi2aw7axle7rs" path="res://assets/ui/ui_start.png" id="3_2t7cl"]
 [ext_resource type="Texture2D" uid="uid://dc7duqlogttjb" path="res://assets/calender/calender.png" id="3_yhon8"]
 [ext_resource type="Texture2D" uid="uid://c2y27ek13cl1u" path="res://assets/calender/2.png" id="4_oblxb"]
 
@@ -37,14 +38,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -99.5
-offset_top = 325.0
-offset_right = 99.5
-offset_bottom = 421.0
+offset_left = -144.99994
+offset_top = 326.0
+offset_right = 344.0
+offset_bottom = 525.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.6122209, 0.6122209)
 theme_override_font_sizes/font_size = 64
-text = "START"
+icon = ExtResource("3_2t7cl")
+flat = true
 
 [node name="Calender" type="TextureRect" parent="." unique_id=85064336]
 layout_mode = 0
