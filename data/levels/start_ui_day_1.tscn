@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://d1n5f8jbsgu3k" path="res://assets/calender/1.png" id="4_jymvk"]
 [ext_resource type="Texture2D" uid="uid://dagxv18fl4hk2" path="res://assets/calender/calender_letter.png" id="5_vgpiv"]
 [ext_resource type="Texture2D" uid="uid://bi2aw7axle7rs" path="res://assets/ui/ui_start.png" id="6_g8rgs"]
+[ext_resource type="Script" uid="uid://br5qrpbed4q2k" path="res://ui/highlightable_controller.gd" id="6_ulwah"]
 
 [node name="DayStartUI" type="Control" unique_id=609662604]
 layout_mode = 3
@@ -23,22 +24,28 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -960.0
-offset_top = -540.0
-offset_right = 842.5513
-offset_bottom = 473.93506
+offset_left = -1127.1111
+offset_top = -634.0
+offset_right = 1127.1111
+offset_bottom = 634.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1.07, 1.07)
 texture = ExtResource("2_g8rgs")
 expand_mode = 2
 
 [node name="Calender" type="TextureRect" parent="." unique_id=1049396779]
-layout_mode = 0
-offset_left = 271.0
-offset_top = 155.99998
-offset_right = 749.0282
-offset_bottom = 825.8927
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -518.0
+offset_top = -344.0
+offset_right = -39.97174
+offset_bottom = 325.8927
+grow_horizontal = 2
+grow_vertical = 2
 rotation = -0.07639296
 texture = ExtResource("3_ulwah")
 expand_mode = 1
@@ -61,30 +68,54 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="Letter" type="TextureRect" parent="." unique_id=1161712861]
-layout_mode = 0
-offset_left = 793.0
-offset_top = 158.0
-offset_right = 2035.0
-offset_bottom = 1895.0
-scale = Vector2(0.4810789, 0.48107886)
-texture = ExtResource("5_vgpiv")
-
-[node name="Button" type="Button" parent="Letter" unique_id=68691776]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -190.7172
-offset_top = 495.10168
-offset_right = 168.89117
-offset_bottom = 657.6189
+offset_left = -62.0
+offset_top = -417.0
+offset_right = 1180.0
+offset_bottom = 1320.0
 grow_horizontal = 2
 grow_vertical = 2
-rotation = 0.0825959
+scale = Vector2(0.4810789, 0.48107886)
+texture = ExtResource("5_vgpiv")
+
+[node name="Highlightable" type="Control" parent="Letter" unique_id=552699433]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.99832
+offset_top = 470.15784
+offset_right = 243.72302
+offset_bottom = 665.552
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.11797405
+script = ExtResource("6_ulwah")
+metadata/_custom_type_script = "uid://br5qrpbed4q2k"
+
+[node name="Button" type="Button" parent="Letter/Highlightable" unique_id=68691776]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -247.36066
+offset_top = -97.69708
+offset_right = 241.63934
+offset_bottom = 101.30293
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
 theme_override_font_sizes/font_size = 64
 icon = ExtResource("6_g8rgs")
 flat = true
 
-[connection signal="pressed" from="Letter/Button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Letter/Highlightable/Button" to="." method="_on_start_button_pressed"]

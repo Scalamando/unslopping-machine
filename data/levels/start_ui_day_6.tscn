@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bi2aw7axle7rs" path="res://assets/ui/ui_start.png" id="3_3pwmc"]
 [ext_resource type="Texture2D" uid="uid://dc7duqlogttjb" path="res://assets/calender/calender.png" id="3_ken7v"]
 [ext_resource type="Texture2D" uid="uid://du1pcett4emga" path="res://assets/calender/6.png" id="4_iir1a"]
+[ext_resource type="Script" uid="uid://br5qrpbed4q2k" path="res://ui/highlightable_controller.gd" id="5_3pwmc"]
 
 [node name="DayStartUI" type="Control" unique_id=609662604]
 layout_mode = 3
@@ -15,46 +16,35 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_aenst")
 
-[node name="Background" type="TextureRect" parent="." unique_id=1688799005]
+[node name="Background" type="TextureRect" parent="." unique_id=989203901]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -960.0
-offset_top = -540.0
-offset_right = 960.0
-offset_bottom = 540.0
+offset_left = -1150.2222
+offset_top = -647.0
+offset_right = 1150.2222
+offset_bottom = 647.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_iir1a")
 expand_mode = 2
 
-[node name="StartButton" type="Button" parent="." unique_id=68691776]
+[node name="Calender" type="TextureRect" parent="." unique_id=85064336]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -145.0
-offset_top = 324.0
-offset_right = 344.0
-offset_bottom = 523.0
+offset_left = -267.0
+offset_top = -467.0
+offset_right = 380.0
+offset_bottom = 439.68408
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.612, 0.612)
-theme_override_font_sizes/font_size = 64
-icon = ExtResource("3_3pwmc")
-flat = true
-
-[node name="Calender" type="TextureRect" parent="." unique_id=85064336]
-layout_mode = 0
-offset_left = 694.0
-offset_top = 73.0
-offset_right = 1341.0
-offset_bottom = 979.6841
 texture = ExtResource("3_ken7v")
 expand_mode = 1
 stretch_mode = 5
@@ -74,4 +64,40 @@ texture = ExtResource("4_iir1a")
 expand_mode = 1
 stretch_mode = 5
 
-[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[node name="Highlightable" type="Control" parent="." unique_id=1112382176]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -145.0
+offset_top = 299.0
+offset_right = 349.7213
+offset_bottom = 494.39417
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.016752541
+scale = Vector2(0.635961, 0.635961)
+script = ExtResource("5_3pwmc")
+metadata/_custom_type_script = "uid://br5qrpbed4q2k"
+
+[node name="Button" type="Button" parent="Highlightable" unique_id=1253563200]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -247.36066
+offset_top = -97.69708
+offset_right = 241.63934
+offset_bottom = 101.30293
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 64
+icon = ExtResource("3_3pwmc")
+flat = true
+
+[connection signal="pressed" from="Highlightable/Button" to="." method="_on_start_button_pressed"]
