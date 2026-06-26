@@ -5,10 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://c34tum3s1oadm" path="res://assets/cloths/folded/folded_black.png" id="3_mngn8"]
 [ext_resource type="Texture2D" uid="uid://bc8hmmdljaj8p" path="res://assets/cloths/dirty/dirty_black.png" id="4_cbp6l"]
 [ext_resource type="Texture2D" uid="uid://dvdva4kve28n8" path="res://assets/cloths/ripped/ripped_black.png" id="5_up81k"]
-[ext_resource type="Texture2D" uid="uid://di4pmp8aqmfiy" path="res://assets/cloths/ice_overlay.png" id="6_ly1s1"]
 [ext_resource type="Texture2D" uid="uid://cpw4mb22mjkrk" path="res://assets/cloths/shirt/shirt_ripped.png" id="7_xmtxl"]
 [ext_resource type="Texture2D" uid="uid://c2bp1dwsrseeq" path="res://assets/cloths/shirt/shirt_shrunk.png" id="8_dwno0"]
-[ext_resource type="Texture2D" uid="uid://cvkp4na34u670" path="res://assets/cloths/shirt/shirt_soaked.png" id="9_wa7rf"]
 [ext_resource type="Texture2D" uid="uid://u5wcu2dib3dy" path="res://assets/cloths/spreadOut/top/top_black.png" id="10_o058a"]
 [ext_resource type="Script" uid="uid://blgnuyj5fjgf1" path="res://data/WashingInstructions.gd" id="11_2lo88"]
 
@@ -25,10 +23,8 @@ wash_instructions = SubResource("Resource_bbsy2")
 value = 40
 texture_dirty = ExtResource("4_cbp6l")
 texture_clean = ExtResource("3_mngn8")
-texture_soaked = ExtResource("9_wa7rf")
 texture_ripped = ExtResource("7_xmtxl")
 texture_shrunk = ExtResource("8_dwno0")
-texture_iced = ExtResource("6_ly1s1")
 texture_garn = ExtResource("5_up81k")
 texture_spread_out = ExtResource("10_o058a")
 spread_out_scene = ExtResource("2_ly1s1")

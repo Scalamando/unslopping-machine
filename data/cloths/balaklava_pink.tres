@@ -5,10 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://cn8igpcl2wvam" path="res://assets/cloths/folded/folded_pink.png" id="3_b16gp"]
 [ext_resource type="Texture2D" uid="uid://n8k3dl111otj" path="res://assets/cloths/dirty/dirty_pink.png" id="4_gilyr"]
 [ext_resource type="Texture2D" uid="uid://dlci8mea53cha" path="res://assets/cloths/ripped/ripped_pink.png" id="5_rsxx1"]
-[ext_resource type="Texture2D" uid="uid://di4pmp8aqmfiy" path="res://assets/cloths/ice_overlay.png" id="6_mfmuk"]
 [ext_resource type="Texture2D" uid="uid://cpw4mb22mjkrk" path="res://assets/cloths/shirt/shirt_ripped.png" id="7_a1mdo"]
 [ext_resource type="Texture2D" uid="uid://c2bp1dwsrseeq" path="res://assets/cloths/shirt/shirt_shrunk.png" id="8_qeeny"]
-[ext_resource type="Texture2D" uid="uid://cvkp4na34u670" path="res://assets/cloths/shirt/shirt_soaked.png" id="9_c7nkn"]
 [ext_resource type="Texture2D" uid="uid://wnr0h0oby8yp" path="res://assets/cloths/spreadOut/balaklava/balaklava_pink.png" id="10_3v7gy"]
 [ext_resource type="Resource" uid="uid://3mxq060bpd3l" path="res://data/WashingInstructions/Fast-Medium-CounterClock.tres" id="11_1hegc"]
 
@@ -18,10 +16,8 @@ wash_instructions = ExtResource("11_1hegc")
 value = 120
 texture_dirty = ExtResource("4_gilyr")
 texture_clean = ExtResource("3_b16gp")
-texture_soaked = ExtResource("9_c7nkn")
 texture_ripped = ExtResource("7_a1mdo")
 texture_shrunk = ExtResource("8_qeeny")
-texture_iced = ExtResource("6_mfmuk")
 texture_garn = ExtResource("5_rsxx1")
 texture_spread_out = ExtResource("10_3v7gy")
 spread_out_scene = ExtResource("2_1hegc")

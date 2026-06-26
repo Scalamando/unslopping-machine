@@ -5,10 +5,10 @@
         "visibility": 0.0
       },
       "resource_local_to_scene": {
-        "visibility": 1
+        "visibility": 1.0
       },
       "resource_name": {
-        "visibility": 0
+        "visibility": 0.0
       }
     },
     "res://data/cloths/scenes/": {
@@ -46,7 +46,8 @@
     }
   },
   "recent_paths": [
-    "res://data/cloths::wash_instructions/"
+    "res://data/cloths::wash_instructions/",
+    "res://data/cloths/"
   ],
   "table_functions": {
     "filter": [
