@@ -1,0 +1,100 @@
+[gd_resource type="Resource" script_class="LevelRes" format=3 uid="uid://chlim43d8gy3p"]
+
+[ext_resource type="Script" uid="uid://bqcwvesmpnf82" path="res://data/CustomerProfile.gd" id="1_7ervf"]
+[ext_resource type="PackedScene" uid="uid://drd20t3yb8mmu" path="res://data/levels/day_start_ui_HARD.tscn" id="2_2rm06"]
+[ext_resource type="Script" uid="uid://b5ioyvhc456j2" path="res://data/LevelRes.gd" id="2_4ax7r"]
+[ext_resource type="Resource" uid="uid://qv08fra4ru3g" path="res://data/cloths/shorts_green.tres" id="2_vu3y2"]
+[ext_resource type="Texture2D" uid="uid://b1bm4qdbuy3wc" path="res://assets/persons/mimi.png" id="3_f6x3p"]
+[ext_resource type="Resource" uid="uid://dscb3lotcjc0b" path="res://data/cloths/shirt_green.tres" id="4_hudow"]
+[ext_resource type="Texture2D" uid="uid://clyy15r8b44g0" path="res://assets/persons/bill.png" id="5_5icim"]
+[ext_resource type="Resource" uid="uid://desc3u2nt5hqh" path="res://data/cloths/balaklava_grey.tres" id="6_20cy2"]
+[ext_resource type="Texture2D" uid="uid://bxwomxb0u5rd5" path="res://assets/persons/lynn.png" id="7_20cy2"]
+[ext_resource type="Resource" uid="uid://b75ppsld4qn6b" path="res://data/cloths/jacket_pink.tres" id="9_5icim"]
+[ext_resource type="Resource" uid="uid://djao23gc0rhrh" path="res://data/cloths/top_black.tres" id="9_exml5"]
+[ext_resource type="Texture2D" uid="uid://h4pmrib2o5ns" path="res://assets/persons/pia.png" id="10_bcvrt"]
+[ext_resource type="Resource" uid="uid://ch8tdhwhjwfos" path="res://data/cloths/tshirt_yellow.tres" id="12_f6x3p"]
+[ext_resource type="Resource" uid="uid://0a1eipy8e1fm" path="res://data/cloths/balaklava_pink.tres" id="13_5icim"]
+[ext_resource type="Resource" uid="uid://c4gts8tceuq1v" path="res://data/cloths/top_green.tres" id="14_q5xep"]
+[ext_resource type="Texture2D" uid="uid://d1nad5cg2lgml" path="res://assets/persons/jay.png" id="15_exml5"]
+
+[sub_resource type="Resource" id="Resource_rm37e"]
+script = ExtResource("1_7ervf")
+texture = ExtResource("3_f6x3p")
+clothing = ExtResource("2_vu3y2")
+timeStamp = 6
+metadata/_custom_type_script = "uid://bqcwvesmpnf82"
+
+[sub_resource type="Resource" id="Resource_fnstl"]
+script = ExtResource("1_7ervf")
+texture = ExtResource("5_5icim")
+clothing = ExtResource("4_hudow")
+timeStamp = 5
+metadata/_custom_type_script = "uid://bqcwvesmpnf82"
+
+[sub_resource type="Resource" id="Resource_pirpb"]
+script = ExtResource("1_7ervf")
+texture = ExtResource("7_20cy2")
+clothing = ExtResource("6_20cy2")
+timeStamp = 20
+metadata/_custom_type_script = "uid://bqcwvesmpnf82"
+
+[sub_resource type="Resource" id="Resource_7m7mg"]
+script = ExtResource("1_7ervf")
+texture = ExtResource("5_5icim")
+clothing = ExtResource("4_hudow")
+metadata/_custom_type_script = "uid://bqcwvesmpnf82"
+
+[sub_resource type="Resource" id="Resource_eearc"]
+script = ExtResource("1_7ervf")
+texture = ExtResource("3_f6x3p")
+clothing = ExtResource("9_exml5")
+timeStamp = 6
+metadata/_custom_type_script = "uid://bqcwvesmpnf82"
+
+[sub_resource type="Resource" id="Resource_dwyig"]
+script = ExtResource("1_7ervf")
+texture = ExtResource("7_20cy2")
+clothing = ExtResource("9_5icim")
+timeStamp = 10
+metadata/_custom_type_script = "uid://bqcwvesmpnf82"
+
+[sub_resource type="Resource" id="Resource_mdcma"]
+script = ExtResource("1_7ervf")
+texture = ExtResource("15_exml5")
+clothing = ExtResource("12_f6x3p")
+timeStamp = 25
+metadata/_custom_type_script = "uid://bqcwvesmpnf82"
+
+[sub_resource type="Resource" id="Resource_pypj1"]
+script = ExtResource("1_7ervf")
+texture = ExtResource("10_bcvrt")
+clothing = ExtResource("6_20cy2")
+timeStamp = 8
+metadata/_custom_type_script = "uid://bqcwvesmpnf82"
+
+[sub_resource type="Resource" id="Resource_vu3y2"]
+script = ExtResource("1_7ervf")
+texture = ExtResource("15_exml5")
+clothing = ExtResource("4_hudow")
+timeStamp = 2
+metadata/_custom_type_script = "uid://bqcwvesmpnf82"
+
+[sub_resource type="Resource" id="Resource_f6x3p"]
+script = ExtResource("1_7ervf")
+texture = ExtResource("5_5icim")
+clothing = ExtResource("13_5icim")
+timeStamp = 8
+metadata/_custom_type_script = "uid://bqcwvesmpnf82"
+
+[sub_resource type="Resource" id="Resource_hudow"]
+script = ExtResource("1_7ervf")
+texture = ExtResource("10_bcvrt")
+clothing = ExtResource("14_q5xep")
+metadata/_custom_type_script = "uid://bqcwvesmpnf82"
+
+[resource]
+script = ExtResource("2_4ax7r")
+day_start_scene = ExtResource("2_2rm06")
+machine_amount = 4
+customer_array = Array[ExtResource("1_7ervf")]([SubResource("Resource_rm37e"), SubResource("Resource_fnstl"), SubResource("Resource_pirpb"), SubResource("Resource_7m7mg"), SubResource("Resource_eearc"), SubResource("Resource_dwyig"), SubResource("Resource_mdcma"), SubResource("Resource_pypj1"), SubResource("Resource_vu3y2"), SubResource("Resource_f6x3p"), SubResource("Resource_hudow")])
+metadata/_custom_type_script = "uid://b5ioyvhc456j2"
