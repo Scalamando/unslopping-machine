@@ -25,7 +25,7 @@ func load_level() -> void:
 	UiManager.hide_level_end_ui()
 
 	# load data
-	var level : LevelRes = levels[level_idx - 1]
+	var level : LevelRes = levels[level_idx - 1] # TODO can be out of bounds
 	customer_manager.customer_array = level.customer_array
 	FinanceManager.reset_money()
 
@@ -73,4 +73,8 @@ func _on_cloth_timedout(_cloth: Cloth) -> void:
 
 func enable_utils(utils : Array[Area2D], amount : int) -> void:
 	for i in len(utils):
-		utils[i].visible = i <= amount - 1
+		var enabled : bool = i <= amount - 1
+		utils[i].visible = enabled
+		utils[i].monitoring = enabled
+		utils[i].monitorable = enabled
+		
