@@ -11,6 +11,9 @@ extends Node2D
 
 @onready var music_player: AudioStreamPlayer = %MusicPlayer
 
+@export_group("Win Conditions")
+@export var threshold_win : int = 1000
+
 var level_idx : int = 1 # start with level 1
 
 # stats
@@ -54,7 +57,18 @@ func load_level() -> void:
 
 func next_level() -> void:
 	level_idx += 1
-	load_level()
+	if level_idx >= len(levels):
+		if stats.money_made_total < threshold_win:
+			UiManager.show_endscreen_ui("lose")
+		else:
+			for machine : WashingMashine in get_tree().get_nodes_in_group("WaschingMachine"):
+				if machine.opened_flusensieb:
+					UiManager.show_endscreen_ui("win")
+					return
+				else:
+					UiManager.show_endscreen_ui("flusensieb")
+	else:
+		load_level()
 
 func end_current_level() -> void:
 	## delete all cloths

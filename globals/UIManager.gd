@@ -7,6 +7,7 @@ var tresen_ui : TresenClothInspectionUIController
 var washing_maschine_ui : WashingMachineSettingsUI
 
 var level_end_ui : LevelEndUI
+var end_ui : EndUI
 
 func show_inspection_tresen(cloth : Clothing) -> void:
 	tresen_ui.init(cloth)
@@ -30,3 +31,8 @@ func show_level_end_ui(stats: Stats) -> void:
 
 func hide_level_end_ui() -> void:
 	level_end_ui.visible = false
+
+func show_endscreen_ui(type: String) -> void:
+	assert(type in ["win", "flusensieb", "lose"])
+	end_ui.init(type)
+	end_ui.visible = true

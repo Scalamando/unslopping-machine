@@ -178,7 +178,7 @@ _data = {
 &"new_animation": SubResource("Animation_ausky")
 }
 
-[node name="WaschingMachine" type="Area2D" unique_id=875701637]
+[node name="WaschingMachine" type="Area2D" unique_id=875701637 groups=["WaschingMachine"]]
 script = ExtResource("1_cltil")
 wasching_time = 8.0
 

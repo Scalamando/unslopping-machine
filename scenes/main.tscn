@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://cwsibguufdebd" path="res://ui/wasch_maschine_settings.tscn" id="13_trceg"]
 [ext_resource type="Texture2D" uid="uid://xtokt5p37ikh" path="res://assets/ui/ui_money.png" id="15_gqmmt"]
 [ext_resource type="AudioStream" uid="uid://dt3ipk7n6xniu" path="res://assets/audio/Doorbell.mp3" id="15_pm3ni"]
+[ext_resource type="PackedScene" uid="uid://cvlsgfgjkn3ij" path="res://data/levels/end_ui_postcard.tscn" id="17_0ld40"]
 [ext_resource type="PackedScene" uid="uid://dxtbtqp8cydst" path="res://ui/level_end_ui.tscn" id="17_dp3eg"]
 [ext_resource type="Texture2D" uid="uid://denil43iiwgb6" path="res://assets/instructions.PNG" id="21_yc10j"]
 
@@ -267,6 +268,9 @@ shape = SubResource("RectangleShape2D_wxdh2")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Camera2D/Area2D" unique_id=400268959]
 position = Vector2(927, -1)
 shape = SubResource("RectangleShape2D_wxdh2")
+
+[node name="EndUI" parent="Camera2D" unique_id=609662604 instance=ExtResource("17_0ld40")]
+visible = false
 
 [node name="DebugFeatures" type="Node" parent="." unique_id=667250662]
 script = ExtResource("1_tbgi4")
