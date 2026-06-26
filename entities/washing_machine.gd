@@ -30,12 +30,18 @@ const heat_off = preload("uid://c3pir06gj8apv")
 @onready var ui_start_red: Sprite2D = %UiStartRed
 @onready var ui_start_yellow: Sprite2D = %UiStartYellow
 
+@onready var ui_flusensieb: Sprite2D = %UiFlusensieb
+@onready var flusensieb_cover: Sprite2D = %FlusensiebCover
+@onready var flusensieb_animation_player: AnimationPlayer = %FlusensiebAnimationPlayer
+
 const WASHING_MACHINE_FAST = preload("res://assets/audio/washing_machine/WashingMachine_Fast.mp3")
 const WASHING_MACHINE_MEDIUM = preload("res://assets/audio/washing_machine/WashingMachine_Medium.mp3")
 const WASHING_MACHINE_SLOW = preload("res://assets/audio/washing_machine/WashingMachine_Slow.mp3")
 
 const DIR_CLOCKWISE = preload("uid://dfiy3v5mak80d")
 const DIR_COUNTERCLOCKWISE = preload("uid://yr8w6tf37am5")
+
+var opened_flusensieb := false
 
 var running: bool :
 	get:
@@ -167,3 +173,10 @@ func end_washing() -> void:
 	finished_wash.emit()
 
 #TODO Flusensieb
+
+func _on_flusensieb_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
+	if event is InputEventMouse:
+		if event.is_action_pressed("click"):
+			if not flusensieb_animation_player.is_playing():
+				flusensieb_animation_player.play("flusensieb_clear")
+			opened_flusensieb = true

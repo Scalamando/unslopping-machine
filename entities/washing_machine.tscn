@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://t2wjeexurs3c" path="res://assets/washing_machine_normal/Speed_Handle.png" id="11_l7nsl"]
 [ext_resource type="Texture2D" uid="uid://yr8w6tf37am5" path="res://assets/washing_machine_normal/ui_turnright.png" id="12_euh64"]
 [ext_resource type="Texture2D" uid="uid://bj2f6c78jjfc7" path="res://assets/washing_machine_normal/Heat_With.png" id="12_l7nsl"]
+[ext_resource type="Texture2D" uid="uid://bkr3rhv6b6xv3" path="res://assets/washing-indicator.png" id="12_lksf2"]
 [ext_resource type="Texture2D" uid="uid://dch5yhcry8ans" path="res://assets/washing_machine_normal/ui_flusensieb.png" id="12_whu1w"]
 [ext_resource type="Texture2D" uid="uid://kgmbcs0bslvj" path="res://assets/washing_machine_normal/ui_speedhandle_pointer.png" id="16_l7nsl"]
 
@@ -67,6 +68,67 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_txmul"]
 size = Vector2(42.5, 32)
+
+[sub_resource type="Animation" id="Animation_lksf2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%UiFlusensieb:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%FlusensiebCover:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_dq6fm"]
+resource_name = "flusensieb_clear"
+length = 2.4000000000000004
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%UiFlusensieb:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.04689488, 2.183655, 2.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%FlusensiebCover:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.75846946, 0.79769766, 1.8535904, 1.8666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lsoe6"]
+_data = {
+&"RESET": SubResource("Animation_lksf2"),
+&"flusensieb_clear": SubResource("Animation_dq6fm")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0j7jy"]
 size = Vector2(203, 97)
@@ -184,17 +246,31 @@ scale = Vector2(0.3973009, 0.3973009)
 texture = ExtResource("11_l7nsl")
 
 [node name="Flusensieb" type="Area2D" parent="." unique_id=674456099]
+unique_name_in_owner = true
 position = Vector2(-71, 123)
 
 [node name="UiFlusensieb" type="Sprite2D" parent="Flusensieb" unique_id=918884394]
+unique_name_in_owner = true
 visible = false
 position = Vector2(-11.328758, -0.8750055)
 scale = Vector2(0.46232864, 0.4623286)
 texture = ExtResource("12_whu1w")
 
+[node name="FlusensiebCover" type="Sprite2D" parent="Flusensieb" unique_id=648549851]
+unique_name_in_owner = true
+visible = false
+modulate = Color(0.1, 0.1, 0.1, 1)
+position = Vector2(0, -2)
+scale = Vector2(0.171875, 0.171875)
+texture = ExtResource("12_lksf2")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Flusensieb" unique_id=783310974]
-position = Vector2(0.75, -1)
+position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_txmul")
+
+[node name="FlusensiebAnimationPlayer" type="AnimationPlayer" parent="Flusensieb" unique_id=1318357776]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_lsoe6")
 
 [node name="Settings" type="Area2D" parent="." unique_id=58356006]
 
@@ -273,4 +349,5 @@ libraries/ = SubResource("AnimationLibrary_34huu")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1453423974]
 unique_name_in_owner = true
 
+[connection signal="input_event" from="Flusensieb" to="." method="_on_flusensieb_input_event"]
 [connection signal="input_event" from="Settings" to="." method="_on_settings_input_event"]
