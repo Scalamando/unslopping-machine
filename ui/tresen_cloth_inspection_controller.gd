@@ -61,7 +61,8 @@ func show_instructions() -> void:
 		WaschingInstruction.Temperature.hot:
 			temp_med.visible = true
 			temp_high.visible = true
-
+	
+	dir_tex_rect.visible = true
 	match display_cloth.wash_instructions.direction:
 		WaschingInstruction.Direction.clockwise:
 			dir_tex_rect.texture = dir_clockwise
