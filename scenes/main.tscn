@@ -174,6 +174,9 @@ offset_top = -2.0
 offset_right = 40.0
 offset_bottom = 38.0
 
+[node name="WaschMaschineSettings" parent="Camera2D" unique_id=1979839577 instance=ExtResource("13_trceg")]
+visible = false
+
 [node name="TresenClothInspection" parent="Camera2D" unique_id=2079798534 instance=ExtResource("8_eb6dy")]
 visible = false
 anchors_preset = 8
@@ -187,9 +190,6 @@ offset_right = 960.0
 offset_bottom = 540.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="WaschMaschineSettings" parent="Camera2D" unique_id=1979839577 instance=ExtResource("13_trceg")]
-visible = false
 
 [node name="LevelEndUI" parent="Camera2D" unique_id=572177404 instance=ExtResource("17_dp3eg")]
 visible = false
