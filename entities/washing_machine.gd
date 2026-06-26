@@ -119,7 +119,7 @@ func start_washing() -> bool:
 	if has_unwashable_cloths:
 		ui_start_yellow.visible = true
 		return false
-	
+
 	ui_start_yellow.visible = false
 
 	for c : Cloth in cloths:

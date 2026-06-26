@@ -10,7 +10,7 @@ radius = 99.0202
 [sub_resource type="Resource" id="Resource_3cvi6"]
 script = ExtResource("2_4erq4")
 
-[node name="Cloth" type="Area2D" unique_id=406249680]
+[node name="Cloth" type="Area2D" unique_id=406249680 groups=["Cloth"]]
 script = ExtResource("1_4erq4")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1168166370]

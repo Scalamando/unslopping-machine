@@ -20,14 +20,6 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rcsmu"]
 size = Vector2(204, 297)
 
-[sub_resource type="Resource" id="Resource_10535"]
-script = ExtResource("3_1vf26")
-metadata/_custom_type_script = "uid://b5wqxyc42r5u"
-
-[sub_resource type="Resource" id="Resource_32ftm"]
-script = ExtResource("3_fckx4")
-metadata/_custom_type_script = "uid://djdmnemxrx7bg"
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_ausky"]
 animations = [{
 "frames": [{
@@ -78,6 +70,14 @@ size = Vector2(42.5, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0j7jy"]
 size = Vector2(203, 146)
 
+[sub_resource type="Resource" id="Resource_10535"]
+script = ExtResource("3_1vf26")
+metadata/_custom_type_script = "uid://b5wqxyc42r5u"
+
+[sub_resource type="Resource" id="Resource_32ftm"]
+script = ExtResource("3_fckx4")
+metadata/_custom_type_script = "uid://djdmnemxrx7bg"
+
 [sub_resource type="Animation" id="Animation_7cal4"]
 length = 0.001
 tracks/0/type = "value"
@@ -122,21 +122,6 @@ script = ExtResource("1_cltil")
 position = Vector2(-1, -1.5)
 shape = SubResource("RectangleShape2D_rcsmu")
 
-[node name="DropZone" type="Node2D" parent="." unique_id=30746829 node_paths=PackedStringArray("attach_spot")]
-script = ExtResource("2_se0gy")
-attach_spot = NodePath("../ClothContainer")
-drop_behavior = SubResource("Resource_10535")
-accepted_draggable_types = Array[ExtResource("3_fckx4")]([SubResource("Resource_32ftm")])
-metadata/_custom_type_script = "uid://nj1hdjl1vob2"
-
-[node name="Slot3" type="Marker2D" parent="DropZone" unique_id=890196539]
-
-[node name="Slot2" type="Marker2D" parent="DropZone" unique_id=5125084]
-position = Vector2(0, 30)
-
-[node name="Slot1" type="Marker2D" parent="DropZone" unique_id=936664904]
-position = Vector2(1, 62)
-
 [node name="Background" type="AnimatedSprite2D" parent="." unique_id=987259098]
 unique_name_in_owner = true
 position = Vector2(-3, -6)
@@ -145,7 +130,7 @@ sprite_frames = SubResource("SpriteFrames_ausky")
 
 [node name="ClothContainer" type="Node2D" parent="." unique_id=663207046]
 unique_name_in_owner = true
-position = Vector2(0, 25)
+position = Vector2(-5.51, -12.38)
 scale = Vector2(0.25, 0.25)
 
 [node name="ForegroundClosed" type="AnimatedSprite2D" parent="." unique_id=2095168351]
@@ -208,6 +193,22 @@ shape = SubResource("RectangleShape2D_txmul")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Settings" unique_id=1109773792]
 position = Vector2(-0.5, -74)
 shape = SubResource("RectangleShape2D_0j7jy")
+
+[node name="DropZone" type="Node2D" parent="." unique_id=30746829 node_paths=PackedStringArray("attach_spot")]
+script = ExtResource("2_se0gy")
+attach_spot = NodePath("../ClothContainer")
+drop_behavior = SubResource("Resource_10535")
+accepted_draggable_types = Array[ExtResource("3_fckx4")]([SubResource("Resource_32ftm")])
+metadata/_custom_type_script = "uid://nj1hdjl1vob2"
+
+[node name="Slot3" type="Marker2D" parent="DropZone" unique_id=890196539]
+position = Vector2(-5, -34)
+
+[node name="Slot2" type="Marker2D" parent="DropZone" unique_id=5125084]
+position = Vector2(-5, -13)
+
+[node name="Slot1" type="Marker2D" parent="DropZone" unique_id=936664904]
+position = Vector2(-5, 8)
 
 [node name="UI" type="Control" parent="." unique_id=892593718]
 layout_mode = 3

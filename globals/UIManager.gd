@@ -5,7 +5,8 @@ extends Node
 # these variables have to be set by the scripts themself
 var tresen_ui : TresenClothInspectionUIController
 var washing_maschine_ui : WashingMachineSettingsUI
-var active_ui_pop_up : Control
+
+var level_end_ui : LevelEndUI
 
 func show_inspection_tresen(cloth : Clothing) -> void:
 	tresen_ui.init(cloth)
@@ -20,3 +21,12 @@ func show_washing_mashine_settings(washing_machine : WashingMashine) -> void:
 
 func hide_washing_machine_settings() -> void:
 	washing_maschine_ui.visible = false
+
+func show_level_end_ui(stats: Stats) -> void:
+	washing_maschine_ui.visible = false
+	tresen_ui.visible = false
+	level_end_ui.init(stats)
+	level_end_ui.visible = true
+
+func hide_level_end_ui() -> void:
+	level_end_ui.visible = false

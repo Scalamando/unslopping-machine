@@ -12,17 +12,19 @@
 [ext_resource type="PackedScene" uid="uid://b5f15rlxpihuc" path="res://entities/basket.tscn" id="5_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://v0gnwt1i2wge" path="res://entities/washing_machine.tscn" id="6_tefeu"]
 [ext_resource type="Script" uid="uid://c0ierpals2ss6" path="res://entities/customer_manager.gd" id="7_choun"]
-[ext_resource type="PackedScene" uid="uid://brnmfwif8cssh" path="res://entities/cloth.tscn" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://upi0337cb7xs" path="res://ui/tresen_cloth_inspection.tscn" id="8_eb6dy"]
 [ext_resource type="Script" uid="uid://bi8xl0g3tlsk1" path="res://scenes/money_UI_controller.gd" id="10_trceg"]
 [ext_resource type="PackedScene" uid="uid://bdbknn06inx1a" path="res://ui/customer_queue.tscn" id="11_trceg"]
 [ext_resource type="PackedScene" uid="uid://cwsibguufdebd" path="res://ui/wasch_maschine_settings.tscn" id="13_trceg"]
+[ext_resource type="PackedScene" uid="uid://dxtbtqp8cydst" path="res://ui/level_end_ui.tscn" id="17_dp3eg"]
 
-[node name="Level" type="Node2D" unique_id=715033021 node_paths=PackedStringArray("customer_manager", "Camera")]
+[node name="LevelManager" type="Node2D" unique_id=715033021 node_paths=PackedStringArray("customer_manager", "Camera", "washing_machines", "baskets")]
 script = ExtResource("1_muem4")
 levels = Array[ExtResource("2_jkv2x")]([ExtResource("3_jbj1t"), ExtResource("4_jbj1t")])
 customer_manager = NodePath("CustomerManager")
 Camera = NodePath("Camera2D")
+washing_machines = [NodePath("WaschingRoom/WaschingMachine"), NodePath("WaschingRoom/WaschingMachine2")]
+baskets = [NodePath("WaschingRoom/Basket"), NodePath("WaschingRoom/Basket2"), NodePath("WaschingRoom/Basket3")]
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1997451519]
 position = Vector2(-524, -0.99999976)
@@ -121,7 +123,6 @@ scale = Vector2(1, 0.98702973)
 unique_name_in_owner = true
 position = Vector2(-1083, 147)
 script = ExtResource("7_choun")
-cloth_scene = ExtResource("7_o6xl0")
 customer_offset = Vector2(-350, 0)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1243545003]
@@ -190,10 +191,16 @@ grow_vertical = 2
 [node name="WaschMaschineSettings" parent="Camera2D" unique_id=1979839577 instance=ExtResource("13_trceg")]
 visible = false
 
+[node name="LevelEndUI" parent="Camera2D" unique_id=572177404 instance=ExtResource("17_dp3eg")]
+visible = false
+
 [node name="DebugFeatures" type="Node" parent="." unique_id=667250662]
 script = ExtResource("1_tbgi4")
 
+[connection signal="finished_clothing" from="Reception/FinishedBasket" to="." method="_on_cloth_finished"]
 [connection signal="finished_clothing" from="Reception/FinishedBasket" to="CustomerManager" method="_on_finished_clothing"]
 [connection signal="customer_added" from="CustomerManager" to="Camera2D/MainUI/CustomerQueue" method="_on_customer_added"]
 [connection signal="customer_queue_finshed" from="CustomerManager" to="." method="_on_cm_customer_queue_finshed"]
 [connection signal="customer_removed" from="CustomerManager" to="Camera2D/MainUI/CustomerQueue" method="_on_customer_removed"]
+[connection signal="customer_timed_out" from="Camera2D/MainUI/CustomerQueue" to="." method="_on_cloth_timedout"]
+[connection signal="start_next_level" from="Camera2D/LevelEndUI" to="." method="next_level"]

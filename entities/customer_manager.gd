@@ -2,7 +2,6 @@ class_name CustomerManager
 extends Node2D
 
 var customer_array : Array[CustomerProfile]
-@export var cloth_scene : PackedScene
 ## The time customers will wait for their clothes to be washed. Incurs a penalty if the time is up
 @export var customer_wait_time : int = 45
 ## The offset between customers, when multiple customers are present in the queue
@@ -34,14 +33,12 @@ signal customer_removed(customer: CustomerQueueItem)
 signal customer_queue_finshed()
 
 func _ready() -> void:
-	assert(cloth_scene != null)
-
 	self.child_entered_tree.connect(_on_customer_count_changes)
 	self.child_exiting_tree.connect(_on_customer_count_changes)
 
 func timed_customer_iteration() -> void:
 	assert(!customer_array.is_empty())
-	
+
 	customer_spawn_counter =  0
 
 	for customer : CustomerProfile in customer_array:
@@ -50,9 +47,8 @@ func timed_customer_iteration() -> void:
 
 		spawn_customer(customer)
 		customer_spawn_counter += 1
-	
+
 	await get_tree().create_timer(customer_wait_time).timeout ## wait for the last customer to finsh
-	customer_queue_finshed.emit()
 
 func spawn_customer(customer : CustomerProfile) -> void:
 	var customer_node : Customer = Customer.create(customer)
@@ -88,3 +84,7 @@ func _on_finished_clothing(cloth: Cloth) -> void:
 			FinanceManager.add_money(ceil(value))
 
 			customer_removed.emit(item)
+			customer_queue_array.erase(item)
+
+			if customer_spawn_counter == len(customer_array) and len(customer_queue_array) == 0:
+				customer_queue_finshed.emit()
