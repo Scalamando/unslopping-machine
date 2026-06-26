@@ -12,9 +12,30 @@ corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 corner_detail = 6
+shadow_color = Color(0.20784314, 0.23137255, 0.23921569, 0.38431373)
+shadow_size = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l4b52"]
 bg_color = Color(0.93582505, 0.19586846, 0.21012074, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+shadow_color = Color(0.20784314, 0.23137255, 0.23921569, 0.38431373)
+shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j87io"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.1, 0.1, 0.1, 0.3)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.22310299, 0.22310287, 0.22310287, 1)
 corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
@@ -73,6 +94,7 @@ offset_left = -46.0
 offset_top = 109.0
 offset_right = 44.0
 offset_bottom = 116.0
+theme_override_styles/background = SubResource("StyleBoxFlat_j87io")
 theme_override_styles/fill = SubResource("StyleBoxFlat_idkw1")
 value = 50.0
 rounded = true

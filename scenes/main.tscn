@@ -121,7 +121,7 @@ scale = Vector2(1, 0.98702973)
 
 [node name="CustomerManager" type="Node2D" parent="." unique_id=622872701]
 unique_name_in_owner = true
-position = Vector2(-1083, 147)
+position = Vector2(-1130, 146)
 script = ExtResource("7_choun")
 customer_offset = Vector2(-350, 0)
 
