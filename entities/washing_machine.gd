@@ -37,6 +37,7 @@ const heat_off = preload("uid://c3pir06gj8apv")
 const WASHING_MACHINE_FAST = preload("res://assets/audio/washing_machine/WashingMachine_Fast.mp3")
 const WASHING_MACHINE_MEDIUM = preload("res://assets/audio/washing_machine/WashingMachine_Medium.mp3")
 const WASHING_MACHINE_SLOW = preload("res://assets/audio/washing_machine/WashingMachine_Slow.mp3")
+const WASHING_DONE_BEEP = preload("res://assets/audio/washing_machine/Ready_Beep.mp3")
 
 const DIR_CLOCKWISE = preload("uid://dfiy3v5mak80d")
 const DIR_COUNTERCLOCKWISE = preload("uid://yr8w6tf37am5")
@@ -163,10 +164,13 @@ func end_washing() -> void:
 
 	# re-enable the dropzone
 	self.collision_layer = 1
-
-
+	
 	wasching_animation_player.play("RESET")
 	audio_stream_player_2d.stop()
+	
+	audio_stream_player_2d.stream = WASHING_DONE_BEEP
+	audio_stream_player_2d.play()
+	
 	ui_start_red.visible = false
 	foreground_open.visible = true
 	foreground_closed.visible = false

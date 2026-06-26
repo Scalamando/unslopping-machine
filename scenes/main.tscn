@@ -5,10 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://dnhqo1hwn6jpe" path="res://scenes/tresen.tscn" id="2_eb6dy"]
 [ext_resource type="Script" uid="uid://b5ioyvhc456j2" path="res://data/LevelRes.gd" id="2_jkv2x"]
 [ext_resource type="Texture2D" uid="uid://cwu0qw0aed8jw" path="res://assets/background.png" id="2_muem4"]
-[ext_resource type="Resource" uid="uid://d2yb83wj5lupc" path="res://data/levels/level_one_mashine.tres" id="3_0ld40"]
 [ext_resource type="PackedScene" uid="uid://cgrnbjcgn2fme" path="res://entities/finished_basket.tscn" id="3_a8y0u"]
 [ext_resource type="Resource" uid="uid://brrju62wo45jr" path="res://data/levels/level_1.tres" id="3_jbj1t"]
 [ext_resource type="Script" uid="uid://dmbn5b0p26ns5" path="res://scenes/camera_controller.gd" id="3_jyhfs"]
+[ext_resource type="Resource" uid="uid://cg85ynxnfgkv3" path="res://data/levels/Sound_Test.tres" id="3_pm3ni"]
 [ext_resource type="Resource" uid="uid://cxnt6wmq76r7c" path="res://data/levels/level_2.tres" id="4_jbj1t"]
 [ext_resource type="Resource" uid="uid://c7yl2ijdurcpu" path="res://data/levels/level_hard.tres" id="5_dp3eg"]
 [ext_resource type="PackedScene" uid="uid://b5f15rlxpihuc" path="res://entities/basket.tscn" id="5_ya4ey"]
@@ -17,17 +17,30 @@
 [ext_resource type="PackedScene" uid="uid://upi0337cb7xs" path="res://ui/tresen_cloth_inspection.tscn" id="8_eb6dy"]
 [ext_resource type="Script" uid="uid://bi8xl0g3tlsk1" path="res://scenes/money_UI_controller.gd" id="10_trceg"]
 [ext_resource type="PackedScene" uid="uid://bdbknn06inx1a" path="res://ui/customer_queue.tscn" id="11_trceg"]
+[ext_resource type="Script" uid="uid://b2mnah3vro7xe" path="res://scenes/instructions_controller.gd" id="13_jscy8"]
 [ext_resource type="PackedScene" uid="uid://cwsibguufdebd" path="res://ui/wasch_maschine_settings.tscn" id="13_trceg"]
 [ext_resource type="Texture2D" uid="uid://xtokt5p37ikh" path="res://assets/ui/ui_money.png" id="15_gqmmt"]
+[ext_resource type="AudioStream" uid="uid://dt3ipk7n6xniu" path="res://assets/audio/Doorbell.mp3" id="15_pm3ni"]
 [ext_resource type="PackedScene" uid="uid://dxtbtqp8cydst" path="res://ui/level_end_ui.tscn" id="17_dp3eg"]
+[ext_resource type="Texture2D" uid="uid://denil43iiwgb6" path="res://assets/instructions.PNG" id="21_yc10j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0j7jy"]
+size = Vector2(1746.1897, 2195.0386)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wxdh2"]
+size = Vector2(65, 1080)
 
 [node name="LevelManager" type="Node2D" unique_id=715033021 node_paths=PackedStringArray("customer_manager", "Camera", "washing_machines", "baskets")]
 script = ExtResource("1_muem4")
-levels = Array[ExtResource("2_jkv2x")]([ExtResource("3_0ld40"), ExtResource("5_dp3eg"), ExtResource("3_jbj1t"), ExtResource("4_jbj1t")])
+levels = Array[ExtResource("2_jkv2x")]([ExtResource("3_pm3ni"), ExtResource("3_jbj1t"), ExtResource("5_dp3eg"), ExtResource("4_jbj1t")])
 customer_manager = NodePath("CustomerManager")
 Camera = NodePath("Camera2D")
 washing_machines = [NodePath("WaschingRoom/WaschingMachine"), NodePath("WaschingRoom/WaschingMachine2"), NodePath("WaschingRoom/WaschingMachine3"), NodePath("WaschingRoom/WaschingMachine4"), NodePath("WaschingRoom/WaschingMachine5"), NodePath("WaschingRoom/WaschingMachine6")]
 baskets = [NodePath("WaschingRoom/Basket"), NodePath("WaschingRoom/Basket2"), NodePath("WaschingRoom/Basket3")]
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=431149415]
+unique_name_in_owner = true
+bus = &"Music"
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1997451519]
 position = Vector2(-524, -0.99999976)
@@ -138,12 +151,36 @@ scale = Vector2(1, 0.98702973)
 position = Vector2(368, -111.53435)
 scale = Vector2(1, 0.9742276)
 
+[node name="Instructions" type="Area2D" parent="WaschingRoom" unique_id=287984316]
+scale = Vector2(0.09277344, 0.09038245)
+script = ExtResource("13_jscy8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaschingRoom/Instructions" unique_id=344680311]
+position = Vector2(625.1789, -507.80746)
+scale = Vector2(0.9999999, 1)
+shape = SubResource("RectangleShape2D_0j7jy")
+
+[node name="Instructions" type="Sprite2D" parent="WaschingRoom/Instructions" unique_id=11811076]
+unique_name_in_owner = true
+visible = false
+position = Vector2(646.7368, -273.01474)
+scale = Vector2(3.6921055, 3.7406223)
+texture = ExtResource("21_yc10j")
+
 [node name="CustomerManager" type="Node2D" parent="." unique_id=622872701]
 unique_name_in_owner = true
 position = Vector2(-1130, 146)
 script = ExtResource("7_choun")
 customer_wait_time = 60
 customer_offset = Vector2(-350, 0)
+
+[node name="DoorBell" type="AudioStreamPlayer2D" parent="CustomerManager" unique_id=1696365902]
+unique_name_in_owner = true
+position = Vector2(-548, -390)
+stream = ExtResource("15_pm3ni")
+volume_db = -5.0
+max_polyphony = 3
+bus = &"SFX"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1243545003]
 script = ExtResource("3_jyhfs")
@@ -169,6 +206,7 @@ offset_top = 10.0
 offset_right = -13.0
 offset_bottom = 68.0
 grow_horizontal = 0
+mouse_filter = 1
 script = ExtResource("10_trceg")
 
 [node name="UiMoney" type="Sprite2D" parent="Camera2D/MainUI/Money" unique_id=587230047]
@@ -220,13 +258,26 @@ grow_vertical = 2
 [node name="LevelEndUI" parent="Camera2D" unique_id=572177404 instance=ExtResource("17_dp3eg")]
 visible = false
 
+[node name="Area2D" type="Area2D" parent="Camera2D" unique_id=1576181982]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/Area2D" unique_id=1779874168]
+position = Vector2(-926.5, -1)
+shape = SubResource("RectangleShape2D_wxdh2")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Camera2D/Area2D" unique_id=400268959]
+position = Vector2(927, -1)
+shape = SubResource("RectangleShape2D_wxdh2")
+
 [node name="DebugFeatures" type="Node" parent="." unique_id=667250662]
 script = ExtResource("1_tbgi4")
 
 [connection signal="finished_clothing" from="Reception/FinishedBasket" to="." method="_on_cloth_finished"]
 [connection signal="finished_clothing" from="Reception/FinishedBasket" to="CustomerManager" method="_on_finished_clothing"]
+[connection signal="mouse_entered" from="WaschingRoom/Instructions" to="WaschingRoom/Instructions" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="WaschingRoom/Instructions" to="WaschingRoom/Instructions" method="_on_mouse_exited"]
 [connection signal="customer_added" from="CustomerManager" to="Camera2D/MainUI/CustomerQueue" method="_on_customer_added"]
 [connection signal="customer_queue_finshed" from="CustomerManager" to="." method="_on_cm_customer_queue_finshed"]
 [connection signal="customer_removed" from="CustomerManager" to="Camera2D/MainUI/CustomerQueue" method="_on_customer_removed"]
 [connection signal="customer_timed_out" from="Camera2D/MainUI/CustomerQueue" to="." method="_on_cloth_timedout"]
 [connection signal="start_next_level" from="Camera2D/LevelEndUI" to="." method="next_level"]
+[connection signal="mouse_shape_entered" from="Camera2D/Area2D" to="Camera2D" method="_on_area_2d_mouse_shape_entered"]

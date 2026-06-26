@@ -28,6 +28,10 @@ run/main_scene="uid://cw70m8ycq204t"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://dp7sq046nfi8h"
+
 [autoload]
 
 UiManager="*uid://butc6vbxcrygb"

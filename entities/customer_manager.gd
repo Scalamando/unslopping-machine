@@ -23,6 +23,8 @@ var customer_array : Array[CustomerProfile]
 ## Money modifier applied for cloths that did not finsh in time.
 @export_range(-1, 1, 0.05) var MOD_TIMEOUT : float = 0.5
 
+@onready var door_bell: AudioStreamPlayer2D = %DoorBell
+
 var time : int = 0
 var customer_spawn_counter : int = 0
 var customer_queue_array : Array[CustomerQueueItem] = []
@@ -58,6 +60,8 @@ func spawn_customer(customer : CustomerProfile) -> void:
 	var customer_queue_item : CustomerQueueItem = CustomerQueueItem.new(customer, customer_wait_time)
 	customer_queue_array.append(customer_queue_item)
 	customer_added.emit(customer_queue_item)
+	
+	door_bell.play()
 
 func _on_customer_count_changes(node: Node) -> void:
 	if node is Customer:
