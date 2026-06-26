@@ -17,9 +17,14 @@
 [ext_resource type="PackedScene" uid="uid://upi0337cb7xs" path="res://ui/tresen_cloth_inspection.tscn" id="8_eb6dy"]
 [ext_resource type="Script" uid="uid://bi8xl0g3tlsk1" path="res://scenes/money_UI_controller.gd" id="10_trceg"]
 [ext_resource type="PackedScene" uid="uid://bdbknn06inx1a" path="res://ui/customer_queue.tscn" id="11_trceg"]
+[ext_resource type="Script" uid="uid://b2mnah3vro7xe" path="res://scenes/instructions_controller.gd" id="13_jscy8"]
 [ext_resource type="PackedScene" uid="uid://cwsibguufdebd" path="res://ui/wasch_maschine_settings.tscn" id="13_trceg"]
 [ext_resource type="Texture2D" uid="uid://xtokt5p37ikh" path="res://assets/ui/ui_money.png" id="15_gqmmt"]
 [ext_resource type="PackedScene" uid="uid://dxtbtqp8cydst" path="res://ui/level_end_ui.tscn" id="17_dp3eg"]
+[ext_resource type="Texture2D" uid="uid://denil43iiwgb6" path="res://assets/instructions.PNG" id="21_yc10j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0j7jy"]
+size = Vector2(1746.1897, 2195.0386)
 
 [node name="LevelManager" type="Node2D" unique_id=715033021 node_paths=PackedStringArray("customer_manager", "Camera", "washing_machines", "baskets")]
 script = ExtResource("1_muem4")
@@ -138,6 +143,22 @@ scale = Vector2(1, 0.98702973)
 position = Vector2(368, -111.53435)
 scale = Vector2(1, 0.9742276)
 
+[node name="Instructions" type="Area2D" parent="WaschingRoom" unique_id=287984316]
+scale = Vector2(0.09277344, 0.09038245)
+script = ExtResource("13_jscy8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaschingRoom/Instructions" unique_id=344680311]
+position = Vector2(625.1789, -507.80746)
+scale = Vector2(0.9999999, 1)
+shape = SubResource("RectangleShape2D_0j7jy")
+
+[node name="Instructions" type="Sprite2D" parent="WaschingRoom/Instructions" unique_id=11811076]
+unique_name_in_owner = true
+visible = false
+position = Vector2(646.7368, -273.01474)
+scale = Vector2(3.6921055, 3.7406223)
+texture = ExtResource("21_yc10j")
+
 [node name="CustomerManager" type="Node2D" parent="." unique_id=622872701]
 unique_name_in_owner = true
 position = Vector2(-1130, 146)
@@ -169,6 +190,7 @@ offset_top = 10.0
 offset_right = -13.0
 offset_bottom = 68.0
 grow_horizontal = 0
+mouse_filter = 1
 script = ExtResource("10_trceg")
 
 [node name="UiMoney" type="Sprite2D" parent="Camera2D/MainUI/Money" unique_id=587230047]
@@ -225,6 +247,8 @@ script = ExtResource("1_tbgi4")
 
 [connection signal="finished_clothing" from="Reception/FinishedBasket" to="." method="_on_cloth_finished"]
 [connection signal="finished_clothing" from="Reception/FinishedBasket" to="CustomerManager" method="_on_finished_clothing"]
+[connection signal="mouse_entered" from="WaschingRoom/Instructions" to="WaschingRoom/Instructions" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="WaschingRoom/Instructions" to="WaschingRoom/Instructions" method="_on_mouse_exited"]
 [connection signal="customer_added" from="CustomerManager" to="Camera2D/MainUI/CustomerQueue" method="_on_customer_added"]
 [connection signal="customer_queue_finshed" from="CustomerManager" to="." method="_on_cm_customer_queue_finshed"]
 [connection signal="customer_removed" from="CustomerManager" to="Camera2D/MainUI/CustomerQueue" method="_on_customer_removed"]
