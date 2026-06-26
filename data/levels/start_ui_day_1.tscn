@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://c0dwud8lo7ogj"]
+
+[ext_resource type="Script" uid="uid://bmqipj5vrhbl6" path="res://ui/day_start_ui_controller.gd" id="1_fon8j"]
+[ext_resource type="Texture2D" uid="uid://h061wjtkfes2" path="res://assets/calender/calender_background.png" id="2_g8rgs"]
+[ext_resource type="Texture2D" uid="uid://dc7duqlogttjb" path="res://assets/calender/calender.png" id="3_ulwah"]
+[ext_resource type="Texture2D" uid="uid://d1n5f8jbsgu3k" path="res://assets/calender/1.png" id="4_jymvk"]
+[ext_resource type="Texture2D" uid="uid://dagxv18fl4hk2" path="res://assets/calender/calender_letter.png" id="5_vgpiv"]
+
+[node name="DayStartUI" type="Control" unique_id=609662604]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fon8j")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1688799005]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 842.5513
+offset_bottom = 473.93506
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.07, 1.07)
+texture = ExtResource("2_g8rgs")
+expand_mode = 2
+
+[node name="Calender" type="TextureRect" parent="." unique_id=1049396779]
+layout_mode = 0
+offset_left = 271.0
+offset_top = 155.99998
+offset_right = 749.0282
+offset_bottom = 825.8927
+rotation = -0.07639296
+texture = ExtResource("3_ulwah")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="1" type="TextureRect" parent="Calender" unique_id=1741793452]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.43800002
+anchor_top = 0.53800005
+anchor_right = 0.43800002
+anchor_bottom = 0.53800005
+offset_left = -79.37285
+offset_top = -101.848236
+offset_right = 67.060776
+offset_bottom = 157.03067
+rotation = -0.012792288
+texture = ExtResource("4_jymvk")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Letter" type="TextureRect" parent="." unique_id=1161712861]
+layout_mode = 0
+offset_left = 793.0
+offset_top = 158.0
+offset_right = 2035.0
+offset_bottom = 1895.0
+scale = Vector2(0.4810789, 0.48107886)
+texture = ExtResource("5_vgpiv")
+
+[node name="Button" type="Button" parent="Letter" unique_id=68691776]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -190.7172
+offset_top = 495.10168
+offset_right = 168.89117
+offset_bottom = 657.6189
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.0825959
+theme_override_font_sizes/font_size = 64
+text = "START"
+
+[connection signal="pressed" from="Letter/Button" to="." method="_on_start_button_pressed"]

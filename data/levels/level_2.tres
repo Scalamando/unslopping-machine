@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://d2vmdjye85vqo" path="res://data/cloths/shirt_pink.tres" id="2_8wi7h"]
 [ext_resource type="Script" uid="uid://b5ioyvhc456j2" path="res://data/LevelRes.gd" id="2_bbs7n"]
 [ext_resource type="Texture2D" uid="uid://h4pmrib2o5ns" path="res://assets/persons/pia.png" id="3_tewwg"]
-[ext_resource type="PackedScene" uid="uid://dwb658vo6kalh" path="res://data/levels/day_start_ui_2.tscn" id="4_tewwg"]
+[ext_resource type="PackedScene" uid="uid://dwb658vo6kalh" path="res://data/levels/start_ui_day_2.tscn" id="4_tewwg"]
 
 [sub_resource type="Resource" id="Resource_diofb"]
 script = ExtResource("1_bbs7n")
