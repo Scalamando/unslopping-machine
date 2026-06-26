@@ -5,10 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://dnhqo1hwn6jpe" path="res://scenes/tresen.tscn" id="2_eb6dy"]
 [ext_resource type="Script" uid="uid://b5ioyvhc456j2" path="res://data/LevelRes.gd" id="2_jkv2x"]
 [ext_resource type="Texture2D" uid="uid://cwu0qw0aed8jw" path="res://assets/background.png" id="2_muem4"]
-[ext_resource type="Resource" uid="uid://d2yb83wj5lupc" path="res://data/levels/level_one_mashine.tres" id="3_0ld40"]
 [ext_resource type="PackedScene" uid="uid://cgrnbjcgn2fme" path="res://entities/finished_basket.tscn" id="3_a8y0u"]
 [ext_resource type="Resource" uid="uid://brrju62wo45jr" path="res://data/levels/level_1.tres" id="3_jbj1t"]
 [ext_resource type="Script" uid="uid://dmbn5b0p26ns5" path="res://scenes/camera_controller.gd" id="3_jyhfs"]
+[ext_resource type="Resource" uid="uid://cg85ynxnfgkv3" path="res://data/levels/Sound_Test.tres" id="3_pm3ni"]
 [ext_resource type="Resource" uid="uid://cxnt6wmq76r7c" path="res://data/levels/level_2.tres" id="4_jbj1t"]
 [ext_resource type="Resource" uid="uid://c7yl2ijdurcpu" path="res://data/levels/level_hard.tres" id="5_dp3eg"]
 [ext_resource type="PackedScene" uid="uid://b5f15rlxpihuc" path="res://entities/basket.tscn" id="5_ya4ey"]
@@ -20,6 +20,7 @@
 [ext_resource type="Script" uid="uid://b2mnah3vro7xe" path="res://scenes/instructions_controller.gd" id="13_jscy8"]
 [ext_resource type="PackedScene" uid="uid://cwsibguufdebd" path="res://ui/wasch_maschine_settings.tscn" id="13_trceg"]
 [ext_resource type="Texture2D" uid="uid://xtokt5p37ikh" path="res://assets/ui/ui_money.png" id="15_gqmmt"]
+[ext_resource type="AudioStream" uid="uid://dt3ipk7n6xniu" path="res://assets/audio/Doorbell.mp3" id="15_pm3ni"]
 [ext_resource type="PackedScene" uid="uid://dxtbtqp8cydst" path="res://ui/level_end_ui.tscn" id="17_dp3eg"]
 [ext_resource type="Texture2D" uid="uid://denil43iiwgb6" path="res://assets/instructions.PNG" id="21_yc10j"]
 
@@ -28,11 +29,15 @@ size = Vector2(1746.1897, 2195.0386)
 
 [node name="LevelManager" type="Node2D" unique_id=715033021 node_paths=PackedStringArray("customer_manager", "Camera", "washing_machines", "baskets")]
 script = ExtResource("1_muem4")
-levels = Array[ExtResource("2_jkv2x")]([ExtResource("3_0ld40"), ExtResource("5_dp3eg"), ExtResource("3_jbj1t"), ExtResource("4_jbj1t")])
+levels = Array[ExtResource("2_jkv2x")]([ExtResource("3_pm3ni"), ExtResource("3_jbj1t"), ExtResource("5_dp3eg"), ExtResource("4_jbj1t")])
 customer_manager = NodePath("CustomerManager")
 Camera = NodePath("Camera2D")
 washing_machines = [NodePath("WaschingRoom/WaschingMachine"), NodePath("WaschingRoom/WaschingMachine2"), NodePath("WaschingRoom/WaschingMachine3"), NodePath("WaschingRoom/WaschingMachine4"), NodePath("WaschingRoom/WaschingMachine5"), NodePath("WaschingRoom/WaschingMachine6")]
 baskets = [NodePath("WaschingRoom/Basket"), NodePath("WaschingRoom/Basket2"), NodePath("WaschingRoom/Basket3")]
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=431149415]
+unique_name_in_owner = true
+bus = &"Music"
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1997451519]
 position = Vector2(-524, -0.99999976)
@@ -165,6 +170,14 @@ position = Vector2(-1130, 146)
 script = ExtResource("7_choun")
 customer_wait_time = 60
 customer_offset = Vector2(-350, 0)
+
+[node name="DoorBell" type="AudioStreamPlayer2D" parent="CustomerManager" unique_id=1696365902]
+unique_name_in_owner = true
+position = Vector2(-548, -390)
+stream = ExtResource("15_pm3ni")
+volume_db = -5.0
+max_polyphony = 3
+bus = &"SFX"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1243545003]
 script = ExtResource("3_jyhfs")

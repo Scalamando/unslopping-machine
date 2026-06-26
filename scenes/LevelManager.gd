@@ -9,6 +9,8 @@ extends Node2D
 @export var washing_machines : Array[Area2D]
 @export var baskets : Array[Area2D]
 
+@onready var music_player: AudioStreamPlayer = %MusicPlayer
+
 var level_idx : int = 1 # start with level 1
 
 # stats
@@ -40,10 +42,15 @@ func load_level() -> void:
 	var node : Node = level.day_start_scene.instantiate()
 	var day_start_UI : DayStartUIController = node as DayStartUIController
 	Camera.add_child(day_start_UI)
-
+	
+	# start music
+	music_player.stream = level.music_stream
+	music_player.play()
+	
 	## start Level
 	await day_start_UI.start_day # start button sigal
 	customer_manager.timed_customer_iteration()
+	
 
 func next_level() -> void:
 	level_idx += 1

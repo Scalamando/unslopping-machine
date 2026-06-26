@@ -12,3 +12,5 @@ extends Resource
 
 ## all customers visiting in this level
 @export var customer_array : Array[CustomerProfile]
+
+@export var music_stream : AudioStream
