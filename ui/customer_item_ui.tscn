@@ -27,7 +27,9 @@ corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
-corner_detail = 6
+corner_detail = 3
+shadow_color = Color(0.20784314, 0.23137255, 0.23921569, 0.38431373)
+shadow_size = 4
 
 [node name="CustomerItemUI" type="PanelContainer" unique_id=257233288]
 custom_minimum_size = Vector2(120, 120)
@@ -68,11 +70,11 @@ custom_minimum_size = Vector2(80, 7)
 custom_maximum_size = Vector2(-1, 7)
 layout_mode = 0
 offset_left = -46.0
-offset_top = 107.0
+offset_top = 109.0
 offset_right = 44.0
-offset_bottom = 114.0
+offset_bottom = 116.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_idkw1")
-value = 100.0
+value = 50.0
 rounded = true
 show_percentage = false
 
