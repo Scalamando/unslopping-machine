@@ -23,6 +23,7 @@ func _ready() -> void:
 
 func load_level() -> void:
 	UiManager.hide_level_end_ui()
+	stats.reset_level_stats()
 
 	# load data
 	var level : LevelRes = levels[level_idx - 1] # TODO can be out of bounds
@@ -77,4 +78,3 @@ func enable_utils(utils : Array[Area2D], amount : int) -> void:
 		utils[i].visible = enabled
 		utils[i].monitoring = enabled
 		utils[i].monitorable = enabled
-		
