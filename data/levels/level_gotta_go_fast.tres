@@ -1,0 +1,125 @@
+[gd_resource type="Resource" script_class="LevelRes" format=3 uid="uid://6jyk13ejtr24"]
+
+[ext_resource type="Script" uid="uid://bqcwvesmpnf82" path="res://data/CustomerProfile.gd" id="1_lbtgu"]
+[ext_resource type="Resource" uid="uid://c4gts8tceuq1v" path="res://data/cloths/top_green.tres" id="2_f02gd"]
+[ext_resource type="Resource" uid="uid://br0vqsse5a8sk" path="res://data/cloths/shorts_grey.tres" id="3_1g3qs"]
+[ext_resource type="Texture2D" uid="uid://d1nad5cg2lgml" path="res://assets/persons/jay.png" id="3_anbl3"]
+[ext_resource type="PackedScene" uid="uid://c0dwud8lo7ogj" path="res://data/levels/start_ui_day_1.tscn" id="4_d43ec"]
+[ext_resource type="Resource" uid="uid://b75ppsld4qn6b" path="res://data/cloths/jacket_pink.tres" id="4_qppva"]
+[ext_resource type="Resource" uid="uid://djao23gc0rhrh" path="res://data/cloths/top_black.tres" id="5_2ho7g"]
+[ext_resource type="Script" uid="uid://b5ioyvhc456j2" path="res://data/LevelRes.gd" id="5_e8oiu"]
+[ext_resource type="Texture2D" uid="uid://b1swlxy6kh0e3" path="res://assets/persons/cara.png" id="5_nckpa"]
+[ext_resource type="Resource" uid="uid://xbe1u2l8qufp" path="res://data/cloths/jacket_yellow.tres" id="6_500pf"]
+[ext_resource type="Texture2D" uid="uid://tx0q6256tg0a" path="res://assets/persons/tim.png" id="6_t15gr"]
+[ext_resource type="Texture2D" uid="uid://clyy15r8b44g0" path="res://assets/persons/bill.png" id="8_7kpiw"]
+[ext_resource type="Resource" uid="uid://djwwq2h7dm30d" path="res://data/cloths/jacket_black.tres" id="8_sal82"]
+[ext_resource type="Resource" uid="uid://desc3u2nt5hqh" path="res://data/cloths/balaklava_grey.tres" id="9_anbl3"]
+[ext_resource type="Texture2D" uid="uid://b1bm4qdbuy3wc" path="res://assets/persons/mimi.png" id="10_gpi1h"]
+[ext_resource type="Resource" uid="uid://c5qne5gjwy57e" path="res://data/cloths/shorts_black.tres" id="10_nckpa"]
+[ext_resource type="Resource" uid="uid://cws7404h0x38y" path="res://data/cloths/top_yellow.tres" id="11_t15gr"]
+[ext_resource type="Texture2D" uid="uid://h4pmrib2o5ns" path="res://assets/persons/pia.png" id="13_av2gr"]
+[ext_resource type="Texture2D" uid="uid://bxwomxb0u5rd5" path="res://assets/persons/lynn.png" id="15_h6c27"]
+
+[sub_resource type="Resource" id="Resource_gpi1h"]
+script = ExtResource("1_lbtgu")
+name = "Geralt"
+texture = ExtResource("3_anbl3")
+clothing = ExtResource("2_f02gd")
+timeStamp = 2
+metadata/_custom_type_script = "uid://bqcwvesmpnf82"
+
+[sub_resource type="Resource" id="Resource_h6c27"]
+script = ExtResource("1_lbtgu")
+name = "Geralt"
+texture = ExtResource("5_nckpa")
+clothing = ExtResource("4_qppva")
+timeStamp = 3
+metadata/_custom_type_script = "uid://bqcwvesmpnf82"
+
+[sub_resource type="Resource" id="Resource_ftw4w"]
+script = ExtResource("1_lbtgu")
+name = "Geralt"
+texture = ExtResource("6_t15gr")
+clothing = ExtResource("2_f02gd")
+timeStamp = 3
+metadata/_custom_type_script = "uid://bqcwvesmpnf82"
+
+[sub_resource type="Resource" id="Resource_n4tjs"]
+script = ExtResource("1_lbtgu")
+name = "Geralt"
+texture = ExtResource("8_7kpiw")
+clothing = ExtResource("5_2ho7g")
+timeStamp = 8
+metadata/_custom_type_script = "uid://bqcwvesmpnf82"
+
+[sub_resource type="Resource" id="Resource_qc7ty"]
+script = ExtResource("1_lbtgu")
+name = "Geralt"
+texture = ExtResource("10_gpi1h")
+clothing = ExtResource("6_500pf")
+timeStamp = 4
+metadata/_custom_type_script = "uid://bqcwvesmpnf82"
+
+[sub_resource type="Resource" id="Resource_0i20h"]
+script = ExtResource("1_lbtgu")
+name = "Geralt"
+texture = ExtResource("5_nckpa")
+clothing = ExtResource("11_t15gr")
+timeStamp = 6
+metadata/_custom_type_script = "uid://bqcwvesmpnf82"
+
+[sub_resource type="Resource" id="Resource_8b3v7"]
+script = ExtResource("1_lbtgu")
+name = "Geralt"
+texture = ExtResource("13_av2gr")
+clothing = ExtResource("8_sal82")
+timeStamp = 12
+metadata/_custom_type_script = "uid://bqcwvesmpnf82"
+
+[sub_resource type="Resource" id="Resource_bs4bf"]
+script = ExtResource("1_lbtgu")
+name = "Geralt"
+texture = ExtResource("15_h6c27")
+clothing = ExtResource("9_anbl3")
+timeStamp = 7
+metadata/_custom_type_script = "uid://bqcwvesmpnf82"
+
+[sub_resource type="Resource" id="Resource_smkgh"]
+script = ExtResource("1_lbtgu")
+name = "Geralt"
+texture = ExtResource("8_7kpiw")
+clothing = ExtResource("10_nckpa")
+timeStamp = 6
+metadata/_custom_type_script = "uid://bqcwvesmpnf82"
+
+[sub_resource type="Resource" id="Resource_xth6v"]
+script = ExtResource("1_lbtgu")
+name = "Geralt"
+texture = ExtResource("6_t15gr")
+clothing = ExtResource("5_2ho7g")
+timeStamp = 9
+metadata/_custom_type_script = "uid://bqcwvesmpnf82"
+
+[sub_resource type="Resource" id="Resource_ya5b1"]
+script = ExtResource("1_lbtgu")
+name = "Geralt"
+texture = ExtResource("10_gpi1h")
+clothing = ExtResource("3_1g3qs")
+timeStamp = 8
+metadata/_custom_type_script = "uid://bqcwvesmpnf82"
+
+[sub_resource type="Resource" id="Resource_xcjkk"]
+script = ExtResource("1_lbtgu")
+name = "Geralt"
+texture = ExtResource("3_anbl3")
+clothing = ExtResource("2_f02gd")
+timeStamp = 5
+metadata/_custom_type_script = "uid://bqcwvesmpnf82"
+
+[resource]
+script = ExtResource("5_e8oiu")
+day_start_scene = ExtResource("4_d43ec")
+machine_amount = 3
+baskset_amount = 2
+customer_array = Array[ExtResource("1_lbtgu")]([SubResource("Resource_gpi1h"), SubResource("Resource_h6c27"), SubResource("Resource_ftw4w"), SubResource("Resource_n4tjs"), SubResource("Resource_qc7ty"), SubResource("Resource_0i20h"), SubResource("Resource_8b3v7"), SubResource("Resource_bs4bf"), SubResource("Resource_smkgh"), SubResource("Resource_xth6v"), SubResource("Resource_ya5b1"), SubResource("Resource_xcjkk")])
+metadata/_custom_type_script = "uid://b5ioyvhc456j2"

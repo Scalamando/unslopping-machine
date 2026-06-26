@@ -1,0 +1,78 @@
+[gd_resource type="Resource" script_class="LevelRes" format=3 uid="uid://bomo1055k83jv"]
+
+[ext_resource type="Script" uid="uid://bqcwvesmpnf82" path="res://data/CustomerProfile.gd" id="1_pocfu"]
+[ext_resource type="Texture2D" uid="uid://h4pmrib2o5ns" path="res://assets/persons/pia.png" id="3_6b8m7"]
+[ext_resource type="Resource" uid="uid://br0vqsse5a8sk" path="res://data/cloths/shorts_grey.tres" id="4_yj8hc"]
+[ext_resource type="Texture2D" uid="uid://d1nad5cg2lgml" path="res://assets/persons/jay.png" id="5_1hsjq"]
+[ext_resource type="Texture2D" uid="uid://bxwomxb0u5rd5" path="res://assets/persons/lynn.png" id="5_efgun"]
+[ext_resource type="Resource" uid="uid://b75ppsld4qn6b" path="res://data/cloths/jacket_pink.tres" id="6_hvmv4"]
+[ext_resource type="Texture2D" uid="uid://b1bm4qdbuy3wc" path="res://assets/persons/mimi.png" id="7_peyht"]
+[ext_resource type="Resource" uid="uid://d2vmdjye85vqo" path="res://data/cloths/shirt_pink.tres" id="8_hvmv4"]
+[ext_resource type="Resource" uid="uid://dscb3lotcjc0b" path="res://data/cloths/shirt_green.tres" id="9_uwt6x"]
+[ext_resource type="Resource" uid="uid://cws7404h0x38y" path="res://data/cloths/top_yellow.tres" id="10_pocfu"]
+[ext_resource type="PackedScene" uid="uid://drd20t3yb8mmu" path="res://data/levels/day_start_ui_HARD.tscn" id="11_x5u76"]
+[ext_resource type="Script" uid="uid://b5ioyvhc456j2" path="res://data/LevelRes.gd" id="12_0t3jw"]
+
+[sub_resource type="Resource" id="Resource_00344"]
+script = ExtResource("1_pocfu")
+name = "Lynn"
+texture = ExtResource("5_efgun")
+clothing = ExtResource("9_uwt6x")
+timeStamp = 2
+metadata/_custom_type_script = "uid://bqcwvesmpnf82"
+
+[sub_resource type="Resource" id="Resource_r8dhs"]
+script = ExtResource("1_pocfu")
+name = "Jay"
+texture = ExtResource("5_1hsjq")
+clothing = ExtResource("4_yj8hc")
+timeStamp = 2
+metadata/_custom_type_script = "uid://bqcwvesmpnf82"
+
+[sub_resource type="Resource" id="Resource_7mnig"]
+script = ExtResource("1_pocfu")
+name = "Mimi"
+texture = ExtResource("7_peyht")
+clothing = ExtResource("6_hvmv4")
+timeStamp = 2
+metadata/_custom_type_script = "uid://bqcwvesmpnf82"
+
+[sub_resource type="Resource" id="Resource_pm3ni"]
+script = ExtResource("1_pocfu")
+name = "Pia"
+texture = ExtResource("3_6b8m7")
+clothing = ExtResource("8_hvmv4")
+timeStamp = 20
+metadata/_custom_type_script = "uid://bqcwvesmpnf82"
+
+[sub_resource type="Resource" id="Resource_y6deb"]
+script = ExtResource("1_pocfu")
+name = "Jay"
+texture = ExtResource("5_1hsjq")
+clothing = ExtResource("9_uwt6x")
+timeStamp = 2
+metadata/_custom_type_script = "uid://bqcwvesmpnf82"
+
+[sub_resource type="Resource" id="Resource_2wyq8"]
+script = ExtResource("1_pocfu")
+name = "Mimi"
+texture = ExtResource("7_peyht")
+clothing = ExtResource("4_yj8hc")
+timeStamp = 15
+metadata/_custom_type_script = "uid://bqcwvesmpnf82"
+
+[sub_resource type="Resource" id="Resource_hvmv4"]
+script = ExtResource("1_pocfu")
+name = "Lynn"
+texture = ExtResource("5_efgun")
+clothing = ExtResource("10_pocfu")
+timeStamp = 6
+metadata/_custom_type_script = "uid://bqcwvesmpnf82"
+
+[resource]
+script = ExtResource("12_0t3jw")
+day_start_scene = ExtResource("11_x5u76")
+machine_amount = 2
+baskset_amount = 2
+customer_array = Array[ExtResource("1_pocfu")]([SubResource("Resource_00344"), SubResource("Resource_r8dhs"), SubResource("Resource_7mnig"), SubResource("Resource_pm3ni"), SubResource("Resource_y6deb"), SubResource("Resource_2wyq8"), SubResource("Resource_hvmv4")])
+metadata/_custom_type_script = "uid://b5ioyvhc456j2"

@@ -87,7 +87,7 @@ offset_top = -290.5852
 offset_right = 2483.5132
 offset_bottom = 709.4148
 script = ExtResource("5_7swae")
-SPEED_CRANK_MULTIPLIER = 9.0
+SPEED_CRANK_MULTIPLIER = 20.0
 SPEED_CRANK_FALLOFF = 0.01
 
 [node name="SpeedLabel" type="Label" parent="Highlightable/SpeedCrank" unique_id=1213575725]
