@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://dq25ctd7033ls"]
+
+[ext_resource type="PackedScene" uid="uid://bnhulx5iy0gf" path="res://data/cloths/scenes/balaklava_black_spread_out.tscn" id="1_uxmon"]
+[ext_resource type="PackedScene" uid="uid://bpgn5owu6b7qt" path="res://data/cloths/scenes/balaklava_grey_spread_out.tscn" id="2_yyg4a"]
+[ext_resource type="PackedScene" uid="uid://dvmrimkamuw4n" path="res://data/cloths/scenes/balaklava_pink_spread_out.tscn" id="3_1g62l"]
+[ext_resource type="PackedScene" uid="uid://qye0og8grprk" path="res://data/cloths/scenes/jacket_black_spread_out.tscn" id="4_owpbn"]
+[ext_resource type="PackedScene" uid="uid://cf8rehec5u64p" path="res://data/cloths/scenes/jacket_pink_spread_out.tscn" id="5_ior4c"]
+[ext_resource type="PackedScene" uid="uid://bm3jc4jys7yur" path="res://data/cloths/scenes/jacket_yellow_spread_out.tscn" id="6_amirc"]
+[ext_resource type="PackedScene" uid="uid://ctpfhq7n6wa1y" path="res://data/cloths/scenes/shirt_green_spread_out.tscn" id="7_4ek2l"]
+[ext_resource type="PackedScene" uid="uid://bwmg2lu7lep0e" path="res://data/cloths/scenes/shirt_spread_out.tscn" id="8_ab8uf"]
+[ext_resource type="PackedScene" uid="uid://chxfo358ud0bs" path="res://data/cloths/scenes/shirt_yellow_spread_out.tscn" id="9_ox5ux"]
+[ext_resource type="PackedScene" uid="uid://c288p7nto28sw" path="res://data/cloths/scenes/shorts_black_spread_out.tscn" id="10_hlerh"]
+[ext_resource type="PackedScene" uid="uid://ccwxprc8cali7" path="res://data/cloths/scenes/shorts_green_spread_out.tscn" id="11_45hgf"]
+[ext_resource type="PackedScene" uid="uid://cwncq7ptwjkqm" path="res://data/cloths/scenes/shorts_grey_spread_out.tscn" id="12_4leg6"]
+[ext_resource type="PackedScene" uid="uid://mhdfy1b2v40o" path="res://data/cloths/scenes/top_black_spread_out.tscn" id="13_4ek2l"]
+[ext_resource type="PackedScene" uid="uid://b3rpk8450n2l4" path="res://data/cloths/scenes/top_green_spread_out.tscn" id="14_ab8uf"]
+[ext_resource type="PackedScene" uid="uid://cim1bquoxc5nv" path="res://data/cloths/scenes/top_yellow_spread_out.tscn" id="15_ox5ux"]
+[ext_resource type="PackedScene" uid="uid://dg7ih64aj468p" path="res://data/cloths/scenes/tshirt_blue_spread_out.tscn" id="16_hlerh"]
+[ext_resource type="PackedScene" uid="uid://bayqrbd5q86fy" path="res://data/cloths/scenes/tshirt_pink_spread_out.tscn" id="17_45hgf"]
+[ext_resource type="PackedScene" uid="uid://cuhxs4823rrqx" path="res://data/cloths/scenes/tshirt_yellow_spread_out.tscn" id="18_4leg6"]
+
+[node name="ClothingGalary" type="Node2D" unique_id=1067660870]
+
+[node name="ShirtSpreadOut" parent="." unique_id=1070618402 instance=ExtResource("1_uxmon")]
+offset_left = 147.0
+offset_top = 149.0
+offset_right = 147.0
+offset_bottom = 149.0
+
+[node name="ShirtSpreadOut2" parent="." unique_id=614911043 instance=ExtResource("2_yyg4a")]
+offset_left = 3975.0
+offset_top = 139.0
+offset_right = 3975.0
+offset_bottom = 139.0
+
+[node name="ShirtSpreadOut3" parent="." unique_id=1098552372 instance=ExtResource("3_1g62l")]
+offset_left = 804.0
+offset_top = 152.0
+offset_right = 804.0
+offset_bottom = 152.0
+
+[node name="ShirtSpreadOut4" parent="." unique_id=1317314900 instance=ExtResource("4_owpbn")]
+offset_left = 150.0
+offset_top = 953.0
+offset_right = 150.0
+offset_bottom = 953.0
+
+[node name="ShirtSpreadOut5" parent="." unique_id=474919700 instance=ExtResource("5_ior4c")]
+offset_left = 1422.0
+offset_top = 953.0
+offset_right = 1422.0
+offset_bottom = 953.0
+
+[node name="ShirtSpreadOut6" parent="." unique_id=2066252889 instance=ExtResource("6_amirc")]
+offset_left = 2211.0
+offset_top = 922.0
+offset_right = 2211.0
+offset_bottom = 922.0
+
+[node name="ShirtSpreadOut7" parent="." unique_id=740527529 instance=ExtResource("7_4ek2l")]
+offset_left = 2974.0
+offset_top = 1792.0
+offset_right = 2974.0
+offset_bottom = 1792.0
+
+[node name="ShirtSpreadOut8" parent="." unique_id=1190345733 instance=ExtResource("8_ab8uf")]
+offset_left = 1417.0
+offset_top = 1883.0
+offset_right = 1417.0
+offset_bottom = 1883.0
+
+[node name="ShirtSpreadOut9" parent="." unique_id=1655712444 instance=ExtResource("9_ox5ux")]
+offset_left = 2252.0
+offset_top = 1883.0
+offset_right = 2252.0
+offset_bottom = 1883.0
+
+[node name="ShirtSpreadOut10" parent="." unique_id=814234062 instance=ExtResource("10_hlerh")]
+offset_left = 140.0
+offset_top = 3054.0
+offset_right = 140.0
+offset_bottom = 3054.0
+
+[node name="ShirtSpreadOut11" parent="." unique_id=239391838 instance=ExtResource("11_45hgf")]
+offset_left = 3026.0
+offset_top = 2980.0
+offset_right = 3026.0
+offset_bottom = 2980.0
+
+[node name="ShirtSpreadOut12" parent="." unique_id=1074028913 instance=ExtResource("12_4leg6")]
+offset_left = 3893.0
+offset_top = 3000.0
+offset_right = 3893.0
+offset_bottom = 3000.0
+
+[node name="ShirtSpreadOut13" parent="." unique_id=876074539 instance=ExtResource("13_4ek2l")]
+offset_left = 105.0
+offset_top = 4169.0
+offset_right = 105.0
+offset_bottom = 4169.0
+
+[node name="ShirtSpreadOut14" parent="." unique_id=1554851113 instance=ExtResource("14_ab8uf")]
+offset_left = 3035.0
+offset_top = 4103.0
+offset_right = 3035.0
+offset_bottom = 4103.0
+
+[node name="ShirtSpreadOut15" parent="." unique_id=1296690619 instance=ExtResource("15_ox5ux")]
+offset_left = 2294.0
+offset_top = 4169.0
+offset_right = 2294.0
+offset_bottom = 4169.0
+
+[node name="ShirtSpreadOut16" parent="." unique_id=153248902 instance=ExtResource("16_hlerh")]
+offset_left = -1010.0
+offset_top = 5145.0
+offset_right = -1010.0
+offset_bottom = 5145.0
+
+[node name="ShirtSpreadOut17" parent="." unique_id=400318909 instance=ExtResource("17_45hgf")]
+offset_left = 1632.0
+offset_top = 5108.0
+offset_right = 1632.0
+offset_bottom = 5108.0
+
+[node name="ShirtSpreadOut18" parent="." unique_id=1201409464 instance=ExtResource("18_4leg6")]
+offset_left = 2431.0
+offset_top = 5072.0
+offset_right = 2431.0
+offset_bottom = 5072.0

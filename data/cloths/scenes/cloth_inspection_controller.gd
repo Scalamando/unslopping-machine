@@ -1,6 +1,7 @@
 class_name ClothInspectionController
 extends Control
 
-@onready var instructions_proxy: InstructionProxy = %InstructionsProxy
+@export var instructions_proxy: InstructionProxy
 
-## also handles pockets
+func _ready() -> void:
+	assert(instructions_proxy != null)

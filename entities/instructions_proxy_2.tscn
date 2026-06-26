@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://d2u0dum4uimhh"]
+
+[ext_resource type="Script" uid="uid://dvtf38pphw1ry" path="res://entities/instructions_proxy_controller.gd" id="1_4g4lg"]
+[ext_resource type="Texture2D" uid="uid://dsmmysugqwd8p" path="res://assets/cloth_inspection/tag_small_3.PNG" id="2_4g4lg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0j7jy"]
+size = Vector2(36, 35)
+
+[node name="InstructionsProxy" type="Area2D" unique_id=1949294101]
+script = ExtResource("1_4g4lg")
+
+[node name="TagSmall1" type="Sprite2D" parent="." unique_id=310363147]
+unique_name_in_owner = true
+position = Vector2(23, 21.000004)
+scale = Vector2(0.35728115, 0.35728115)
+texture = ExtResource("2_4g4lg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1458007271]
+position = Vector2(22, 22.5)
+shape = SubResource("RectangleShape2D_0j7jy")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bir8ep1uhlj2d" path="res://data/cloths/scenes/cloth_inspection_controller.gd" id="1_3jivv"]
 [ext_resource type="Texture2D" uid="uid://c55ds3wfv1u4f" path="res://assets/cloth_inspection/clothes/top/top_yellow.PNG" id="2_3jivv"]
-[ext_resource type="PackedScene" uid="uid://i3driceblmb2" path="res://entities/instructions_proxy.tscn" id="3_0gkac"]
+[ext_resource type="PackedScene" uid="uid://d2u0dum4uimhh" path="res://entities/instructions_proxy_2.tscn" id="2_trno8"]
 
-[node name="ShirtSpreadOut" type="Control" unique_id=1070618402]
+[node name="ShirtSpreadOut" type="Control" unique_id=1070618402 node_paths=PackedStringArray("instructions_proxy")]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -15,6 +15,10 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_3jivv")
+instructions_proxy = NodePath("InstructionsProxy2")
+
+[node name="InstructionsProxy2" parent="." unique_id=1949294101 instance=ExtResource("2_trno8")]
+position = Vector2(44, -341)
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1563049386]
 layout_mode = 1
@@ -32,9 +36,3 @@ grow_vertical = 2
 rotation = 0.0007894301
 texture = ExtResource("2_3jivv")
 expand_mode = 5
-
-[node name="InstructionsProxy" parent="." unique_id=1949294101 instance=ExtResource("3_0gkac")]
-unique_name_in_owner = true
-position = Vector2(-18, -369)
-rotation = -0.061440013
-scale = Vector2(0.9999999, 0.9999999)
