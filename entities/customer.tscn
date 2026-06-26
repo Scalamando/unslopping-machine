@@ -16,4 +16,4 @@ unique_name_in_owner = true
 
 [node name="ClothMarker2D" type="Marker2D" parent="ClothContainer" unique_id=1668937604]
 unique_name_in_owner = true
-position = Vector2(75, -170)
+position = Vector2(0, -118)

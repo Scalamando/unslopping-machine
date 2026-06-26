@@ -1,18 +1,17 @@
 [gd_scene format=3 uid="uid://upi0337cb7xs"]
 
 [ext_resource type="Script" uid="uid://bgjg0nvgknpum" path="res://ui/tresen_cloth_inspection_controller.gd" id="1_v7wvd"]
-[ext_resource type="Texture2D" uid="uid://cjgy02etn6tbf" path="res://assets/washing_instructions_icons/speed-slow.png" id="2_0r8yg"]
-[ext_resource type="Texture2D" uid="uid://p7enlrfxt4r2" path="res://assets/washing_instructions_icons/temp-cold.png" id="2_3k22f"]
-[ext_resource type="Texture2D" uid="uid://dh81kloa3bycp" path="res://assets/washing_instructions_icons/speed-med.png" id="3_lbrc7"]
-[ext_resource type="Texture2D" uid="uid://bl0cqry5dllwh" path="res://assets/washing_instructions_icons/dir-clockwise.png" id="3_xgu23"]
-[ext_resource type="Texture2D" uid="uid://cj5dbbhnb4li1" path="res://assets/washing_instructions_icons/speed-fast.png" id="4_0r8yg"]
-[ext_resource type="Texture2D" uid="uid://esmc1k7f4ums" path="res://assets/washing_instructions_icons/temp-medium.png" id="6_2bbuj"]
-[ext_resource type="Texture2D" uid="uid://dkdj3e2u6i8x5" path="res://assets/washing_instructions_icons/temp-hot.png" id="7_8wybo"]
-[ext_resource type="Texture2D" uid="uid://cjjdrak1g00mr" path="res://assets/washing_instructions_icons/dir-counterclockwise.png" id="9_w4ujp"]
-[ext_resource type="Texture2D" uid="uid://vdiqsnum0tab" path="res://assets/washing_instructions_icons/dir-both.png" id="10_ic0nb"]
+[ext_resource type="Texture2D" uid="uid://cbl8hgpqsvlka" path="res://assets/cloth_inspection/tag_spinlow.png" id="2_s4f4h"]
+[ext_resource type="Texture2D" uid="uid://glhv6cca7gin" path="res://assets/cloth_inspection/tag_spinmid.png" id="3_7r8aj"]
+[ext_resource type="Texture2D" uid="uid://c1u25vk40lot8" path="res://assets/cloth_inspection/tag_spinhigh.png" id="4_sajcn"]
+[ext_resource type="Texture2D" uid="uid://bjjvtkvdjft8q" path="res://assets/cloth_inspection/tag_spinleft.png" id="9_s4f4h"]
 [ext_resource type="Texture2D" uid="uid://cc2kxgkgxe5qi" path="res://assets/cloth_inspection/table.png" id="11_w4ujp"]
 [ext_resource type="Texture2D" uid="uid://bfnwonrb758k7" path="res://assets/ui/closebutton.png" id="12_ic0nb"]
+[ext_resource type="Theme" uid="uid://cmq0345iy5yop" path="res://assets/theme/UI-border.tres" id="12_vc88v"]
 [ext_resource type="Texture2D" uid="uid://chdphl8exgow7" path="res://assets/cloth_inspection/tag_large.png" id="13_ic0nb"]
+[ext_resource type="StyleBox" uid="uid://deei1yhkk6wiv" path="res://assets/theme/texture_rect_border_small.tres" id="13_s4f4h"]
+[ext_resource type="Texture2D" uid="uid://cxfktnu5hkkeo" path="res://assets/cloth_inspection/tag_spinright.png" id="15_7r8aj"]
+[ext_resource type="Texture2D" uid="uid://4rekj2hdw18t" path="res://assets/cloth_inspection/tag_heat.png" id="16_sajcn"]
 
 [node name="TresenClothInspection" type="Control" unique_id=2079798534]
 layout_mode = 3
@@ -21,23 +20,13 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 mouse_filter = 1
 script = ExtResource("1_v7wvd")
-speed_slow = ExtResource("2_0r8yg")
-speed_med = ExtResource("3_lbrc7")
-speed_fast = ExtResource("4_0r8yg")
-temp_cold = ExtResource("2_3k22f")
-temp_med = ExtResource("6_2bbuj")
-temp_hot = ExtResource("7_8wybo")
-dir_clockwise = ExtResource("3_xgu23")
-dir_counterclockwise = ExtResource("9_w4ujp")
-dir_both = ExtResource("10_ic0nb")
-
-[node name="Table" type="Sprite2D" parent="." unique_id=1531922368]
-position = Vector2(935, 540.00006)
-scale = Vector2(0.40177792, 0.4335666)
-texture = ExtResource("11_w4ujp")
+speed_slow = ExtResource("2_s4f4h")
+speed_med = ExtResource("3_7r8aj")
+speed_fast = ExtResource("4_sajcn")
+dir_clockwise = ExtResource("15_7r8aj")
+dir_counterclockwise = ExtResource("9_s4f4h")
 
 [node name="Tresen" type="ColorRect" parent="." unique_id=94396307]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -45,13 +34,34 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -1080.0
-offset_top = -453.0
+offset_top = -642.0
 offset_right = 1080.0
-offset_bottom = 447.0
+offset_bottom = 707.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-color = Color(0.5216516, 0.37004402, 0.19765705, 1)
+color = Color(0.25490198, 0.16078432, 0.17254902, 0.39607844)
+
+[node name="Table" type="Sprite2D" parent="." unique_id=1531922368]
+position = Vector2(935, 540.00006)
+scale = Vector2(0.40177792, 0.4335666)
+texture = ExtResource("11_w4ujp")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1636046240]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -597.0
+offset_top = -447.0
+offset_right = 547.0
+offset_bottom = 447.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("12_vc88v")
+theme_override_styles/panel = ExtResource("13_s4f4h")
 
 [node name="Instructions" type="ColorRect" parent="." unique_id=785957466]
 unique_name_in_owner = true
@@ -63,7 +73,7 @@ offset_bottom = 677.0
 mouse_filter = 1
 color = Color(1, 1, 1, 0)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Instructions" unique_id=789653406]
+[node name="HBoxContainer" type="Control" parent="Instructions" unique_id=632956755]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -73,7 +83,7 @@ anchor_bottom = 1.0
 offset_left = -81.99997
 offset_top = -81.0
 offset_right = 694.0
-offset_bottom = 175.0
+offset_bottom = 176.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.215, 0.215)
@@ -83,20 +93,65 @@ position = Vector2(502.32568, -93.023315)
 scale = Vector2(2.4141579, 2.4141579)
 texture = ExtResource("13_ic0nb")
 
-[node name="TempTexRect" type="TextureRect" parent="Instructions/HBoxContainer" unique_id=94150691]
-unique_name_in_owner = true
-layout_mode = 2
-texture = ExtResource("2_3k22f")
-
 [node name="DirTexRect" type="TextureRect" parent="Instructions/HBoxContainer" unique_id=894656843]
 unique_name_in_owner = true
-layout_mode = 2
-texture = ExtResource("3_xgu23")
+layout_mode = 0
+offset_left = 130.23245
+offset_top = -730.2325
+offset_right = 400.5831
+offset_bottom = -473.23248
+rotation = -0.114520036
+scale = Vector2(1.5777079, 1.671632)
+texture = ExtResource("15_7r8aj")
+expand_mode = 3
+
+[node name="TempLow" type="TextureRect" parent="Instructions/HBoxContainer" unique_id=94150691]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -153.48836
+offset_top = -106.976746
+offset_right = 102.51164
+offset_bottom = 271.00983
+rotation = -0.12535968
+scale = Vector2(1.1645546, 1.1645546)
+texture = ExtResource("16_sajcn")
+expand_mode = 5
+
+[node name="TempMed" type="TextureRect" parent="Instructions/HBoxContainer" unique_id=147085119]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 260.46487
+offset_top = -158.1395
+offset_right = 516.46484
+offset_bottom = 219.84708
+rotation = -0.12535968
+scale = Vector2(1.1645546, 1.1645546)
+texture = ExtResource("16_sajcn")
+expand_mode = 5
+
+[node name="TempHigh" type="TextureRect" parent="Instructions/HBoxContainer" unique_id=994416880]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 632.5579
+offset_top = -218.60461
+offset_right = 888.5579
+offset_bottom = 159.38196
+rotation = -0.12535968
+scale = Vector2(1.1645546, 1.1645546)
+texture = ExtResource("16_sajcn")
+expand_mode = 5
 
 [node name="SpeedTexRect" type="TextureRect" parent="Instructions/HBoxContainer" unique_id=1556407445]
 unique_name_in_owner = true
-layout_mode = 2
-texture = ExtResource("4_0r8yg")
+layout_mode = 0
+offset_left = -23.256058
+offset_top = 502.32556
+offset_right = 386.74396
+offset_bottom = 622.32556
+rotation = -0.095722795
+scale = Vector2(2.4204469, 2.4204469)
+texture = ExtResource("4_sajcn")
+stretch_mode = 2
 
 [node name="Headline" type="Label" parent="Instructions" unique_id=1915626365]
 visible = false

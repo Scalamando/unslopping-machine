@@ -1,0 +1,6 @@
+[gd_resource type="Theme" format=3 uid="uid://cmq0345iy5yop"]
+
+[ext_resource type="StyleBox" uid="uid://d4iiau3lmh0mi" path="res://assets/theme/texture_rect_border_big.tres" id="1_iep2c"]
+
+[resource]
+PanelContainer/styles/panel = ExtResource("1_iep2c")

@@ -15,7 +15,7 @@ script = ExtResource("1_4erq4")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1168166370]
 unique_name_in_owner = true
-scale = Vector2(0.25, 0.25)
+scale = Vector2(0.35, 0.35)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1394123991]
 shape = SubResource("CircleShape2D_rcsmu")

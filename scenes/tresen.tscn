@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://djdmnemxrx7bg" path="res://addons/drag_and_drop/resources/draggable_types/draggable_type.gd" id="4_hukpr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rcsmu"]
-size = Vector2(229, 433)
+size = Vector2(165.5, 143)
 
 [sub_resource type="Resource" id="Resource_0iswh"]
 script = ExtResource("3_8w7rg")
@@ -19,7 +19,7 @@ script = ExtResource("4_hukpr")
 script = ExtResource("1_7ualo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1345797470]
-position = Vector2(1, -219)
+position = Vector2(-30.75, -303.5)
 shape = SubResource("RectangleShape2D_rcsmu")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1102692665]
@@ -36,6 +36,6 @@ accepted_draggable_types = Array[ExtResource("4_hukpr")]([SubResource("Resource_
 metadata/_custom_type_script = "uid://nj1hdjl1vob2"
 
 [node name="ClothAttachPoint" type="Marker2D" parent="DropZone" unique_id=187660227]
-position = Vector2(1, -359)
+position = Vector2(3, -221)
 
 [connection signal="drop_applied" from="DropZone" to="." method="_on_drop_zone_drop_applied"]

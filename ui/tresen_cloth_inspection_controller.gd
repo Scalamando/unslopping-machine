@@ -11,15 +11,16 @@ var display_cloth : Clothing
 @export var speed_med : Texture
 @export var speed_fast : Texture
 
-@export var temp_cold : Texture
-@export var temp_med : Texture
-@export var temp_hot : Texture
+
+@onready var temp_med: TextureRect = %TempMed
+@onready var temp_high: TextureRect = %TempHigh
+
 
 @export var dir_clockwise : Texture
 @export var dir_counterclockwise : Texture
-@export var dir_both : Texture
 
-@onready var temp_tex_rect: TextureRect = %TempTexRect
+
+
 @onready var dir_tex_rect: TextureRect = %DirTexRect
 @onready var speed_tex_rect: TextureRect = %SpeedTexRect
 
@@ -52,11 +53,14 @@ func show_instructions() -> void:
 
 	match display_cloth.wash_instructions.temperature:
 		WaschingInstruction.Temperature.cold:
-			temp_tex_rect.texture = temp_cold
+			temp_med.visible = false
+			temp_high.textvisible = false
 		WaschingInstruction.Temperature.medium:
-			temp_tex_rect.texture = temp_med
+			temp_med.visible = true
+			temp_high.visible = false
 		WaschingInstruction.Temperature.hot:
-			temp_tex_rect.texture = temp_hot
+			temp_med.visible = true
+			temp_high.visible = true
 
 	match display_cloth.wash_instructions.direction:
 		WaschingInstruction.Direction.clockwise:
@@ -64,7 +68,7 @@ func show_instructions() -> void:
 		WaschingInstruction.Direction.counterclockwise:
 			dir_tex_rect.texture = dir_counterclockwise
 		WaschingInstruction.Direction.both:
-			dir_tex_rect.texture = dir_both
+			dir_tex_rect.visible = false
 
 	match display_cloth.wash_instructions.speed:
 		WaschingInstruction.Speed.slow:
