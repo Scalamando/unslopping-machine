@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b1bm4qdbuy3wc" path="res://assets/persons/mimi.png" id="7_6wgx5"]
 [ext_resource type="PackedScene" uid="uid://drd20t3yb8mmu" path="res://data/levels/day_start_ui_HARD.tscn" id="8_fp0f6"]
 [ext_resource type="Resource" uid="uid://dscb3lotcjc0b" path="res://data/cloths/shirt_green.tres" id="8_jrykr"]
+[ext_resource type="Texture2D" uid="uid://clyy15r8b44g0" path="res://assets/persons/bill.png" id="8_rt02c"]
 [ext_resource type="Texture2D" uid="uid://tx0q6256tg0a" path="res://assets/persons/tim.png" id="9_rt02c"]
 
 [sub_resource type="Resource" id="Resource_diofb"]
@@ -24,7 +25,7 @@ script = ExtResource("1_nhiqh")
 name = "Lynn"
 texture = ExtResource("5_jrykr")
 clothing = ExtResource("4_76jg5")
-timeStamp = 20
+timeStamp = 15
 metadata/_custom_type_script = "uid://bqcwvesmpnf82"
 
 [sub_resource type="Resource" id="Resource_jk86l"]
@@ -38,9 +39,8 @@ metadata/_custom_type_script = "uid://bqcwvesmpnf82"
 [sub_resource type="Resource" id="Resource_fp0f6"]
 script = ExtResource("1_nhiqh")
 name = "Mimi"
-texture = ExtResource("7_6wgx5")
+texture = ExtResource("8_rt02c")
 clothing = ExtResource("6_rt02c")
-timeStamp = 25
 metadata/_custom_type_script = "uid://bqcwvesmpnf82"
 
 [sub_resource type="Resource" id="Resource_6wgx5"]
@@ -48,6 +48,7 @@ script = ExtResource("1_nhiqh")
 name = "Tim"
 texture = ExtResource("9_rt02c")
 clothing = ExtResource("8_jrykr")
+timeStamp = 15
 metadata/_custom_type_script = "uid://bqcwvesmpnf82"
 
 [resource]
