@@ -116,8 +116,24 @@ position = Vector2(856, 183.58754)
 scale = Vector2(1, 0.98702973)
 
 [node name="WaschingMachine2" parent="WaschingRoom" unique_id=875701637 instance=ExtResource("6_tefeu")]
-position = Vector2(620, 183.58754)
+position = Vector2(610, 183.58754)
 scale = Vector2(1, 0.98702973)
+
+[node name="WaschingMachine3" parent="WaschingRoom" unique_id=285717667 instance=ExtResource("6_tefeu")]
+position = Vector2(368, 183.58754)
+scale = Vector2(1, 0.9742276)
+
+[node name="WaschingMachine4" parent="WaschingRoom" unique_id=397138035 instance=ExtResource("6_tefeu")]
+position = Vector2(856, -111.53435)
+scale = Vector2(1, 0.98702973)
+
+[node name="WaschingMachine5" parent="WaschingRoom" unique_id=1269422458 instance=ExtResource("6_tefeu")]
+position = Vector2(610, -111.53435)
+scale = Vector2(1, 0.98702973)
+
+[node name="WaschingMachine6" parent="WaschingRoom" unique_id=1657794018 instance=ExtResource("6_tefeu")]
+position = Vector2(368, -111.53435)
+scale = Vector2(1, 0.9742276)
 
 [node name="CustomerManager" type="Node2D" parent="." unique_id=622872701]
 unique_name_in_owner = true
