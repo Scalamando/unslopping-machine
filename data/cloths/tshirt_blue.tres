@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="Clothing" format=3 uid="uid://baakgpsampe2h"]
+
+[ext_resource type="Script" uid="uid://c1er473h2880c" path="res://data/Clothing.gd" id="1_bww0u"]
+[ext_resource type="PackedScene" uid="uid://dg7ih64aj468p" path="res://data/cloths/scenes/tshirt_blue_spread_out.tscn" id="2_bww0u"]
+[ext_resource type="Texture2D" uid="uid://bsh62kwiog6cp" path="res://assets/cloths/folded/folded_blue.png" id="3_bww0u"]
+[ext_resource type="Texture2D" uid="uid://e4vg6rutmbie" path="res://assets/cloths/dirty/dirty_blue.png" id="4_w44kw"]
+[ext_resource type="Texture2D" uid="uid://d1umgr0e2e5yo" path="res://assets/cloths/ripped/ripped_blue.png" id="5_kxf22"]
+[ext_resource type="Texture2D" uid="uid://di4pmp8aqmfiy" path="res://assets/cloths/ice_overlay.png" id="6_qhmw1"]
+[ext_resource type="Texture2D" uid="uid://cpw4mb22mjkrk" path="res://assets/cloths/shirt/shirt_ripped.png" id="7_msqek"]
+[ext_resource type="Texture2D" uid="uid://c2bp1dwsrseeq" path="res://assets/cloths/shirt/shirt_shrunk.png" id="8_gtdq0"]
+[ext_resource type="Texture2D" uid="uid://cvkp4na34u670" path="res://assets/cloths/shirt/shirt_soaked.png" id="9_r0rco"]
+[ext_resource type="Texture2D" uid="uid://cep7vehjcdig" path="res://assets/cloths/spreadOut/tshirt/tshirt_blue.png" id="10_vxtue"]
+[ext_resource type="Script" uid="uid://blgnuyj5fjgf1" path="res://data/WashingInstructions.gd" id="11_0cdpx"]
+
+[sub_resource type="Resource" id="Resource_bbsy2"]
+script = ExtResource("11_0cdpx")
+speed = 1100
+temperature = 30
+direction = 0
+metadata/_custom_type_script = "uid://blgnuyj5fjgf1"
+
+[resource]
+script = ExtResource("1_bww0u")
+wash_instructions = SubResource("Resource_bbsy2")
+texture_dirty = ExtResource("4_w44kw")
+texture_clean = ExtResource("3_bww0u")
+texture_soaked = ExtResource("9_r0rco")
+texture_ripped = ExtResource("7_msqek")
+texture_shrunk = ExtResource("8_gtdq0")
+texture_iced = ExtResource("6_qhmw1")
+texture_garn = ExtResource("5_kxf22")
+texture_spread_out = ExtResource("10_vxtue")
+spread_out_scene = ExtResource("2_bww0u")
+metadata/_custom_type_script = "uid://c1er473h2880c"

@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="Clothing" format=3 uid="uid://cb4n8ug53xxff"]
+
+[ext_resource type="Script" uid="uid://c1er473h2880c" path="res://data/Clothing.gd" id="1_oljwn"]
+[ext_resource type="PackedScene" uid="uid://bayqrbd5q86fy" path="res://data/cloths/scenes/tshirt_pink_spread_out.tscn" id="2_oljwn"]
+[ext_resource type="Texture2D" uid="uid://cn8igpcl2wvam" path="res://assets/cloths/folded/folded_pink.png" id="3_drpop"]
+[ext_resource type="Texture2D" uid="uid://n8k3dl111otj" path="res://assets/cloths/dirty/dirty_pink.png" id="4_uj230"]
+[ext_resource type="Texture2D" uid="uid://dlci8mea53cha" path="res://assets/cloths/ripped/ripped_pink.png" id="5_mckjw"]
+[ext_resource type="Texture2D" uid="uid://di4pmp8aqmfiy" path="res://assets/cloths/ice_overlay.png" id="6_byg4q"]
+[ext_resource type="Texture2D" uid="uid://cpw4mb22mjkrk" path="res://assets/cloths/shirt/shirt_ripped.png" id="7_af4jk"]
+[ext_resource type="Texture2D" uid="uid://c2bp1dwsrseeq" path="res://assets/cloths/shirt/shirt_shrunk.png" id="8_ietkg"]
+[ext_resource type="Texture2D" uid="uid://cvkp4na34u670" path="res://assets/cloths/shirt/shirt_soaked.png" id="9_4ad7r"]
+[ext_resource type="Texture2D" uid="uid://ybmptkv55b6s" path="res://assets/cloths/spreadOut/tshirt/tshirt_pink.png" id="10_oljwn"]
+[ext_resource type="Script" uid="uid://blgnuyj5fjgf1" path="res://data/WashingInstructions.gd" id="11_14kdc"]
+
+[sub_resource type="Resource" id="Resource_bbsy2"]
+script = ExtResource("11_14kdc")
+metadata/_custom_type_script = "uid://blgnuyj5fjgf1"
+
+[resource]
+script = ExtResource("1_oljwn")
+wash_instructions = SubResource("Resource_bbsy2")
+texture_dirty = ExtResource("4_uj230")
+texture_clean = ExtResource("3_drpop")
+texture_soaked = ExtResource("9_4ad7r")
+texture_ripped = ExtResource("7_af4jk")
+texture_shrunk = ExtResource("8_ietkg")
+texture_iced = ExtResource("6_byg4q")
+texture_garn = ExtResource("5_mckjw")
+texture_spread_out = ExtResource("10_oljwn")
+spread_out_scene = ExtResource("2_oljwn")
+metadata/_custom_type_script = "uid://c1er473h2880c"

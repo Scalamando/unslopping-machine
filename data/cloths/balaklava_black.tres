@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Clothing" format=3 uid="uid://pw3g1htlg3n3"]
+
+[ext_resource type="Script" uid="uid://c1er473h2880c" path="res://data/Clothing.gd" id="1_ulo7u"]
+[ext_resource type="PackedScene" uid="uid://bnhulx5iy0gf" path="res://data/cloths/scenes/balaklava_black_spread_out.tscn" id="2_ulo7u"]
+[ext_resource type="Texture2D" uid="uid://c34tum3s1oadm" path="res://assets/cloths/folded/folded_black.png" id="3_xmqfv"]
+[ext_resource type="Texture2D" uid="uid://bc8hmmdljaj8p" path="res://assets/cloths/dirty/dirty_black.png" id="4_c1r8t"]
+[ext_resource type="Texture2D" uid="uid://dvdva4kve28n8" path="res://assets/cloths/ripped/ripped_black.png" id="5_k8kh6"]
+[ext_resource type="Texture2D" uid="uid://toivcp23ga6q" path="res://assets/cloths/shirt/shirt_iced.png" id="6_f3m4y"]
+[ext_resource type="Texture2D" uid="uid://cpw4mb22mjkrk" path="res://assets/cloths/shirt/shirt_ripped.png" id="7_1yn3h"]
+[ext_resource type="Texture2D" uid="uid://c2bp1dwsrseeq" path="res://assets/cloths/shirt/shirt_shrunk.png" id="8_slmfh"]
+[ext_resource type="Texture2D" uid="uid://cvkp4na34u670" path="res://assets/cloths/shirt/shirt_soaked.png" id="9_xmotk"]
+[ext_resource type="Texture2D" uid="uid://nv50bgm2p0i5" path="res://assets/cloths/spreadOut/balaklava/balaklava_black.png" id="10_ce8yi"]
+[ext_resource type="Script" uid="uid://blgnuyj5fjgf1" path="res://data/WashingInstructions.gd" id="11_1yxsc"]
+
+[sub_resource type="Resource" id="Resource_bbsy2"]
+script = ExtResource("11_1yxsc")
+temperature = 10
+metadata/_custom_type_script = "uid://blgnuyj5fjgf1"
+
+[resource]
+script = ExtResource("1_ulo7u")
+wash_instructions = SubResource("Resource_bbsy2")
+texture_dirty = ExtResource("4_c1r8t")
+texture_clean = ExtResource("3_xmqfv")
+texture_soaked = ExtResource("9_xmotk")
+texture_ripped = ExtResource("7_1yn3h")
+texture_shrunk = ExtResource("8_slmfh")
+texture_iced = ExtResource("6_f3m4y")
+texture_garn = ExtResource("5_k8kh6")
+texture_spread_out = ExtResource("10_ce8yi")
+spread_out_scene = ExtResource("2_ulo7u")
+metadata/_custom_type_script = "uid://c1er473h2880c"

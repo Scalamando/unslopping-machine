@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Clothing" format=3 uid="uid://djwwq2h7dm30d"]
+
+[ext_resource type="Script" uid="uid://c1er473h2880c" path="res://data/Clothing.gd" id="1_5tsj3"]
+[ext_resource type="PackedScene" uid="uid://qye0og8grprk" path="res://data/cloths/scenes/jacket_black_spread_out.tscn" id="2_5tsj3"]
+[ext_resource type="Texture2D" uid="uid://c34tum3s1oadm" path="res://assets/cloths/folded/folded_black.png" id="3_4sjc4"]
+[ext_resource type="Texture2D" uid="uid://bc8hmmdljaj8p" path="res://assets/cloths/dirty/dirty_black.png" id="4_xd12f"]
+[ext_resource type="Texture2D" uid="uid://dvdva4kve28n8" path="res://assets/cloths/ripped/ripped_black.png" id="5_a4x1x"]
+[ext_resource type="Texture2D" uid="uid://toivcp23ga6q" path="res://assets/cloths/shirt/shirt_iced.png" id="6_ny6di"]
+[ext_resource type="Texture2D" uid="uid://cpw4mb22mjkrk" path="res://assets/cloths/shirt/shirt_ripped.png" id="7_go7yr"]
+[ext_resource type="Texture2D" uid="uid://c2bp1dwsrseeq" path="res://assets/cloths/shirt/shirt_shrunk.png" id="8_54sw7"]
+[ext_resource type="Texture2D" uid="uid://cvkp4na34u670" path="res://assets/cloths/shirt/shirt_soaked.png" id="9_xfus8"]
+[ext_resource type="Texture2D" uid="uid://ceh7w0v0ph1nc" path="res://assets/cloths/spreadOut/jacket/jacket_black.png" id="10_ht78y"]
+[ext_resource type="Script" uid="uid://blgnuyj5fjgf1" path="res://data/WashingInstructions.gd" id="11_jt3d8"]
+
+[sub_resource type="Resource" id="Resource_bbsy2"]
+script = ExtResource("11_jt3d8")
+temperature = 10
+metadata/_custom_type_script = "uid://blgnuyj5fjgf1"
+
+[resource]
+script = ExtResource("1_5tsj3")
+wash_instructions = SubResource("Resource_bbsy2")
+texture_dirty = ExtResource("4_xd12f")
+texture_clean = ExtResource("3_4sjc4")
+texture_soaked = ExtResource("9_xfus8")
+texture_ripped = ExtResource("7_go7yr")
+texture_shrunk = ExtResource("8_54sw7")
+texture_iced = ExtResource("6_ny6di")
+texture_garn = ExtResource("5_a4x1x")
+texture_spread_out = ExtResource("10_ht78y")
+spread_out_scene = ExtResource("2_5tsj3")
+metadata/_custom_type_script = "uid://c1er473h2880c"

@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://ctpfhq7n6wa1y"]
+
+[ext_resource type="Script" uid="uid://bir8ep1uhlj2d" path="res://data/cloths/scenes/cloth_inspection_controller.gd" id="1_guyh3"]
+[ext_resource type="Texture2D" uid="uid://r5kpcqpbdjy3" path="res://assets/cloth_inspection/clothes/shirt/shirt_green.PNG" id="3_guyh3"]
+[ext_resource type="PackedScene" uid="uid://i3driceblmb2" path="res://entities/instructions_proxy.tscn" id="3_viqdv"]
+
+[node name="ShirtSpreadOut" type="Control" unique_id=1070618402]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_guyh3")
+
+[node name="InstructionsProxy" parent="." unique_id=1949294101 instance=ExtResource("3_viqdv")]
+unique_name_in_owner = true
+position = Vector2(-304, 431)
+rotation = -0.061440013
+scale = Vector2(0.9999999, 0.9999999)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1563049386]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -386.0
+offset_top = -407.4856
+offset_right = 386.0
+offset_bottom = 407.4856
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_guyh3")
+expand_mode = 5
