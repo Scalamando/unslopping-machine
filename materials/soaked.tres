@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bxsitw85qhc3p"]
+
+[ext_resource type="Shader" uid="uid://bwk5s5trrbla8" path="res://shader/water_ripples.gdshader" id="1_7lkp4"]
+
+[resource]
+shader = ExtResource("1_7lkp4")
+shader_parameter/water_color = Color(0, 0.41666675, 1, 1)
+shader_parameter/foam_color = Color(0, 0.61666656, 1, 1)
+shader_parameter/water_opacity = 0.1970000093575
+shader_parameter/foam_opacity = 1.0
+shader_parameter/uv_offset = Vector2(0, 5)
+shader_parameter/wave_frequency = 40.0
+shader_parameter/wave_speed = 1.705
+shader_parameter/max_radius = 7.98
+shader_parameter/noise_scale = 8.8
+shader_parameter/distortion_strength = 0.125
+shader_parameter/breakup_strength = 0.494000023465

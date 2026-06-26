@@ -10,15 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://c2bp1dwsrseeq" path="res://assets/cloths/shirt/shirt_shrunk.png" id="8_qeeny"]
 [ext_resource type="Texture2D" uid="uid://cvkp4na34u670" path="res://assets/cloths/shirt/shirt_soaked.png" id="9_c7nkn"]
 [ext_resource type="Texture2D" uid="uid://wnr0h0oby8yp" path="res://assets/cloths/spreadOut/balaklava/balaklava_pink.png" id="10_3v7gy"]
-[ext_resource type="Script" uid="uid://blgnuyj5fjgf1" path="res://data/WashingInstructions.gd" id="11_k50m5"]
-
-[sub_resource type="Resource" id="Resource_bbsy2"]
-script = ExtResource("11_k50m5")
-metadata/_custom_type_script = "uid://blgnuyj5fjgf1"
+[ext_resource type="Resource" uid="uid://3mxq060bpd3l" path="res://data/WashingInstructions/Fast-Medium-CounterClock.tres" id="11_1hegc"]
 
 [resource]
 script = ExtResource("1_1hegc")
-wash_instructions = SubResource("Resource_bbsy2")
+wash_instructions = ExtResource("11_1hegc")
+value = 120
 texture_dirty = ExtResource("4_gilyr")
 texture_clean = ExtResource("3_b16gp")
 texture_soaked = ExtResource("9_c7nkn")

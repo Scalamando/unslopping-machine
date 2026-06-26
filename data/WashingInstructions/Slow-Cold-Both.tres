@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="WaschingInstruction" format=3 uid="uid://leu8q3pgwmms"]
+
+[ext_resource type="Script" uid="uid://blgnuyj5fjgf1" path="res://data/WashingInstructions.gd" id="1_qa8ml"]
+
+[resource]
+script = ExtResource("1_qa8ml")
+metadata/_custom_type_script = "uid://blgnuyj5fjgf1"

@@ -15,9 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://t2wjeexurs3c" path="res://assets/washing_machine_normal/Speed_Handle.png" id="11_l7nsl"]
 [ext_resource type="Texture2D" uid="uid://yr8w6tf37am5" path="res://assets/washing_machine_normal/ui_turnright.png" id="12_euh64"]
 [ext_resource type="Texture2D" uid="uid://bj2f6c78jjfc7" path="res://assets/washing_machine_normal/Heat_With.png" id="12_l7nsl"]
-[ext_resource type="Texture2D" uid="uid://kgmbcs0bslvj" path="res://assets/washing_machine_normal/ui_speedhandle_pointer.png" id="16_l7nsl"]
-[ext_resource type="Texture2D" uid="uid://bg320rdqxrnh8" path="res://assets/washing_machine_detail/ui_speeddisplay.png" id="15_euh64"]
 [ext_resource type="Texture2D" uid="uid://dch5yhcry8ans" path="res://assets/washing_machine_normal/ui_flusensieb.png" id="12_whu1w"]
+[ext_resource type="Texture2D" uid="uid://kgmbcs0bslvj" path="res://assets/washing_machine_normal/ui_speedhandle_pointer.png" id="16_l7nsl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rcsmu"]
 size = Vector2(204, 297)
@@ -119,6 +118,7 @@ _data = {
 
 [node name="WaschingMachine" type="Area2D" unique_id=875701637]
 script = ExtResource("1_cltil")
+wasching_time = 8.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1698410713]
 position = Vector2(-1, -1.5)

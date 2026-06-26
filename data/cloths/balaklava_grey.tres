@@ -5,29 +5,23 @@
 [ext_resource type="Texture2D" uid="uid://iv05qvtbdx10" path="res://assets/cloths/folded/folded_grey.png" id="3_0wrgb"]
 [ext_resource type="Texture2D" uid="uid://dlap3efhdgwh1" path="res://assets/cloths/dirty/dirty_grey.png" id="4_vhpwk"]
 [ext_resource type="Texture2D" uid="uid://b0wf3jncoxd86" path="res://assets/cloths/ripped/ripped_grey.png" id="5_vov2e"]
-[ext_resource type="Texture2D" uid="uid://toivcp23ga6q" path="res://assets/cloths/shirt/shirt_iced.png" id="6_85adc"]
+[ext_resource type="Texture2D" uid="uid://di4pmp8aqmfiy" path="res://assets/cloths/ice_overlay.png" id="6_f6gyh"]
 [ext_resource type="Texture2D" uid="uid://cpw4mb22mjkrk" path="res://assets/cloths/shirt/shirt_ripped.png" id="7_i4nu6"]
 [ext_resource type="Texture2D" uid="uid://c2bp1dwsrseeq" path="res://assets/cloths/shirt/shirt_shrunk.png" id="8_dllxe"]
 [ext_resource type="Texture2D" uid="uid://cvkp4na34u670" path="res://assets/cloths/shirt/shirt_soaked.png" id="9_t8b2r"]
 [ext_resource type="Texture2D" uid="uid://b0m8vpdyfesa5" path="res://assets/cloths/spreadOut/balaklava/balaklava_grey.png" id="10_15scq"]
-[ext_resource type="Script" uid="uid://blgnuyj5fjgf1" path="res://data/WashingInstructions.gd" id="11_qakbq"]
-
-[sub_resource type="Resource" id="Resource_bbsy2"]
-script = ExtResource("11_qakbq")
-speed = 1100
-temperature = 30
-direction = 0
-metadata/_custom_type_script = "uid://blgnuyj5fjgf1"
+[ext_resource type="Resource" uid="uid://c8mmjtntswilu" path="res://data/WashingInstructions/Med-Med-Clock.tres" id="11_f6gyh"]
 
 [resource]
 script = ExtResource("1_f6gyh")
-wash_instructions = SubResource("Resource_bbsy2")
+wash_instructions = ExtResource("11_f6gyh")
+value = 120
 texture_dirty = ExtResource("4_vhpwk")
 texture_clean = ExtResource("3_0wrgb")
 texture_soaked = ExtResource("9_t8b2r")
 texture_ripped = ExtResource("7_i4nu6")
 texture_shrunk = ExtResource("8_dllxe")
-texture_iced = ExtResource("6_85adc")
+texture_iced = ExtResource("6_f6gyh")
 texture_garn = ExtResource("5_vov2e")
 texture_spread_out = ExtResource("10_15scq")
 spread_out_scene = ExtResource("2_f6gyh")

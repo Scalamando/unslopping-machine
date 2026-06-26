@@ -1,0 +1,21 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dw3ygr4c6b1wp"]
+
+[ext_resource type="Shader" uid="uid://d2ng4klyiar0h" path="res://shader/dissolve.gdshader" id="1_lot1s"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_qmoiu"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_0bec8"]
+seed = 3
+frequency = 0.0039
+fractal_octaves = 4
+fractal_weighted_strength = 0.25
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_x5uos"]
+noise = SubResource("FastNoiseLite_0bec8")
+
+[resource]
+shader = ExtResource("1_lot1s")
+shader_parameter/dissolve_value = 0.5150000244625
+shader_parameter/mix_ratio = 0.558000026505
+shader_parameter/dissolve_noise = SubResource("NoiseTexture2D_x5uos")
+shader_parameter/dissolve_gradient = SubResource("NoiseTexture2D_qmoiu")

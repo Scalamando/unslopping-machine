@@ -54,7 +54,7 @@ func show_instructions() -> void:
 	match display_cloth.wash_instructions.temperature:
 		WaschingInstruction.Temperature.cold:
 			temp_med.visible = false
-			temp_high.textvisible = false
+			temp_high.visible = false
 		WaschingInstruction.Temperature.medium:
 			temp_med.visible = true
 			temp_high.visible = false

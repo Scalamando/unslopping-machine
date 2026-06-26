@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://baey72ybfhen1"]
+
+[ext_resource type="Script" uid="uid://br5qrpbed4q2k" path="res://ui/highlightable_controller.gd" id="1_uuhsw"]
+
+[node name="Highlightable" type="Control" unique_id=1122754297]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_uuhsw")

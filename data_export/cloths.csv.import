@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://dd3740n6m482w"
+
+[deps]
+
+files=["res://data_export/cloths.wash.translation", "res://data_export/cloths.value.translation", "res://data_export/cloths.texture.translation", "res://data_export/cloths.texture.translation", "res://data_export/cloths.texture.translation", "res://data_export/cloths.texture.translation", "res://data_export/cloths.texture.translation", "res://data_export/cloths.texture.translation", "res://data_export/cloths.texture.translation", "res://data_export/cloths.texture.translation", "res://data_export/cloths.spread.translation"]
+
+source_file="res://data_export/cloths.csv"
+dest_files=["res://data_export/cloths.wash.translation", "res://data_export/cloths.value.translation", "res://data_export/cloths.texture.translation", "res://data_export/cloths.texture.translation", "res://data_export/cloths.texture.translation", "res://data_export/cloths.texture.translation", "res://data_export/cloths.texture.translation", "res://data_export/cloths.texture.translation", "res://data_export/cloths.texture.translation", "res://data_export/cloths.texture.translation", "res://data_export/cloths.spread.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

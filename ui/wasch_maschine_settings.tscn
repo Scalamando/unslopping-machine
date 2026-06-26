@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cwsibguufdebd"]
 
 [ext_resource type="Script" uid="uid://cf0ov6lsiwile" path="res://ui/wasch_maschine_settings_ui.gd" id="1_j6sok"]
-[ext_resource type="Texture2D" uid="uid://cneh5bgbo4frd" path="res://assets/washing_machine_detail/wasching-machine-settings.png" id="2_hfvhi"]
+[ext_resource type="Texture2D" uid="uid://cneh5bgbo4frd" path="res://assets/washing_machine_detail/wasching-machine-settings.PNG" id="2_hfvhi"]
 [ext_resource type="Theme" uid="uid://cmq0345iy5yop" path="res://assets/theme/UI-border.tres" id="2_osu8h"]
 [ext_resource type="Texture2D" uid="uid://cax2bq2ok7oq7" path="res://assets/washing_machine_detail/ui_heatoff.png" id="3_b1spw"]
 [ext_resource type="Theme" uid="uid://c822krlutu482" path="res://assets/theme/Main-Theme.tres" id="3_ik1eq"]
@@ -10,10 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://bfnwonrb758k7" path="res://assets/ui/closebutton.png" id="4_ream5"]
 [ext_resource type="Script" uid="uid://mqvdgk1satiy" path="res://ui/speed_crank_controller.gd" id="5_7swae"]
 [ext_resource type="Texture2D" uid="uid://hyck2ayy7gr0" path="res://assets/washing_machine_detail/ui_speedhandle.png" id="5_yifcm"]
+[ext_resource type="PackedScene" uid="uid://baey72ybfhen1" path="res://ui/highlightable.tscn" id="6_kfceo"]
 [ext_resource type="Texture2D" uid="uid://brdjyf6c5niux" path="res://assets/washing_machine_detail/ui_startgreen.png" id="6_yifcm"]
 [ext_resource type="Texture2D" uid="uid://dw8uuqxpjp5yn" path="res://assets/washing_machine_detail/ui_startyellow.png" id="7_7swae"]
 [ext_resource type="Texture2D" uid="uid://bg320rdqxrnh8" path="res://assets/washing_machine_detail/ui_speeddisplay.png" id="7_hfvhi"]
 [ext_resource type="Texture2D" uid="uid://bk7q51k2l70x3" path="res://assets/washing_machine_detail/ui_startred.png" id="8_hfvhi"]
+[ext_resource type="Script" uid="uid://br5qrpbed4q2k" path="res://ui/highlightable_controller.gd" id="10_u8w67"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_j6sok"]
 font_size = 42
@@ -74,18 +76,21 @@ text = "
 "
 icon = ExtResource("4_ream5")
 
-[node name="SpeedCrank" type="Control" parent="." unique_id=100898956]
+[node name="Highlightable" parent="." unique_id=1588756862 instance=ExtResource("6_kfceo")]
+layout_mode = 0
+
+[node name="SpeedCrank" type="Control" parent="Highlightable" unique_id=100898956]
 unique_name_in_owner = true
 anchors_preset = 0
-offset_left = 1483.5131
-offset_top = -290.58496
+offset_left = 1483.5132
+offset_top = -290.5852
 offset_right = 2483.5132
-offset_bottom = 709.41504
+offset_bottom = 709.4148
 script = ExtResource("5_7swae")
 SPEED_CRANK_MULTIPLIER = 9.0
 SPEED_CRANK_FALLOFF = 0.01
 
-[node name="SpeedLabel" type="Label" parent="SpeedCrank" unique_id=1213575725]
+[node name="SpeedLabel" type="Label" parent="Highlightable/SpeedCrank" unique_id=1213575725]
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
@@ -103,7 +108,7 @@ theme_override_font_sizes/font_size = 32
 text = "0 RPM"
 label_settings = SubResource("LabelSettings_j6sok")
 
-[node name="Anchor" type="Control" parent="SpeedCrank" unique_id=1256602382]
+[node name="Anchor" type="Control" parent="Highlightable/SpeedCrank" unique_id=1256602382]
 unique_name_in_owner = true
 anchors_preset = 0
 offset_left = 416.75983
@@ -112,7 +117,7 @@ offset_right = 456.75983
 offset_bottom = 399.40775
 scale = Vector2(1.8941743, 1.8941743)
 
-[node name="TextureRect" type="TextureRect" parent="SpeedCrank/Anchor" unique_id=1370933325]
+[node name="TextureRect" type="TextureRect" parent="Highlightable/SpeedCrank/Anchor" unique_id=1370933325]
 layout_mode = 0
 offset_left = -84.116714
 offset_top = -80.29323
@@ -121,7 +126,7 @@ offset_bottom = 89.70679
 mouse_filter = 2
 texture = ExtResource("5_yifcm")
 
-[node name="Line2D" type="Line2D" parent="SpeedCrank" unique_id=1057583525]
+[node name="Line2D" type="Line2D" parent="Highlightable/SpeedCrank" unique_id=1057583525]
 unique_name_in_owner = true
 default_color = Color(1, 0, 0, 1)
 
@@ -150,7 +155,7 @@ offset_top = -860.28467
 offset_right = -1194.9865
 offset_bottom = -820.28467
 
-[node name="Cold" type="Button" parent="TemperatureButtons" unique_id=1167156892]
+[node name="Cold" type="Button" parent="TemperatureButtons" unique_id=353612600]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
@@ -165,6 +170,7 @@ offset_bottom = 341.76456
 scale = Vector2(1.499, 1.499)
 theme = ExtResource("3_ik1eq")
 icon = ExtResource("4_cflqw")
+script = ExtResource("10_u8w67")
 
 [node name="Medium" type="Button" parent="TemperatureButtons" unique_id=585404810]
 unique_name_in_owner = true
@@ -181,6 +187,7 @@ offset_bottom = 342.76456
 scale = Vector2(1.4985995, 1.4985995)
 theme = ExtResource("3_ik1eq")
 icon = ExtResource("3_b1spw")
+script = ExtResource("10_u8w67")
 
 [node name="Hot" type="Button" parent="TemperatureButtons" unique_id=1545301610]
 unique_name_in_owner = true
@@ -197,6 +204,7 @@ offset_bottom = 344.7648
 scale = Vector2(1.499, 1.499)
 theme = ExtResource("3_ik1eq")
 icon = ExtResource("3_b1spw")
+script = ExtResource("10_u8w67")
 
 [node name="DirectionButton" type="Button" parent="." unique_id=1951405259]
 unique_name_in_owner = true
@@ -208,6 +216,7 @@ offset_bottom = -836.1658
 scale = Vector2(3.95, 3.95)
 theme = ExtResource("3_ik1eq")
 expand_icon = true
+script = ExtResource("10_u8w67")
 
 [node name="StartButton" type="Button" parent="." unique_id=908637153]
 unique_name_in_owner = true
@@ -218,6 +227,7 @@ offset_right = 1814.0
 offset_bottom = -660.00024
 scale = Vector2(1.8775368, 1.8775368)
 theme = ExtResource("3_ik1eq")
+script = ExtResource("10_u8w67")
 
 [node name="StartGreen" type="TextureRect" parent="StartButton" unique_id=1494321951]
 layout_mode = 0
@@ -248,7 +258,7 @@ offset_bottom = 155.0
 texture = ExtResource("4_ik1eq")
 
 [connection signal="pressed" from="CloseButton" to="." method="_on_button_pressed"]
-[connection signal="gui_input" from="SpeedCrank" to="SpeedCrank" method="_on_crank_input"]
+[connection signal="gui_input" from="Highlightable/SpeedCrank" to="Highlightable/SpeedCrank" method="_on_crank_input"]
 [connection signal="pressed" from="TemperatureButtons/Cold" to="." method="_on_cold_pressed"]
 [connection signal="pressed" from="TemperatureButtons/Medium" to="." method="_on_medium_pressed"]
 [connection signal="pressed" from="TemperatureButtons/Hot" to="." method="_on_hot_pressed"]

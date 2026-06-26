@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="LevelRes" format=3 uid="uid://brrju62wo45jr"]
 
 [ext_resource type="Script" uid="uid://bqcwvesmpnf82" path="res://data/CustomerProfile.gd" id="1_5gghx"]
-[ext_resource type="Resource" uid="uid://d2vmdjye85vqo" path="res://data/cloths/shirt.tres" id="2_8p1tc"]
+[ext_resource type="Resource" uid="uid://d2vmdjye85vqo" path="res://data/cloths/shirt_pink.tres" id="2_8p1tc"]
 [ext_resource type="Texture2D" uid="uid://d1nad5cg2lgml" path="res://assets/persons/jay.png" id="4_3dfqs"]
 [ext_resource type="Script" uid="uid://b5ioyvhc456j2" path="res://data/LevelRes.gd" id="4_3u61q"]
 [ext_resource type="PackedScene" uid="uid://c0dwud8lo7ogj" path="res://data/levels/day_start_ui_1.tscn" id="4_8p1tc"]

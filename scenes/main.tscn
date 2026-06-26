@@ -5,10 +5,12 @@
 [ext_resource type="PackedScene" uid="uid://dnhqo1hwn6jpe" path="res://scenes/tresen.tscn" id="2_eb6dy"]
 [ext_resource type="Script" uid="uid://b5ioyvhc456j2" path="res://data/LevelRes.gd" id="2_jkv2x"]
 [ext_resource type="Texture2D" uid="uid://cwu0qw0aed8jw" path="res://assets/background.png" id="2_muem4"]
+[ext_resource type="Resource" uid="uid://d2yb83wj5lupc" path="res://data/levels/level_one_mashine.tres" id="3_0ld40"]
 [ext_resource type="PackedScene" uid="uid://cgrnbjcgn2fme" path="res://entities/finished_basket.tscn" id="3_a8y0u"]
 [ext_resource type="Resource" uid="uid://brrju62wo45jr" path="res://data/levels/level_1.tres" id="3_jbj1t"]
 [ext_resource type="Script" uid="uid://dmbn5b0p26ns5" path="res://scenes/camera_controller.gd" id="3_jyhfs"]
 [ext_resource type="Resource" uid="uid://cxnt6wmq76r7c" path="res://data/levels/level_2.tres" id="4_jbj1t"]
+[ext_resource type="Resource" uid="uid://c7yl2ijdurcpu" path="res://data/levels/level_hard.tres" id="5_dp3eg"]
 [ext_resource type="PackedScene" uid="uid://b5f15rlxpihuc" path="res://entities/basket.tscn" id="5_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://v0gnwt1i2wge" path="res://entities/washing_machine.tscn" id="6_tefeu"]
 [ext_resource type="Script" uid="uid://c0ierpals2ss6" path="res://entities/customer_manager.gd" id="7_choun"]
@@ -20,10 +22,10 @@
 
 [node name="LevelManager" type="Node2D" unique_id=715033021 node_paths=PackedStringArray("customer_manager", "Camera", "washing_machines", "baskets")]
 script = ExtResource("1_muem4")
-levels = Array[ExtResource("2_jkv2x")]([ExtResource("3_jbj1t"), ExtResource("4_jbj1t")])
+levels = Array[ExtResource("2_jkv2x")]([ExtResource("3_0ld40"), ExtResource("5_dp3eg"), ExtResource("3_jbj1t"), ExtResource("4_jbj1t")])
 customer_manager = NodePath("CustomerManager")
 Camera = NodePath("Camera2D")
-washing_machines = [NodePath("WaschingRoom/WaschingMachine"), NodePath("WaschingRoom/WaschingMachine2")]
+washing_machines = [NodePath("WaschingRoom/WaschingMachine"), NodePath("WaschingRoom/WaschingMachine2"), NodePath("WaschingRoom/WaschingMachine3"), NodePath("WaschingRoom/WaschingMachine4"), NodePath("WaschingRoom/WaschingMachine5"), NodePath("WaschingRoom/WaschingMachine6")]
 baskets = [NodePath("WaschingRoom/Basket"), NodePath("WaschingRoom/Basket2"), NodePath("WaschingRoom/Basket3")]
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1997451519]
@@ -139,6 +141,7 @@ scale = Vector2(1, 0.9742276)
 unique_name_in_owner = true
 position = Vector2(-1130, 146)
 script = ExtResource("7_choun")
+customer_wait_time = 60
 customer_offset = Vector2(-350, 0)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1243545003]

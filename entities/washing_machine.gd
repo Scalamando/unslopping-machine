@@ -5,6 +5,8 @@ signal finished_wash
 
 enum Direction {clockwise, counterclockwise}
 
+@export_range(1.0, 20.0, 0.5) var wasching_time : float = 10.0
+
 @onready var temp_med: Sprite2D = %TempMed
 @onready var temp_high: Sprite2D = %TempHigh
 
@@ -28,7 +30,6 @@ const heat_off = preload("uid://c3pir06gj8apv")
 @onready var ui_start_red: Sprite2D = %UiStartRed
 @onready var ui_start_yellow: Sprite2D = %UiStartYellow
 
-
 const WASHING_MACHINE_FAST = preload("res://assets/audio/washing_machine/WashingMachine_Fast.mp3")
 const WASHING_MACHINE_MEDIUM = preload("res://assets/audio/washing_machine/WashingMachine_Medium.mp3")
 const WASHING_MACHINE_SLOW = preload("res://assets/audio/washing_machine/WashingMachine_Slow.mp3")
@@ -49,19 +50,19 @@ var has_unwashable_cloths: bool :
 	set(value):
 		pass
 
-@export var speed : int = 0 :
+var speed : int = 0 :
 	get: return speed
 	set(value):
 		speed = value
 		set_speed_pointer(value)
 
-@export var temperature : WaschingInstruction.Temperature = WaschingInstruction.Temperature.hot :
+var temperature : WaschingInstruction.Temperature = WaschingInstruction.Temperature.hot :
 	get: return temperature
 	set(value):
 		temperature = value
 		_set_temperature_rect(value)
 
-@export var direction : Direction = Direction.clockwise :
+var direction : Direction = Direction.clockwise :
 	get: return direction
 	set(value):
 		direction = value
@@ -131,7 +132,7 @@ func start_washing() -> bool:
 	ui_start_red.visible = true
 	foreground_open.visible = false
 	foreground_closed.visible = true
-	wasching_timer.start()
+	wasching_timer.start(wasching_time)
 
 
 

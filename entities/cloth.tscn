@@ -3,6 +3,10 @@
 [ext_resource type="Script" uid="uid://bxe8mmrb2ox61" path="res://scenes/cloth_controller.gd" id="1_4erq4"]
 [ext_resource type="Script" uid="uid://crmnw3ldr3xev" path="res://addons/drag_and_drop/scripts/draggable.gd" id="1_sm2ym"]
 [ext_resource type="Script" uid="uid://djdmnemxrx7bg" path="res://addons/drag_and_drop/resources/draggable_types/draggable_type.gd" id="2_4erq4"]
+[ext_resource type="Material" uid="uid://dw3ygr4c6b1wp" path="res://materials/ripped.tres" id="3_0bec8"]
+[ext_resource type="Texture2D" uid="uid://di4pmp8aqmfiy" path="res://assets/cloths/ice_overlay.png" id="3_gwx4f"]
+[ext_resource type="Material" uid="uid://bxsitw85qhc3p" path="res://materials/soaked.tres" id="3_x5uos"]
+[ext_resource type="Texture2D" uid="uid://n8k3dl111otj" path="res://assets/cloths/dirty/dirty_pink.png" id="4_gwx4f"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rcsmu"]
 radius = 99.0202
@@ -12,10 +16,19 @@ script = ExtResource("2_4erq4")
 
 [node name="Cloth" type="Area2D" unique_id=406249680 groups=["Cloth"]]
 script = ExtResource("1_4erq4")
+soaked_material = ExtResource("3_x5uos")
+ripped_material = ExtResource("3_0bec8")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1168166370]
 unique_name_in_owner = true
 scale = Vector2(0.35, 0.35)
+texture = ExtResource("4_gwx4f")
+
+[node name="IcedSprite2D" type="Sprite2D" parent="." unique_id=576939286]
+unique_name_in_owner = true
+visible = false
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("3_gwx4f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1394123991]
 shape = SubResource("CircleShape2D_rcsmu")

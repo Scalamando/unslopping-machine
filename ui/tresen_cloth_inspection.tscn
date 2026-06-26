@@ -144,12 +144,12 @@ expand_mode = 5
 [node name="SpeedTexRect" type="TextureRect" parent="Instructions/HBoxContainer" unique_id=1556407445]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = -23.256058
-offset_top = 502.32556
-offset_right = 386.74396
-offset_bottom = 622.32556
+offset_left = -106.977
+offset_top = 581.3953
+offset_right = 462.023
+offset_bottom = 701.3953
 rotation = -0.095722795
-scale = Vector2(2.4204469, 2.4204469)
+scale = Vector2(2.0592089, 2.0592089)
 texture = ExtResource("4_sajcn")
 stretch_mode = 2
 

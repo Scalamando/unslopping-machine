@@ -15,8 +15,8 @@
 [sub_resource type="Resource" id="Resource_bbsy2"]
 script = ExtResource("11_c3eiv")
 speed = 1100
-temperature = 30
-direction = 0
+temperature = 10
+direction = 1
 metadata/_custom_type_script = "uid://blgnuyj5fjgf1"
 
 [resource]

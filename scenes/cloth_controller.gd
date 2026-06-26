@@ -1,7 +1,14 @@
 class_name Cloth
 extends Area2D
 
+@export var soaked_material : Material
+@export var ripped_material : Material
+@export var scale_normal : Vector2 = Vector2(0.35, 0.35)
+@export var scale_shrunk : Vector2 = Vector2(0.1, 0.1)
+
 @onready var sprite_2d: Sprite2D = %Sprite2D
+@onready var iced_sprite_2d: Sprite2D = %IcedSprite2D
+
 const cloth_scene = preload("res://entities/cloth.tscn")
 
 enum State {dirty, clean, soaked, ripped, shrunk, iced, garn}
@@ -24,17 +31,36 @@ func get_state() -> State:
 
 func apply_wash(temperature: WaschingInstruction.Temperature, speed: int, direction: WaschingInstruction.Direction) -> State:
 	state = _state_for_wash(temperature, speed, direction)
-	sprite_2d.texture = get_texture()
+	sprite_2d.texture = _get_texture()
+
+	# iced overlay
+	if state == State.iced:
+		iced_sprite_2d.visible = true
+	else:
+		iced_sprite_2d.visible = false
+
+	if state == State.soaked:
+		sprite_2d.material = soaked_material
+	elif state == State.ripped:
+		sprite_2d.material = ripped_material
+	else:
+		sprite_2d.material = null
+
+	if state == State.shrunk:
+		sprite_2d.scale = scale_shrunk
+	else:
+		sprite_2d.scale = scale_normal
+
 	return state
 
-func get_texture() -> Texture:
+func _get_texture() -> Texture:
 	match state:
 		State.dirty: return clothing.texture_dirty
 		State.clean: return clothing.texture_clean
-		State.soaked: return clothing.texture_soaked
-		State.ripped: return clothing.texture_ripped
-		State.shrunk: return clothing.texture_shrunk
-		State.iced: return clothing.texture_iced
+		State.soaked: return clothing.texture_spread_out
+		State.ripped: return clothing.texture_spread_out
+		State.shrunk: return clothing.texture_spread_out
+		State.iced: return clothing.texture_dirty
 		State.garn: return clothing.texture_garn
 		_: return clothing.texture_dirty
 

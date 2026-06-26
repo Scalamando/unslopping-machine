@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://c0q5c8k04crof"
+
+[deps]
+
+files=["res://data/cloths/scenes/cloths.wash.translation", "res://data/cloths/scenes/cloths.value.translation", "res://data/cloths/scenes/cloths.texture.translation", "res://data/cloths/scenes/cloths.texture.translation", "res://data/cloths/scenes/cloths.texture.translation", "res://data/cloths/scenes/cloths.texture.translation", "res://data/cloths/scenes/cloths.texture.translation", "res://data/cloths/scenes/cloths.texture.translation", "res://data/cloths/scenes/cloths.texture.translation", "res://data/cloths/scenes/cloths.texture.translation", "res://data/cloths/scenes/cloths.spread.translation"]
+
+source_file="res://data/cloths/scenes/cloths.csv"
+dest_files=["res://data/cloths/scenes/cloths.wash.translation", "res://data/cloths/scenes/cloths.value.translation", "res://data/cloths/scenes/cloths.texture.translation", "res://data/cloths/scenes/cloths.texture.translation", "res://data/cloths/scenes/cloths.texture.translation", "res://data/cloths/scenes/cloths.texture.translation", "res://data/cloths/scenes/cloths.texture.translation", "res://data/cloths/scenes/cloths.texture.translation", "res://data/cloths/scenes/cloths.texture.translation", "res://data/cloths/scenes/cloths.texture.translation", "res://data/cloths/scenes/cloths.spread.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

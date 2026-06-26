@@ -69,7 +69,7 @@ func _on_cm_customer_queue_finshed() -> void:
 func _on_cloth_finished(_cloth: Cloth) -> void:
 	stats.add_finished_cloth()
 
-func _on_cloth_timedout(_cloth: Cloth) -> void:
+func _on_cloth_timedout(_i: CustomerQueueItem) -> void:
 	stats.add_timedout_cloth()
 
 func enable_utils(utils : Array[Area2D], amount : int) -> void:

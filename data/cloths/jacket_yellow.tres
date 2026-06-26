@@ -14,14 +14,15 @@
 
 [sub_resource type="Resource" id="Resource_bbsy2"]
 script = ExtResource("11_u6f65")
-speed = 1100
+speed = 1950
 temperature = 30
-direction = 0
+direction = 1
 metadata/_custom_type_script = "uid://blgnuyj5fjgf1"
 
 [resource]
 script = ExtResource("1_odpt0")
 wash_instructions = SubResource("Resource_bbsy2")
+value = 100
 texture_dirty = ExtResource("4_jp7hc")
 texture_clean = ExtResource("3_131c6")
 texture_soaked = ExtResource("9_ipt7p")
