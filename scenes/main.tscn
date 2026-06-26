@@ -18,6 +18,7 @@
 [ext_resource type="Script" uid="uid://bi8xl0g3tlsk1" path="res://scenes/money_UI_controller.gd" id="10_trceg"]
 [ext_resource type="PackedScene" uid="uid://bdbknn06inx1a" path="res://ui/customer_queue.tscn" id="11_trceg"]
 [ext_resource type="PackedScene" uid="uid://cwsibguufdebd" path="res://ui/wasch_maschine_settings.tscn" id="13_trceg"]
+[ext_resource type="Texture2D" uid="uid://xtokt5p37ikh" path="res://assets/ui/ui_money.png" id="15_gqmmt"]
 [ext_resource type="PackedScene" uid="uid://dxtbtqp8cydst" path="res://ui/level_end_ui.tscn" id="17_dp3eg"]
 
 [node name="LevelManager" type="Node2D" unique_id=715033021 node_paths=PackedStringArray("customer_manager", "Camera", "washing_machines", "baskets")]
@@ -170,6 +171,11 @@ offset_bottom = 68.0
 grow_horizontal = 0
 script = ExtResource("10_trceg")
 
+[node name="UiMoney" type="Sprite2D" parent="Camera2D/MainUI/Money" unique_id=587230047]
+position = Vector2(29.999998, 31.999989)
+scale = Vector2(0.44068483, 0.44068483)
+texture = ExtResource("15_gqmmt")
+
 [node name="HBoxContainer" type="HBoxContainer" parent="Camera2D/MainUI/Money" unique_id=1951345216]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -177,6 +183,7 @@ size_flags_vertical = 4
 offset_transform_position = Vector2(3, 0)
 
 [node name="Doller" type="Label" parent="Camera2D/MainUI/Money/HBoxContainer" unique_id=892387999]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 42
 text = "$"
@@ -184,6 +191,7 @@ text = "$"
 [node name="Money" type="Label" parent="Camera2D/MainUI/Money/HBoxContainer" unique_id=1775086089]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_colors/font_color = Color(0.17641911, 0.17641908, 0.17641908, 1)
 theme_override_font_sizes/font_size = 42
 text = "0"
 
