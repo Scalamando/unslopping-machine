@@ -202,13 +202,13 @@ accepted_draggable_types = Array[ExtResource("3_fckx4")]([SubResource("Resource_
 metadata/_custom_type_script = "uid://nj1hdjl1vob2"
 
 [node name="Slot3" type="Marker2D" parent="DropZone" unique_id=890196539]
-position = Vector2(34, -3)
+position = Vector2(44, 8)
 
 [node name="Slot2" type="Marker2D" parent="DropZone" unique_id=5125084]
-position = Vector2(-44, -6)
+position = Vector2(-52, 5)
 
 [node name="Slot1" type="Marker2D" parent="DropZone" unique_id=936664904]
-position = Vector2(0, 18)
+position = Vector2(0, 37)
 
 [node name="UI" type="Control" parent="." unique_id=892593718]
 layout_mode = 3
