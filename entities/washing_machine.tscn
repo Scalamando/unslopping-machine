@@ -16,6 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://yr8w6tf37am5" path="res://assets/washing_machine_normal/ui_turnright.png" id="12_euh64"]
 [ext_resource type="Texture2D" uid="uid://bj2f6c78jjfc7" path="res://assets/washing_machine_normal/Heat_With.png" id="12_l7nsl"]
 [ext_resource type="Texture2D" uid="uid://kgmbcs0bslvj" path="res://assets/washing_machine_normal/ui_speedhandle_pointer.png" id="16_l7nsl"]
+[ext_resource type="Texture2D" uid="uid://bg320rdqxrnh8" path="res://assets/washing_machine_detail/ui_speeddisplay.png" id="15_euh64"]
+[ext_resource type="Texture2D" uid="uid://dch5yhcry8ans" path="res://assets/washing_machine_normal/ui_flusensieb.png" id="12_whu1w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rcsmu"]
 size = Vector2(204, 297)
@@ -183,6 +185,12 @@ texture = ExtResource("11_l7nsl")
 
 [node name="Flusensieb" type="Area2D" parent="." unique_id=674456099]
 position = Vector2(-71, 123)
+
+[node name="UiFlusensieb" type="Sprite2D" parent="Flusensieb" unique_id=918884394]
+visible = false
+position = Vector2(-11.328758, -0.8750055)
+scale = Vector2(0.46232864, 0.4623286)
+texture = ExtResource("12_whu1w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Flusensieb" unique_id=783310974]
 position = Vector2(0.75, -1)
