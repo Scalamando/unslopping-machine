@@ -16,3 +16,11 @@ func _input(event : InputEvent) -> void:
 		targetPos = cameraPosLeftRoom
 	elif event.is_action_pressed("move_right_room"):
 		targetPos = cameraPosRightRoom
+
+
+func _on_area_2d_mouse_shape_entered(shape_idx: int) -> void:
+	
+	if(shape_idx == 0):
+		targetPos = cameraPosLeftRoom
+	elif (shape_idx == 1):
+		targetPos = cameraPosRightRoom
