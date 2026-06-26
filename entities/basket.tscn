@@ -32,10 +32,10 @@ accepted_draggable_types = Array[ExtResource("3_pdp4j")]([SubResource("Resource_
 metadata/_custom_type_script = "uid://nj1hdjl1vob2"
 
 [node name="Marker2D" type="Marker2D" parent="DropZone" unique_id=853318214]
-position = Vector2(-59, -31)
+position = Vector2(-51, -31)
 
 [node name="Marker2D2" type="Marker2D" parent="DropZone" unique_id=177960539]
-position = Vector2(61, -31)
+position = Vector2(53, -31)
 
 [node name="Marker2D3" type="Marker2D" parent="DropZone" unique_id=665811517]
 position = Vector2(0, -31)
