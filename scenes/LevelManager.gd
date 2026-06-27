@@ -82,13 +82,19 @@ func end_current_level() -> void:
 	stats.add_customers_served(len(level.customer_array))
 
 	## show level end UI
-	UiManager.show_level_end_ui(stats)
+	UiManager.show_level_end_ui(level_idx, stats, threshold_win)
 
 func _on_cm_customer_queue_finshed() -> void:
 	end_current_level()
 
-func _on_cloth_finished(_cloth: Cloth) -> void:
+func _on_cloth_finished(cloth: Cloth) -> void:
 	stats.add_finished_cloth()
+	match cloth.state:
+		Cloth.State.soaked: stats.add_soaked_cloth()
+		Cloth.State.ripped: stats.add_ripped_cloth()
+		Cloth.State.shrunk: stats.add_shrunk_cloth()
+		Cloth.State.iced: stats.add_iced_cloth()
+		Cloth.State.garn: stats.add_garn_cloth()
 
 func _on_cloth_timedout(_i: CustomerQueueItem) -> void:
 	stats.add_timedout_cloth()

@@ -1,31 +1,38 @@
 [gd_scene format=3 uid="uid://dxtbtqp8cydst"]
 
 [ext_resource type="Script" uid="uid://bagd4ckscnhog" path="res://ui/level_end_ui_controller.gd" id="1_lhv6k"]
+[ext_resource type="Texture2D" uid="uid://o21bs04l2b8" path="res://assets/levelend.png" id="2_vtbdu"]
+[ext_resource type="Texture2D" uid="uid://dv888difqgjh8" path="res://assets/ui/ui_nextday.png" id="3_8iu28"]
+[ext_resource type="Script" uid="uid://br5qrpbed4q2k" path="res://ui/highlightable_controller.gd" id="3_rilo5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ho7a4"]
+font_size = 64
+font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_rcsmu"]
-font_size = 24
-font_color = Color(0.74138474, 0.7413847, 0.74138457, 1)
+font_size = 20
+font_color = Color(0.20871013, 0.20871016, 0.20871004, 1)
 
 [sub_resource type="FontVariation" id="FontVariation_ho7a4"]
 variation_embolden = 0.75
 
 [sub_resource type="LabelSettings" id="LabelSettings_32ftm"]
 font = SubResource("FontVariation_ho7a4")
-font_size = 32
+font_size = 28
+font_color = Color(0.096204735, 0.09620475, 0.096204735, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_vcnvx"]
-font_size = 31
-
-[sub_resource type="LabelSettings" id="LabelSettings_lhv6k"]
-font = SubResource("FontVariation_ho7a4")
-font_size = 24
-
-[sub_resource type="LabelSettings" id="LabelSettings_gol62"]
 font_size = 28
+font_color = Color(0.0142752165, 0.014275218, 0.014275218, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8iu28"]
+font_size = 20
+font_color = Color(0.18000486, 0.18000486, 0.18000486, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_vtbdu"]
 line_spacing = 5.855
 font_size = 28
+font_color = Color(0.06053035, 0.06053035, 0.060530342, 1)
 
 [node name="LevelEndUI" type="Control" unique_id=572177404]
 layout_mode = 3
@@ -51,6 +58,23 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.6117647)
 
+[node name="Levelend" type="TextureRect" parent="ColorRect" unique_id=1631894056]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -862.0
+offset_top = -623.0
+offset_right = 809.98413
+offset_bottom = 565.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_vtbdu")
+expand_mode = 1
+stretch_mode = 5
+
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1218616892]
 layout_mode = 1
 anchors_preset = 8
@@ -58,18 +82,21 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -52.5
-offset_top = -42.0
-offset_right = 52.5
-offset_bottom = 42.0
+offset_left = -308.0
+offset_top = -452.0
+offset_right = 292.0
+offset_bottom = 494.0
 grow_horizontal = 2
 grow_vertical = 2
+rotation = -0.023118408
 alignment = 1
 
 [node name="TitleLabel" type="Label" parent="VBoxContainer" unique_id=1324678956]
+unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 64
-text = "Level Finshed"
+text = "Day %s Finished"
+label_settings = SubResource("LabelSettings_ho7a4")
+horizontal_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" unique_id=2002016874]
 layout_mode = 2
@@ -97,7 +124,6 @@ label_settings = SubResource("LabelSettings_rcsmu")
 [node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer" unique_id=2063854283]
 layout_mode = 2
 theme_override_constants/margin_top = 8
-theme_override_constants/margin_bottom = 8
 
 [node name="MoneyStatsContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer2" unique_id=28708183]
 layout_mode = 2
@@ -135,45 +161,159 @@ label_settings = SubResource("LabelSettings_vcnvx")
 
 [node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer" unique_id=2444349]
 layout_mode = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 4
-theme_override_constants/margin_bottom = 8
+theme_override_constants/margin_top = 8
 
 [node name="ClothTimedoutContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer4" unique_id=2113665670]
 layout_mode = 2
 
 [node name="ClothTimedoutLabel" type="Label" parent="VBoxContainer/MarginContainer4/ClothTimedoutContainer" unique_id=1689057672]
-custom_minimum_size = Vector2(280, 0)
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
-text = "Returned too late:"
-label_settings = SubResource("LabelSettings_lhv6k")
+text = "Late returns:"
+label_settings = SubResource("LabelSettings_32ftm")
 
 [node name="ClothTimedoutValue" type="Label" parent="VBoxContainer/MarginContainer4/ClothTimedoutContainer" unique_id=464663931]
 unique_name_in_owner = true
 layout_mode = 2
 text = "0"
-label_settings = SubResource("LabelSettings_gol62")
+label_settings = SubResource("LabelSettings_vcnvx")
+
+[node name="MarginContainer12" type="MarginContainer" parent="VBoxContainer" unique_id=928511409]
+layout_mode = 2
+theme_override_constants/margin_top = 32
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer12" unique_id=1534301271]
+layout_mode = 2
+text = "Damaged Clothing"
+label_settings = SubResource("LabelSettings_8iu28")
+
+[node name="MarginContainer7" type="MarginContainer" parent="VBoxContainer" unique_id=1095967129]
+layout_mode = 2
+theme_override_constants/margin_top = 8
+
+[node name="ClothSoakedContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer7" unique_id=2103091997]
+layout_mode = 2
+
+[node name="ClothSoakedLabel" type="Label" parent="VBoxContainer/MarginContainer7/ClothSoakedContainer" unique_id=1615958910]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Soaked:"
+label_settings = SubResource("LabelSettings_32ftm")
+
+[node name="ClothSoakedValue" type="Label" parent="VBoxContainer/MarginContainer7/ClothSoakedContainer" unique_id=2079055213]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_vcnvx")
+
+[node name="MarginContainer8" type="MarginContainer" parent="VBoxContainer" unique_id=483559997]
+layout_mode = 2
+theme_override_constants/margin_top = 8
+
+[node name="ClothRippedContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer8" unique_id=291145855]
+layout_mode = 2
+
+[node name="ClothRippedLabel" type="Label" parent="VBoxContainer/MarginContainer8/ClothRippedContainer" unique_id=745931864]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Ripped:"
+label_settings = SubResource("LabelSettings_32ftm")
+
+[node name="ClothRippedValue" type="Label" parent="VBoxContainer/MarginContainer8/ClothRippedContainer" unique_id=2060617052]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_vcnvx")
+
+[node name="MarginContainer9" type="MarginContainer" parent="VBoxContainer" unique_id=57406107]
+layout_mode = 2
+theme_override_constants/margin_top = 8
+
+[node name="ClothIcedContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer9" unique_id=2092297729]
+layout_mode = 2
+
+[node name="ClothIcedLabel" type="Label" parent="VBoxContainer/MarginContainer9/ClothIcedContainer" unique_id=100467607]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Iced:"
+label_settings = SubResource("LabelSettings_32ftm")
+
+[node name="ClothIcedValue" type="Label" parent="VBoxContainer/MarginContainer9/ClothIcedContainer" unique_id=2079378391]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_vcnvx")
+
+[node name="MarginContainer10" type="MarginContainer" parent="VBoxContainer" unique_id=1814170532]
+layout_mode = 2
+theme_override_constants/margin_top = 8
+
+[node name="ClothShrunkContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer10" unique_id=257453375]
+layout_mode = 2
+
+[node name="ClothShrunkLabel" type="Label" parent="VBoxContainer/MarginContainer10/ClothShrunkContainer" unique_id=557271138]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Shrunk:"
+label_settings = SubResource("LabelSettings_32ftm")
+
+[node name="ClothShrunkValue" type="Label" parent="VBoxContainer/MarginContainer10/ClothShrunkContainer" unique_id=823003273]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_vcnvx")
+
+[node name="MarginContainer11" type="MarginContainer" parent="VBoxContainer" unique_id=1133138805]
+layout_mode = 2
+theme_override_constants/margin_top = 8
+
+[node name="ClothGarnContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer11" unique_id=716630645]
+layout_mode = 2
+
+[node name="ClothGarnLabel" type="Label" parent="VBoxContainer/MarginContainer11/ClothGarnContainer" unique_id=2127971592]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Unraveled:"
+label_settings = SubResource("LabelSettings_32ftm")
+
+[node name="ClothGarnValue" type="Label" parent="VBoxContainer/MarginContainer11/ClothGarnContainer" unique_id=1630262363]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_vcnvx")
 
 [node name="MarginContainer6" type="MarginContainer" parent="VBoxContainer" unique_id=1301243814]
 layout_mode = 2
-theme_override_constants/margin_top = 16
+theme_override_constants/margin_top = 32
 
 [node name="MoneyLeftLabel" type="Label" parent="VBoxContainer/MarginContainer6" unique_id=2118554541]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
-text = "You need to collect %s more $$
-to make grandma proud."
+text = "I still need to collect %s til the end
+of the week to make grandma proud."
 label_settings = SubResource("LabelSettings_vtbdu")
 horizontal_alignment = 1
 
 [node name="MarginContainer5" type="MarginContainer" parent="VBoxContainer" unique_id=1634055441]
 layout_mode = 2
-theme_override_constants/margin_top = 32
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.715, 0.715)
 
-[node name="Button" type="Button" parent="VBoxContainer/MarginContainer5" unique_id=1848607690]
+[node name="Highlightable" type="Control" parent="VBoxContainer/MarginContainer5" unique_id=1366323048]
+custom_minimum_size = Vector2(0, 208.81)
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Next"
+script = ExtResource("3_rilo5")
+metadata/_custom_type_script = "uid://br5qrpbed4q2k"
 
-[connection signal="pressed" from="VBoxContainer/MarginContainer5/Button" to="." method="_on_next_level_button_pressed"]
+[node name="Button" type="TextureButton" parent="VBoxContainer/MarginContainer5/Highlightable" unique_id=1414580805]
+custom_maximum_size = Vector2(600, -1)
+layout_mode = 0
+offset_right = 600.0
+offset_bottom = 199.0
+offset_transform_scale = Vector2(0.685, 0.685)
+mouse_filter = 1
+texture_normal = ExtResource("3_8iu28")
+stretch_mode = 3
+
+[connection signal="pressed" from="VBoxContainer/MarginContainer5/Highlightable/Button" to="." method="_on_next_level_button_pressed"]

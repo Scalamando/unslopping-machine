@@ -23,10 +23,10 @@ func show_washing_mashine_settings(washing_machine : WashingMashine) -> void:
 func hide_washing_machine_settings() -> void:
 	washing_maschine_ui.visible = false
 
-func show_level_end_ui(stats: Stats) -> void:
+func show_level_end_ui(day: int, stats: Stats, win_threshold: int) -> void:
 	washing_maschine_ui.visible = false
 	tresen_ui.visible = false
-	level_end_ui.init(stats)
+	level_end_ui.init(day, stats, win_threshold)
 	level_end_ui.visible = true
 
 func hide_level_end_ui() -> void:
