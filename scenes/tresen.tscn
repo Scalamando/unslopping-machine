@@ -39,3 +39,4 @@ metadata/_custom_type_script = "uid://nj1hdjl1vob2"
 position = Vector2(3, -221)
 
 [connection signal="drop_applied" from="DropZone" to="." method="_on_drop_zone_drop_applied"]
+[connection signal="drop_rejected" from="DropZone" to="." method="_on_drop_zone_drop_rejected"]
