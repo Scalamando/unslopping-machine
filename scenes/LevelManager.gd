@@ -57,7 +57,7 @@ func load_level() -> void:
 
 func next_level() -> void:
 	level_idx += 1
-	if level_idx >= len(levels):
+	if level_idx > len(levels):
 		if stats.money_made_total < threshold_win:
 			UiManager.show_endscreen_ui("lose")
 		else:
