@@ -12,7 +12,7 @@ extends Node2D
 @onready var music_player: AudioStreamPlayer = %MusicPlayer
 
 @export_group("Win Conditions")
-@export var threshold_win : int = 1000
+@export var threshold_win : int = 3000
 
 var level_idx : int = 1 # start with level 1
 
