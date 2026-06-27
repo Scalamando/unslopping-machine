@@ -1,7 +1,6 @@
 [gd_resource type="Resource" script_class="LevelRes" format=3 uid="uid://d3p8tuoksfkjq"]
 
 [ext_resource type="Script" uid="uid://bqcwvesmpnf82" path="res://data/CustomerProfile.gd" id="1_laeuw"]
-[ext_resource type="PackedScene" uid="uid://dwb658vo6kalh" path="res://data/levels/start_ui_day_2.tscn" id="2_15w2e"]
 [ext_resource type="Script" uid="uid://b5ioyvhc456j2" path="res://data/LevelRes.gd" id="2_wc4qo"]
 [ext_resource type="Texture2D" uid="uid://clyy15r8b44g0" path="res://assets/persons/bill.png" id="3_yovsy"]
 [ext_resource type="Texture2D" uid="uid://b1swlxy6kh0e3" path="res://assets/persons/cara.png" id="5_cqh3m"]
@@ -14,7 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://b1bm4qdbuy3wc" path="res://assets/persons/mimi.png" id="13_vtlyl"]
 [ext_resource type="Resource" uid="uid://b75ppsld4qn6b" path="res://data/cloths/jacket_pink.tres" id="14_qh535"]
 [ext_resource type="Texture2D" uid="uid://d1nad5cg2lgml" path="res://assets/persons/jay.png" id="15_qbi3k"]
+[ext_resource type="PackedScene" uid="uid://bibckso8xjhe5" path="res://data/levels/start_ui_day_4.tscn" id="15_vtlyl"]
 [ext_resource type="Resource" uid="uid://cb4n8ug53xxff" path="res://data/cloths/tshirt_pink.tres" id="16_qbi3k"]
+[ext_resource type="AudioStream" uid="uid://lltsbn4tk2g" path="res://assets/audio/music/Day4.mp3" id="16_qh535"]
 [ext_resource type="Resource" uid="uid://c4gts8tceuq1v" path="res://data/cloths/top_green.tres" id="18_k1ey7"]
 
 [sub_resource type="Resource" id="Resource_0j7jy"]
@@ -114,8 +115,9 @@ metadata/_custom_type_script = "uid://bqcwvesmpnf82"
 
 [resource]
 script = ExtResource("2_wc4qo")
-day_start_scene = ExtResource("2_15w2e")
+day_start_scene = ExtResource("15_vtlyl")
 machine_amount = 2
 baskset_amount = 2
 customer_array = Array[ExtResource("1_laeuw")]([SubResource("Resource_0j7jy"), SubResource("Resource_wxdh2"), SubResource("Resource_fiw7c"), SubResource("Resource_gyagi"), SubResource("Resource_vu477"), SubResource("Resource_0ujts"), SubResource("Resource_cqh3m"), SubResource("Resource_yofm0"), SubResource("Resource_rkjf0"), SubResource("Resource_rffxt"), SubResource("Resource_qh535"), SubResource("Resource_vtlyl")])
+music_stream = ExtResource("16_qh535")
 metadata/_custom_type_script = "uid://b5ioyvhc456j2"

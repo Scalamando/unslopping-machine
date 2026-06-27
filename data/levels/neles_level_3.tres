@@ -10,8 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://h4pmrib2o5ns" path="res://assets/persons/pia.png" id="9_dfyk2"]
 [ext_resource type="Texture2D" uid="uid://tx0q6256tg0a" path="res://assets/persons/tim.png" id="9_esass"]
 [ext_resource type="Resource" uid="uid://djwwq2h7dm30d" path="res://data/cloths/jacket_black.tres" id="10_6ycy7"]
-[ext_resource type="PackedScene" uid="uid://drd20t3yb8mmu" path="res://data/levels/day_start_ui_HARD.tscn" id="11_2tr7s"]
+[ext_resource type="PackedScene" uid="uid://cnxehwsvqvalh" path="res://data/levels/start_ui_day_3.tscn" id="11_6ycy7"]
 [ext_resource type="Script" uid="uid://b5ioyvhc456j2" path="res://data/LevelRes.gd" id="12_ce4i3"]
+[ext_resource type="AudioStream" uid="uid://ce1uiuq4teh5e" path="res://assets/audio/music/Day3.mp3" id="12_xs3cy"]
 
 [sub_resource type="Resource" id="Resource_s2nqr"]
 script = ExtResource("1_6ycy7")
@@ -63,7 +64,8 @@ metadata/_custom_type_script = "uid://bqcwvesmpnf82"
 
 [resource]
 script = ExtResource("12_ce4i3")
-day_start_scene = ExtResource("11_2tr7s")
+day_start_scene = ExtResource("11_6ycy7")
 machine_amount = 3
 customer_array = Array[ExtResource("1_6ycy7")]([SubResource("Resource_s2nqr"), SubResource("Resource_7k4tt"), SubResource("Resource_mncd8"), SubResource("Resource_nh174"), SubResource("Resource_3cgds"), SubResource("Resource_ri66u")])
+music_stream = ExtResource("12_xs3cy")
 metadata/_custom_type_script = "uid://b5ioyvhc456j2"

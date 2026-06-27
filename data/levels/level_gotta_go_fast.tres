@@ -4,7 +4,6 @@
 [ext_resource type="Resource" uid="uid://c4gts8tceuq1v" path="res://data/cloths/top_green.tres" id="2_f02gd"]
 [ext_resource type="Resource" uid="uid://br0vqsse5a8sk" path="res://data/cloths/shorts_grey.tres" id="3_1g3qs"]
 [ext_resource type="Texture2D" uid="uid://d1nad5cg2lgml" path="res://assets/persons/jay.png" id="3_anbl3"]
-[ext_resource type="PackedScene" uid="uid://c0dwud8lo7ogj" path="res://data/levels/start_ui_day_1.tscn" id="4_d43ec"]
 [ext_resource type="Resource" uid="uid://b75ppsld4qn6b" path="res://data/cloths/jacket_pink.tres" id="4_qppva"]
 [ext_resource type="Resource" uid="uid://djao23gc0rhrh" path="res://data/cloths/top_black.tres" id="5_2ho7g"]
 [ext_resource type="Script" uid="uid://b5ioyvhc456j2" path="res://data/LevelRes.gd" id="5_e8oiu"]
@@ -19,6 +18,8 @@
 [ext_resource type="Resource" uid="uid://cws7404h0x38y" path="res://data/cloths/top_yellow.tres" id="11_t15gr"]
 [ext_resource type="Texture2D" uid="uid://h4pmrib2o5ns" path="res://assets/persons/pia.png" id="13_av2gr"]
 [ext_resource type="Texture2D" uid="uid://bxwomxb0u5rd5" path="res://assets/persons/lynn.png" id="15_h6c27"]
+[ext_resource type="PackedScene" uid="uid://dw6gp4jgg6n0d" path="res://data/levels/start_ui_day_7.tscn" id="18_2cgea"]
+[ext_resource type="AudioStream" uid="uid://cyffdou32p2ua" path="res://assets/audio/music/Day1.mp3" id="19_hgg1q"]
 
 [sub_resource type="Resource" id="Resource_gpi1h"]
 script = ExtResource("1_lbtgu")
@@ -118,8 +119,9 @@ metadata/_custom_type_script = "uid://bqcwvesmpnf82"
 
 [resource]
 script = ExtResource("5_e8oiu")
-day_start_scene = ExtResource("4_d43ec")
+day_start_scene = ExtResource("18_2cgea")
 machine_amount = 3
 baskset_amount = 2
 customer_array = Array[ExtResource("1_lbtgu")]([SubResource("Resource_gpi1h"), SubResource("Resource_h6c27"), SubResource("Resource_ftw4w"), SubResource("Resource_n4tjs"), SubResource("Resource_qc7ty"), SubResource("Resource_0i20h"), SubResource("Resource_8b3v7"), SubResource("Resource_bs4bf"), SubResource("Resource_smkgh"), SubResource("Resource_xth6v"), SubResource("Resource_ya5b1"), SubResource("Resource_xcjkk")])
+music_stream = ExtResource("19_hgg1q")
 metadata/_custom_type_script = "uid://b5ioyvhc456j2"
