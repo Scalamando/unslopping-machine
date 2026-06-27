@@ -27,6 +27,8 @@
 [ext_resource type="PackedScene" uid="uid://cvlsgfgjkn3ij" path="res://data/levels/end_ui_postcard.tscn" id="17_0ld40"]
 [ext_resource type="PackedScene" uid="uid://dxtbtqp8cydst" path="res://ui/level_end_ui.tscn" id="17_dp3eg"]
 [ext_resource type="Texture2D" uid="uid://denil43iiwgb6" path="res://assets/instructions.PNG" id="21_yc10j"]
+[ext_resource type="Texture2D" uid="uid://cj83lhea7w6vk" path="res://assets/ui/ui_e.png" id="28_yq6so"]
+[ext_resource type="Texture2D" uid="uid://djefmc0xghxec" path="res://assets/ui/ui_q.png" id="29_fv21b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0j7jy"]
 size = Vector2(1746.1897, 2195.0386)
@@ -189,6 +191,16 @@ customer_offset = Vector2(-350, 0)
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1243545003]
 script = ExtResource("3_jyhfs")
 cameraPosLeftRoom = Vector2(-1050, 0)
+
+[node name="UiE" type="Sprite2D" parent="Camera2D" unique_id=2051088156]
+position = Vector2(904, 482)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("28_yq6so")
+
+[node name="UiQ" type="Sprite2D" parent="Camera2D" unique_id=74397869]
+position = Vector2(-901, 482)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("29_fv21b")
 
 [node name="MainUI" type="Control" parent="Camera2D" unique_id=1842875158]
 layout_mode = 3
