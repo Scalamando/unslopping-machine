@@ -25,7 +25,6 @@ var customer_array : Array[CustomerProfile]
 
 @onready var door_bell: AudioStreamPlayer2D = %DoorBell
 
-var time : int = 0
 var customer_spawn_counter : int = 0
 var customer_queue_array : Array[CustomerQueueItem] = []
 
@@ -44,7 +43,7 @@ func timed_customer_iteration() -> void:
 	customer_spawn_counter =  0
 
 	for customer : CustomerProfile in customer_array:
-		var delay : int = customer.timeStamp - time
+		var delay : int = customer.timeStamp
 		await get_tree().create_timer(delay).timeout
 
 		spawn_customer(customer)
