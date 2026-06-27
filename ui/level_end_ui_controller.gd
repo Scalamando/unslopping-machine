@@ -38,7 +38,7 @@ func init(day: int, stats: Stats, win_threshold: int) -> void:
 	if stats.money_made_total < win_threshold:
 		money_left_label.text = "I still need to collect $%s til the end\nof the week to make grandma proud." % (win_threshold - stats.money_made_total)
 	else:
-		money_left_label.text = "I got $%s. That's all the money I need to make grandma proud!" % (win_threshold - stats.money_made_total)
+		money_left_label.text = "I got $%s.\nThat's all the money I need to make grandma proud!" % (stats.money_made_total)
 
 
 func _on_next_level_button_pressed() -> void:
