@@ -29,4 +29,5 @@ func _ready() -> void:
 func _on_cloth_removed(node: Node) -> void:
 	if node is Cloth:
 		await get_tree().create_timer(0.25).timeout
+		if cloth_container.get_child_count() > 1: return # dont allow customer to despawn with cloth
 		queue_free()
