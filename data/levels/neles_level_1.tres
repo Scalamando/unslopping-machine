@@ -8,9 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bxwomxb0u5rd5" path="res://assets/persons/lynn.png" id="5_jrykr"]
 [ext_resource type="Resource" uid="uid://cb4n8ug53xxff" path="res://data/cloths/tshirt_pink.tres" id="6_rt02c"]
 [ext_resource type="Texture2D" uid="uid://b1bm4qdbuy3wc" path="res://assets/persons/mimi.png" id="7_6wgx5"]
-[ext_resource type="Resource" uid="uid://dscb3lotcjc0b" path="res://data/cloths/shirt_green.tres" id="8_jrykr"]
 [ext_resource type="Texture2D" uid="uid://clyy15r8b44g0" path="res://assets/persons/bill.png" id="8_rt02c"]
-[ext_resource type="Texture2D" uid="uid://tx0q6256tg0a" path="res://assets/persons/tim.png" id="9_rt02c"]
 [ext_resource type="PackedScene" uid="uid://c0dwud8lo7ogj" path="res://data/levels/start_ui_day_1.tscn" id="11_rt02c"]
 [ext_resource type="AudioStream" uid="uid://cyffdou32p2ua" path="res://assets/audio/music/Day1.mp3" id="12_6wgx5"]
 
@@ -19,6 +17,7 @@ script = ExtResource("1_nhiqh")
 name = "Pia"
 texture = ExtResource("3_xx8wu")
 clothing = ExtResource("2_fp0f6")
+timeStamp = 5
 metadata/_custom_type_script = "uid://bqcwvesmpnf82"
 
 [sub_resource type="Resource" id="Resource_8wi7h"]
@@ -44,17 +43,9 @@ texture = ExtResource("8_rt02c")
 clothing = ExtResource("6_rt02c")
 metadata/_custom_type_script = "uid://bqcwvesmpnf82"
 
-[sub_resource type="Resource" id="Resource_6wgx5"]
-script = ExtResource("1_nhiqh")
-name = "Tim"
-texture = ExtResource("9_rt02c")
-clothing = ExtResource("8_jrykr")
-timeStamp = 15
-metadata/_custom_type_script = "uid://bqcwvesmpnf82"
-
 [resource]
 script = ExtResource("5_fp0f6")
 day_start_scene = ExtResource("11_rt02c")
-customer_array = Array[ExtResource("1_nhiqh")]([SubResource("Resource_diofb"), SubResource("Resource_8wi7h"), SubResource("Resource_jk86l"), SubResource("Resource_fp0f6"), SubResource("Resource_6wgx5")])
+customer_array = Array[ExtResource("1_nhiqh")]([SubResource("Resource_diofb"), SubResource("Resource_8wi7h"), SubResource("Resource_jk86l"), SubResource("Resource_fp0f6")])
 music_stream = ExtResource("12_6wgx5")
 metadata/_custom_type_script = "uid://b5ioyvhc456j2"
