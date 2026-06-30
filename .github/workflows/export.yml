@@ -8,10 +8,10 @@ on:
 
 env:
   GODOT_VERSION: 4.7
-  EXPORT_NAME: unslopping-machine
+  EXPORT_NAME: spin-club
   PROJECT_PATH: .
-  ITCHIO_USERNAME: scalamando
-  ITCHIO_GAME: unslopping-machine
+  ITCHIO_USERNAME: RafaelWortmann
+  ITCHIO_GAME: spin-club
 
 jobs:
   export-windows:
